@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+<button type="default" bindtap="btn_default" catchtap="onTabAdd">
+添加图书</button>
+
+
+<view class="topic-info">
+        <text class="container">{{book.title}}</text>
+    
+        <text class="container">{{book.publisher}}</text>
+
+        <image class="" mode="widthFix" src="{{book.images.large}}">  
+</image>  
+    </view>
+</view>

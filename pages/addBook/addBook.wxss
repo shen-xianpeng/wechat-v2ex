@@ -1,0 +1,5 @@
+/* pages/addBook/addBook.wxss */
+
+.container {
+  width: 100%;
+}
