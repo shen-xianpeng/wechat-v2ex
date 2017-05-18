@@ -1,0 +1,24 @@
+<!--detail.wxml-->
+<view class="container">
+  <view class="topic-detail {{logged?'':'hidden'}}">
+    <view class="topic-owner ">
+        <image class="owner-avatar" src="https://ohe31mpy9.qnssl.com/test/thirdparty/avatar/IJEpt20170503110957.jpeg" id="{{detail.member.id}}" bindtap="showUserInfo"></image>
+        <view class="topic-tit">xianpeng</view>
+    </view>
+    <view class="topic-desc">
+        <text>{{detail.content}}</text>
+    </view>
+
+  </view> 
+
+   <view class="topic-detail {{logged?'hidden':''}}">
+    <view class="topic-owner ">
+        <image class="owner-avatar" src="https://imgqn.smm.cn/production/question/vjxIA20170509133549.png" id="{{detail.member.id}}" bindtap="showUserInfo"></image>
+        <button bindtap="popLogin" class="margin-button">去登录</button>
+
+    </view>
+
+</view> 
+
+
+</view>

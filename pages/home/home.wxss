@@ -1,0 +1,48 @@
+.container {
+    padding:30rpx;
+}
+
+.topic-owner {
+    display: block;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+
+.owner-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100%;
+}
+
+.topic-created {
+    margin-left: 30rpx;
+    font-size:14px;
+    color:#999;
+}
+
+.topic-tit {
+    flex:1;
+    box-sizing:border-box;
+    line-height: 1.4;
+    font-size:14px;
+    color:#333;
+}
+
+.topic-info {
+    margin-bottom: 40rpx;
+    color:#777;
+}
+
+.topic-desc {
+    margin-bottom: 20rpx;
+    line-height: 1.4;
+    word-wrap: break-word; 
+    word-break: normal;
+    font-size:14px;
+    color:#333;
+}
+
+.hidden {
+  display: none;
+}

@@ -20,7 +20,7 @@ App({
   console.log(res);                          objz.avatarUrl=res.userInfo.avatarUrl;  
                         objz.nickName=res.userInfo.nickName;  
                         //console.log(objz);  
-                        wx.setStorageSync('userInfo', objz);//存储userInfo  
+                       // wx.setStorageSync('userInfo', objz);//存储userInfo  
 
                         var params = {};
                         params["code"] = jscode
@@ -37,7 +37,7 @@ App({
                             obj.openid = res.data.openid;
                             obj.expires_in = Date.now() + res.data.expires_in;
                             //console.log(obj);  
-                            wx.setStorageSync('user', obj);//存储openid    
+                           // wx.setStorageSync('user', obj);//存储openid    
                           }
                         });  
                     }  
