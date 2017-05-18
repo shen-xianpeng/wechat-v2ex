@@ -9,7 +9,7 @@
     
         <text class="container">{{book.publisher}}</text>
 
-        <image class="" mode="widthFix" src="{{book.images.large}}">  
+        <image class="" mode="widthFix" src="{{book.image}}">  
 </image>  
     </view>
 </view>

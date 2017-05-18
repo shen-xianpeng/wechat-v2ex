@@ -1,0 +1,17 @@
+<!--latest.wxml-->
+
+  <view class="container">
+
+    <view class="item" wx:for="{{datalist}}">
+      <image class="img" style="width:95%;" mode="widthFix" src="{{item.image}}"></image>
+      <view class="text">
+        <text class="title">{{item.title}}</text>
+        <text class="description">
+          {{item.publisher}}</text>
+      </view>
+    </view>
+
+
+  </view>
+
+

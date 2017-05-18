@@ -21,18 +21,19 @@ Page({
         console.log(res.result);
         console.log(res.scanType);
         var bookIsbn = res.result;
+        var params = {};
+        params["barcode"] = bookIsbn;
+        params["code_type"] = res.scanType;
         wx.request({
-          url: 'https://api.douban.com/v2/book/isbn/' + bookIsbn,
+          url: 'http://118.184.11.37:10000/add_book_by_barcode',
+          data: params,
           method: 'GET',
           success: function (res) {
-
             console.log(res);
-            console.log('https://api.douban.com/v2/book/isbn/' + bookIsbn)
             if (res.data.code && res.data.code > 0) {
               console.log(res.data.msg);
               return;
             }
-            console.log(res.data.title);
             that.setData({
               book: res.data
             })
