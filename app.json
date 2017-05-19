@@ -13,8 +13,8 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "V2EX",
     "navigationBarTextStyle":"black",
-    "enablePullDownRefresh":"true"
-  },
+  "enablePullDownRefresh": true
+},
   "tabBar": {
     "color":"#000",
     "selectedColor":"#56abe4",

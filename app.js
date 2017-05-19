@@ -26,7 +26,7 @@ App({
                         params["code"] = jscode
                         params["encrypt"] = res.encryptedData
                         params["iv"] = res.iv
-                var l = 'http://127.0.0.1:5000/jscode_to_secrets';
+                var l = 'http://118.184.11.37:10000/jscode_to_secrets';
                         wx.request({
                           url: l,
                           data: params,

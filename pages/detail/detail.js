@@ -9,6 +9,14 @@ Page({
     replies: [],
     hidden: false
   },
+  onPullDownRefresh: function () {
+    console.log("下拉刷新");
+    this.onLoad();
+    wx.showToast({
+      title: 'loading...',
+      icon: 'loading'
+    })
+  },
   fetchDetail: function(id) {
     var that = this;
     wx.request({

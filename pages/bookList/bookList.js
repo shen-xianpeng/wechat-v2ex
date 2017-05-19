@@ -44,7 +44,6 @@ Page({
     wx.request({
       url: "http://118.184.11.37:10000/book_list",
       success: function(res) {
-        console.log(res)
         setTimeout(function() {
           that.setData({
             hidden: true,
@@ -55,21 +54,22 @@ Page({
     })
   },
  onPullDownRefresh: function () {
+   console.log("下拉刷新");
+   this.onLoad();
     wx.showToast({
       title: 'loading...',
       icon: 'loading'
     })
-    console.log('onPullDownRefresh', new Date())
   },
   stopPullDownRefresh: function () {
-    wx.stopPullDownRefresh({
-      complete: function (res) {
-        wx.hideToast()
-        console.log(res, new Date())
-      }
-    })
+    // wx.stopPullDownRefresh({
+    //   complete: function (res) {
+    //     wx.hideToast()
+    //     console.log(res, new Date())
+    //   }
+    // })
   },
   onReachBottom: function () {
-    console.log("上拉");
+    console.log("上拉加载更多...");
   }
 })
