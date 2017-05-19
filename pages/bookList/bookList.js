@@ -39,35 +39,45 @@ Page({
       url: url
     })
   },
-  fetchData: function() {
+  fetchData: function(callback) {
     var that = this;
     wx.request({
       url: "http://118.184.11.37:10000/book_list",
       success: function(res) {
-        setTimeout(function() {
+          if (callback) {
+            callback();
+          }
           that.setData({
             hidden: true,
             datalist: res.data.infos
           })
-        }, 100)
       }
     })
   },
  onPullDownRefresh: function () {
    console.log("下拉刷新");
-   this.onLoad();
-    wx.showToast({
-      title: 'loading...',
-      icon: 'loading'
-    })
+   var that=this;
+
+   that.setData({
+     hidden: true,
+     //datalist: []
+   })
+   wx.showToast({
+     title: '加载中...',
+     icon: 'loading'
+   })
+   that.fetchData(function () {
+     that.stopPullDownRefresh();
+   })
+  
   },
   stopPullDownRefresh: function () {
-    // wx.stopPullDownRefresh({
-    //   complete: function (res) {
-    //     wx.hideToast()
-    //     console.log(res, new Date())
-    //   }
-    // })
+    wx.stopPullDownRefresh({
+      complete: function (res) {
+        wx.hideToast()
+        console.log(res, new Date())
+      }
+    })
   },
   onReachBottom: function () {
     console.log("上拉加载更多...");

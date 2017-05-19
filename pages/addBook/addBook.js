@@ -24,6 +24,7 @@ Page({
         var params = {};
         params["barcode"] = bookIsbn;
         params["code_type"] = res.scanType;
+        console.log("start")
         wx.request({
           url: 'http://118.184.11.37:10000/add_book_by_barcode',
           data: params,
@@ -38,6 +39,9 @@ Page({
               book: res.data
             })
 
+          },
+          fail: function( res) {
+            console.log(res);
           }
 
         })

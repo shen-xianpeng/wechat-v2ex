@@ -2,8 +2,8 @@
 
   <view class="container">
 
-    <view class="item" wx:for="{{datalist}}">
-      <image class="img" style="width:95%;" mode="widthFix" src="{{item.image}}"></image>
+    <view class="item" wx:for="{{datalist}}" wx:key="id">
+      <image     mode="aspectFit" src="{{item.image}}"></image>
       <view class="text">
         <text class="title">{{item.title}}</text>
         <text class="description">

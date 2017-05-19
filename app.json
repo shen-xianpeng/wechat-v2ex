@@ -9,7 +9,7 @@
     "pages/addBook/addBook"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "V2EX",
     "navigationBarTextStyle":"black",
