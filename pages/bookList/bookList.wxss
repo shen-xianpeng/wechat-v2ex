@@ -7,22 +7,30 @@
 
 .item {
   display: inline-block;
-  width: 375rpx;
+  width:350rpx;
   overflow:hidden;
   height: 500rpx;
   text-align: center;
+  box-shadow:3rpx 3rpx 3rpx 3rpx gray;
+  margin:10rpx;
 }
+
+
+
 
 image {
   max-height:400rpx;
-  max-width:200rpx;
+  max-width:300rpx;
   width: auto;
   margin: 0 auto;
+  margin-top: 10rpx;
   display: block;
 }
 
 .text {
-  font-size: 20rpx;
+  font-size: 25rpx;
+  line-height: 30rpx;
+  padding-top:5px;
 }
 
 
