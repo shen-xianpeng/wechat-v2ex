@@ -13,3 +13,13 @@
 </image>  
     </view>
 </view>
+
+
+<modal hidden="{{!showSuccessModal}}" title="添加成功" confirm-text="关闭" cancel-text="" bindcancel="onCancelModal" bindconfirm="onConfirmModal" no-cancel="yes">
+    
+</modal>
+
+
+<modal hidden="{{!showErrorModal}}" title="添加失败" confirm-text="关闭" cancel-text="" bindcancel="onCancelModal" bindconfirm="onErrorConfirmModal" no-cancel="yes">
+    {{errMsg}}
+</modal>

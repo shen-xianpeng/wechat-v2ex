@@ -5,7 +5,10 @@ Page({
   data: {
     title: '添加图书',
     book: {},
-    hidden: false
+    hidden: false,
+    showSuccessModal: false,
+    showErrorModal: false,
+    errMsg: ""
   },
   // 事件处理函数
   onTabAdd: function (e) {
@@ -33,14 +36,24 @@ Page({
             console.log(res);
             if (res.data.code && res.data.code > 0) {
               console.log(res.data.msg);
+              that.setData({
+                showErrorModal: true,
+                errMsg: res.data.msg
+              })
               return;
             }
             that.setData({
               book: res.data
             })
+            that.setData({
+              showSuccessModal: true
+            })
 
           },
           fail: function( res) {
+            that.setData({
+              showErrorModal: true
+            })
             console.log(res);
           }
 
@@ -50,7 +63,31 @@ Page({
   fetchData: function (id) {
     
   },
+  onCancelModal: function(){
+    this.setData({
+      showSuccessModal: false
+    })
+  },
+  onConfirmModal: function () {
+    this.setData({
+      showSuccessModal: false
+    })
+    wx.switchTab({
+      url: '../bookList/bookList',
+      success: function (e) {
+        var page = getCurrentPages().pop();
+        if (page == undefined || page == null) return;
+        page.onLoad();
+      }
+    })
+  },
+  onErrorConfirmModal: function () {
+    this.setData({
+      showErrorModal: false
+    })
+  },
   onLoad: function (options) {
     this.fetchData(options.id);
+  
   }
 })
