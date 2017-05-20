@@ -24,3 +24,9 @@ image {
 .text {
   font-size: 20rpx;
 }
+
+
+.bottom-loader {
+  text-align:center;
+  color:gray;
+}

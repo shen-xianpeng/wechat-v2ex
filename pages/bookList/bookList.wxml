@@ -13,6 +13,15 @@
       </view>
     </view>
 
+
+  <view class="bottom-loader">
+  <text wx:if="{{hasMore==false}}">没有了</text>
+          <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
+          <text  wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
+
+          
+          
+          </view>
   </view>
 
 
