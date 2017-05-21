@@ -7,7 +7,7 @@
     <view class="item" wx:for="{{datalist}}"  wx:for-index="j" wx:key="id">
       <image     mode="aspectFit" src="{{item.image}}"></image>
       <view class="text">
-        <text class="title">{{item.title}} {{item.id}}</text>
+        <text class="title">{{item.title}}</text>
         <text class="description">
           {{item.publisher}}</text>
       </view>
