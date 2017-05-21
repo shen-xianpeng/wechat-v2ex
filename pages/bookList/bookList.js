@@ -104,5 +104,17 @@ Page({
       loadingBottom: true,
     })
     this.fetchData();
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '换书',
+      path: '/pages/bookList/bookList',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })

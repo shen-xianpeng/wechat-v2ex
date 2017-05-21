@@ -11,7 +11,8 @@
   overflow:hidden;
   height: 500rpx;
   text-align: center;
-  box-shadow:3rpx 3rpx 3rpx 3rpx gray;
+  box-shadow:3rpx 3rpx 3rpx 3rpx #e9ebed;
+  border-radius:8rpx;
   margin:10rpx;
 }
 
@@ -30,9 +31,20 @@ image {
 .text {
   font-size: 25rpx;
   line-height: 30rpx;
-  padding-top:5px;
+  padding:5rpx;
+   text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden;
 }
 
+.title {
+  padding:10rpx;
+
+}
+.description {
+  padding:10rpx;
+
+}
 
 .bottom-loader {
   text-align:center;
