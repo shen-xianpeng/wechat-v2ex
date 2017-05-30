@@ -1,3 +1,5 @@
+<view class="page" style="height:100%;overflow: {{scroll}}">
+
 <view class="container">
 
 
@@ -26,7 +28,7 @@
 </view>  
 
 
-<swiper current="{{currentTab}}" class="swiper-box" duration="100" style="" bindchange="bindChange">  
+<swiper bindtouchstart="touchDesc" current="{{currentTab}}" class="swiper-box" duration="100" style="" bindchange="bindChange">  
     <!-- 0 -->  
     <swiper-item>  
       <scroll-view scroll-y="true"  class="book-summary">
@@ -47,3 +49,4 @@
 </swiper> 
 
   
+  </view>

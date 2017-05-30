@@ -6,6 +6,7 @@ Page({
   data: {
     title: '书本详情',
     currentTab: 0,
+    scroll: 'auto',
     book: {},
   },
   fetchDetail: function (id) {
@@ -39,6 +40,12 @@ Page({
     var that = this;
     that.setData({ currentTab: e.currentTarget.dataset.current });
 
+  },
+  touchDesc : function () {
+    console.log("start touch,,,")
+    this.setData({
+    //  scroll:"hidden"
+    })
   },
   onLoad: function (options) {
     console.log(options);
