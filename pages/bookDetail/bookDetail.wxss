@@ -60,3 +60,53 @@ image {
   font-size: 30rpx;
   padding:50rpx;
 }
+
+.book-catalog {
+  font-size: 30rpx;
+  padding:50rpx;
+}
+
+.book-comments-empty {
+  font-size: 30rpx;
+  padding:50rpx;
+  text-align: center
+}
+
+swiper-item {
+display:block;
+overflow:scroll;
+}
+
+
+.swiper-tab{  
+    width: 60%;  
+    text-align: center;  
+    line-height: 60rpx;
+    color: gray;  
+    margin-left:50rpx;  
+}
+
+.swiper-tab-list{  font-size: 30rpx;  
+    display: inline-block;  
+    width: 33.33%;  
+    color: gray;  
+}  
+
+.on{ 
+    color: #3b5998;  
+    border-bottom: 5rpx solid #3b5998;}  
+  
+.swiper-box{ 
+  display: block; 
+  height: 100%;
+ }  
+
+
+page {
+  height:100%;
+
+}
+
+scroll-view {  
+  width: 640rpx !important;
+}
