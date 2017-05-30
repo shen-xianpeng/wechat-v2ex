@@ -31,9 +31,10 @@ Page({
 
   },
   // 事件处理函数
-  redictDetail: function(e) {
-    var id = e.currentTarget.id,
-      url = '../detail/detail?id=' + id;
+  goBookDetail: function(e) {
+    var id = e.currentTarget.id;
+    console.log(id);
+    var url = '../bookDetail/bookDetail?id=' + id;
       
     wx.navigateTo({
       url: url
@@ -48,12 +49,10 @@ Page({
       params["offset"] = this.data.offset
     }
     wx.request({
-      url: "http://118.184.11.37:10000/book_list",
+      url: "https://www.xianpeng.org/book_list",
       data: params,
       success: function(res) {
-          if (callback) {
-            callback();
-          }
+     
           var datas = data.concat(res.data.infos);
           that.setData({
             hidden: true,
@@ -62,7 +61,9 @@ Page({
             hasMore: res.data.has_more,
             offset: res.data.offset,
           })
-
+          if (callback) {
+            callback();
+          }
 
       }
     })
@@ -70,6 +71,7 @@ Page({
  onPullDownRefresh: function () {
    console.log("下拉刷新");
    var that=this;
+   wx.stopPullDownRefresh();
 
    that.setData({
      hidden: true,
@@ -77,19 +79,18 @@ Page({
      offset: undefined,
      //datalist: []
    })
-   wx.showToast({
-     title: '加载中...',
-     icon: 'loading'
-   })
+  wx.showNavigationBarLoading()
+
    that.fetchData(function () {
      that.stopPullDownRefresh();
    })
   
   },
   stopPullDownRefresh: function () {
+    wx.hideNavigationBarLoading();
     wx.stopPullDownRefresh({
       complete: function (res) {
-        wx.hideToast()
+
         console.log(res, new Date())
       }
     })

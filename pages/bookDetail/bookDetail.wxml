@@ -1,0 +1,26 @@
+<view class="container">
+
+
+  <view class="left-detail">
+    <image catchtap="onPreviewImage" class="" mode="aspectFit" id="{{book.image}}" src="{{book.image}}">
+    </image>
+  </view>
+
+  <view class="right-detail">
+   <view>
+    <text class="book-title">{{book.title}} </text>
+   </view>
+    <view class="sub-info">
+     <label>作者： </label> <text>{{book.author}} </text>
+   </view>
+    <view class="sub-info">
+     <label>出版社： </label> <text>{{book.publisher}} </text>
+   </view>
+  </view>
+
+</view>
+
+
+   <view class="book-summary">
+     <text>{{book.summary}} </text>
+   </view>

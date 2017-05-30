@@ -4,7 +4,7 @@ App({
       var that = this  
      var user=wx.getStorageSync('user') || {};    
      var userInfo=wx.getStorageSync('userInfo') || {};   
-     if((!user.openid || (user.expires_in || Date.now()) < (Date.now() + 600))&&(!userInfo.nickName)){   
+     if((1 || !user.openid || (user.expires_in || Date.now()) < (Date.now() + 600))&&(!userInfo.nickName)){   
         wx.login({    
         success: function(res){   
             console.log(res);
@@ -26,7 +26,7 @@ App({
                         params["code"] = jscode
                         params["encrypt"] = res.encryptedData
                         params["iv"] = res.iv
-                var l = 'http://118.184.11.37:10000/jscode_to_secrets';
+                        var l = 'https://www.xianpeng.org/jscode_to_secrets';
                         wx.request({
                           url: l,
                           data: params,

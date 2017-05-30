@@ -29,7 +29,7 @@ Page({
         params["code_type"] = res.scanType;
         console.log("start")
         wx.request({
-          url: 'http://118.184.11.37:10000/add_book_by_barcode',
+          url: 'https://www.xianpeng.org/add_book_by_barcode',
           data: params,
           method: 'GET',
           success: function (res) {

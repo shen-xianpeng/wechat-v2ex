@@ -2,12 +2,13 @@
   "pages":[
     "pages/bookList/bookList",
     "pages/home/home",
-    "pages/addBook/addBook"
+    "pages/addBook/addBook",
+    "pages/bookDetail/bookDetail"
   ],
   "window":{
     "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "V2EX",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle":"black",
   "enablePullDownRefresh": false
 },

@@ -5,7 +5,7 @@
 
 
     <view class="item" wx:for="{{datalist}}"  wx:for-index="j" wx:key="id">
-      <image     mode="aspectFit" src="{{item.image}}"></image>
+      <image  catchtap="goBookDetail"  id="{{item.id}}" mode="aspectFit" src="{{item.image}}"></image>
       <view class="text">
         <text class="title">{{item.title}}</text>
         <text class="description">

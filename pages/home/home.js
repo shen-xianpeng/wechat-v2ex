@@ -4,9 +4,7 @@ var Api = require('../../utils/api.js');
 
 Page({
   data: {
-    title: '话题详情',
-    detail: {},
-    replies: [],
+    title: '我的',
     logged: false
   },
   fetchDetail: function(id) {
@@ -37,7 +35,7 @@ Page({
               params["code"] = jscode
               params["encrypt"] = res.encryptedData
               params["iv"] = res.iv
-              var l = 'http://127.0.0.1:5000/jscode_to_secrets';
+              var l = 'https://www.xianpeng.org/jscode_to_secrets';
               wx.request({
                 url: l,
                 data: params,
@@ -60,6 +58,5 @@ Page({
   },
   onLoad: function (options) {
   
-    this.fetchDetail(options.id);
   }
 })

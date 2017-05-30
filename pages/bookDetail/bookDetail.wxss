@@ -1,0 +1,62 @@
+.left-detail {
+  width: 250rpx;
+  display: inline-block;
+  float: left;
+
+}
+
+
+.right-detail {
+  width: 450rpx;
+  display: inline-block;
+  float: left;
+  padding: 50rpx 10rpx 0rpx 30rpx;
+  height: 100%;
+}
+
+
+image {
+  width: 200rpx;
+  padding: 0rpx 80rpx 20rpx 50rpx;
+}
+
+
+
+.right-detail text {
+  display:inline-block;
+  font-size: 25rpx;
+}
+
+.book-title {
+  font-size: 32rpx !important;
+  font-weight: bold;
+  padding-bottom: 10rpx;
+}
+
+.right-detail label {
+  font-size: 25rpx;
+  color: gray;
+}
+
+.sub-info text {
+  color: gray;
+}
+
+.sub-info {
+    line-height: 25rpx;
+    padding-bottom: 5rpx;
+}
+
+
+.container {
+  display:block;
+  width:100%;
+  height:420rpx;
+  overflow: hidden;
+}
+
+
+.book-summary {
+  font-size: 30rpx;
+  padding:50rpx;
+}
