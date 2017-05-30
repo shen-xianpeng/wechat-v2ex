@@ -15,7 +15,7 @@
 </view>
 
 
-<modal hidden="{{!showSuccessModal}}" title="添加成功" confirm-text="关闭" cancel-text="" bindcancel="onCancelModal" bindconfirm="onConfirmModal" no-cancel="yes">
+<modal hidden="{{!showSuccessModal}}" title="添加成功" confirm-text="查看" cancel-text="" bindcancel="onCancelModal" bindconfirm="onConfirmModal" no-cancel="yes">
     
 </modal>
 

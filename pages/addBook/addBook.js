@@ -45,6 +45,7 @@ Page({
             that.setData({
               book: res.data
             })
+            that.book_id = res.data.id;
             that.setData({
               showSuccessModal: true
             })
@@ -69,6 +70,15 @@ Page({
     })
   },
   onConfirmModal: function () {
+    this.setData({
+      showSuccessModal: false
+    })
+    var url = '../bookDetail/bookDetail?id=' + this.book_id;
+
+    wx.navigateTo({
+      url: url
+    })
+    return
     this.setData({
       showSuccessModal: false
     })

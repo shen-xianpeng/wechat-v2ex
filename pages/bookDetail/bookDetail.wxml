@@ -18,6 +18,15 @@
     <view class="sub-info">
      <label>出版社： </label> <text>{{book.publisher}} </text>
    </view>
+      <view class="sub-info">
+     <label>ISBN： </label> <text>{{book.isbn}} </text>
+   </view>
+      <view class="sub-info">
+     <label>价格： </label> <text>{{book.price}} </text>
+   </view>
+      <view class="sub-info">
+     <label>出版日期： </label> <text>{{book.pubdate}} </text>
+   </view>
   </view>
 
 </view>
