@@ -4,6 +4,10 @@
 添加图书</button>
 
 
+<button type="default" bindtap="btn_default" catchtap="chooseImages">
+上传图片</button>
+
+
 <view class="topic-info">
         <text class="container">{{book.title}}</text>
     
@@ -23,3 +27,11 @@
 <modal hidden="{{!showErrorModal}}" title="添加失败" confirm-text="关闭" cancel-text="" bindcancel="onCancelModal" bindconfirm="onErrorConfirmModal" no-cancel="yes">
     {{errMsg}}
 </modal>
+
+
+
+    <view class="image-item" wx:for="{{image_list}}"  wx:for-index="j" wx:key="">
+      <image  catchtap="goBookDetail"  id="{{item}}" mode="aspectFit" src="{{item}}"></image>
+ 
+    </view>
+

@@ -3,3 +3,11 @@
 .container {
   width: 100%;
 }
+
+.image-item  {
+  display: inline-block;
+}
+
+.image-item image {
+  width: 200rpx;
+}

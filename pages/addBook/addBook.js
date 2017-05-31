@@ -6,6 +6,7 @@ Page({
     title: '添加图书',
     book: {},
     hidden: false,
+    image_list : [],
     showSuccessModal: false,
     showErrorModal: false,
     errMsg: ""
@@ -51,7 +52,7 @@ Page({
             })
 
           },
-          fail: function( res) {
+          fail: function (res) {
             that.setData({
               showErrorModal: true
             })
@@ -59,12 +60,50 @@ Page({
           }
 
         })
-      }})
+      }
+    })
+  },
+  chooseImages: function () {
+    var that=this;
+    wx.chooseImage({
+      count: 9, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        console.log(res);
+        var tempFilePaths = res.tempFilePaths
+        that.setData({
+          image_list: tempFilePaths
+        });
+        for (var i = 0; i < tempFilePaths.length; i++) {
+          console.log("start....", tempFilePaths[i])
+          wx.uploadFile({
+            url: 'https://www.xianpeng.org/upload_file', //仅为示例，非真实的接口地址
+            filePath: tempFilePaths[i],
+            name: 'file',
+            formData: {
+            },
+            success: function (res) {
+              var data = res.data
+              //do something
+            },
+            fail: function(e) {
+              console.log(e);
+            },
+            complete: function () {
+              console.log("complete");
+            }
+          })
+        }
+       
+      }
+    })
   },
   fetchData: function (id) {
-    
+
   },
-  onCancelModal: function(){
+  onCancelModal: function () {
     this.setData({
       showSuccessModal: false
     })
@@ -98,6 +137,6 @@ Page({
   },
   onLoad: function (options) {
     this.fetchData(options.id);
-  
+
   }
 })
