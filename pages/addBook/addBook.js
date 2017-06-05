@@ -7,6 +7,9 @@ Page({
     book: {},
     hidden: false,
     image_list : [],
+    book_photos : [
+      {id:1},{id:2},{id:3}
+    ],
     showSuccessModal: false,
     showErrorModal: false,
     errMsg: ""
@@ -66,7 +69,7 @@ Page({
   chooseImages: function () {
     var that=this;
     wx.chooseImage({
-      count: 9, // 默认9
+      count: that.data.book_photos.length, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
@@ -78,6 +81,9 @@ Page({
         });
         for (var i = 0; i < tempFilePaths.length; i++) {
           console.log("start....", tempFilePaths[i])
+          var tmpData = that.data.book_photos;
+          tmpData[i].src = tempFilePaths[i];
+          that.setData({ book_photos:tmpData});
           wx.uploadFile({
             url: 'https://www.xianpeng.org/upload_file', //仅为示例，非真实的接口地址
             filePath: tempFilePaths[i],

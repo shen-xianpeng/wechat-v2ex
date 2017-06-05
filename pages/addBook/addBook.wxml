@@ -1,11 +1,46 @@
 <!--index.wxml-->
 <view class="container">
+
 <button type="default" bindtap="btn_default" catchtap="onTabAdd">
-添加图书</button>
+扫码添加</button>
 
 
-<button type="default" bindtap="btn_default" catchtap="chooseImages">
-上传图片</button>
+
+<form class="book-form" bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section section_gap hidden">
+    <view class="section__title">switch</view>
+    <switch name="switch"/>
+  </view>
+  <view class="section section_gap hidden">
+    <view class="section__title">slider</view>
+    <slider name="slider" show-value ></slider>
+  </view>
+  <view class="section section_gap form-entry">
+   <label class="form-label">图书名称</label>  <input  bindinput="" placeholder="书名"/>
+
+  </view>
+
+
+
+
+<view class="photo-wrap">
+
+
+<view  class="image-item photo-box-wrapper"  wx:for="{{book_photos}}"  wx:for-index="j" wx:key=""  catchtap="chooseImages" data-id="{{item.id}}">
+<image class="photo-image" mode="aspectFit" src="{{item.src}}"></image>
+  <view class="photo-box">
+  </view>
+</view>
+
+
+
+</view>
+
+  <view class="btn-area">
+    <button class="submit-book" type="primary" formType="submit">提交</button>
+    <button class="hidden"  formType="reset">Reset</button>
+  </view>
+</form>
 
 
 <view class="topic-info">
@@ -14,9 +49,16 @@
         <text class="container">{{book.publisher}}</text>
 
         <image class="" mode="aspectFit" src="{{book.image}}">  
-</image>  
-    </view>
+        </image>  
 </view>
+
+
+
+
+
+</view>
+
+
 
 
 <modal hidden="{{!showSuccessModal}}" title="添加成功" confirm-text="查看" cancel-text="" bindcancel="onCancelModal" bindconfirm="onConfirmModal" no-cancel="yes">
@@ -29,9 +71,4 @@
 </modal>
 
 
-
-    <view class="image-item" wx:for="{{image_list}}"  wx:for-index="j" wx:key="">
-      <image  catchtap="goBookDetail"  id="{{item}}" mode="aspectFit" src="{{item}}"></image>
- 
-    </view>
 
