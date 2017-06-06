@@ -16,18 +16,21 @@
     <slider name="slider" show-value ></slider>
   </view>
   <view class="section section_gap form-entry">
-   <label class="form-label">图书名称</label>  <input  bindinput="" placeholder="书名"/>
+   <label class="form-label">图书名称</label>  <input  bindinput="" value="{{book.title}}" placeholder="书名"/>
 
   </view>
 
+  <view class="section section_gap form-entry">
+   <label class="form-label">ISBN</label>  <input  bindinput="" value="{{book.isbn}}" placeholder="ISBN"/>
 
+  </view>
 
 
 <view class="photo-wrap">
 
 
 <view  class="image-item photo-box-wrapper"  wx:for="{{book_photos}}"  wx:for-index="j" wx:key=""  catchtap="chooseImages" data-id="{{item.id}}">
-<image class="photo-image" mode="aspectFit" src="{{item.src}}"></image>
+<image class="photo-image" mode="aspectFit" src="{{item.path}}"></image>
   <view class="photo-box">
   </view>
 </view>

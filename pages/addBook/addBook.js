@@ -38,21 +38,21 @@ Page({
           method: 'GET',
           success: function (res) {
             console.log(res);
-            if (res.data.code && res.data.code > 0) {
-              console.log(res.data.msg);
-              that.setData({
-                showErrorModal: true,
-                errMsg: res.data.msg
-              })
-              return;
-            }
-            that.setData({
-              book: res.data
-            })
-            that.book_id = res.data.id;
-            that.setData({
-              showSuccessModal: true
-            })
+            // if (res.data.code && res.data.code > 0) {
+            //   console.log(res.data.msg);
+            //   that.setData({
+            //     showErrorModal: true,
+            //     errMsg: res.data.msg
+            //   })
+            //   return;
+            // }
+            // that.setData({
+            //   book: res.data
+            // })
+            // that.book_id = res.data.id;
+            // that.setData({
+            //   showSuccessModal: true
+            // })
 
           },
           fail: function (res) {
@@ -82,7 +82,7 @@ Page({
         for (var i = 0; i < tempFilePaths.length; i++) {
           console.log("start....", tempFilePaths[i])
           var tmpData = that.data.book_photos;
-          tmpData[i].src = tempFilePaths[i];
+          tmpData[i].path = tempFilePaths[i];
           that.setData({ book_photos:tmpData});
           wx.uploadFile({
             url: 'https://www.xianpeng.org/upload_file', //仅为示例，非真实的接口地址
@@ -92,7 +92,9 @@ Page({
             },
             success: function (res) {
               var data = res.data
-              //do something
+              var tmpData = that.data.book_photos;
+              tmpData[i].src = tempFilePaths[i];
+              that.setData({ book_photos: tmpData });
             },
             fail: function(e) {
               console.log(e);
