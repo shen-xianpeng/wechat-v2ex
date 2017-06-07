@@ -66,10 +66,17 @@ Page({
       }
     })
   },
-  chooseImages: function () {
+  chooseImages: function (e) {
     var that=this;
+    console.log(e.currentTarget.dataset.id);
+    var count=9;
+    if (e.currentTarget.dataset.id<3) {
+      count=1;
+    } else {
+      count = 9+1 - e.currentTarget.dataset.id;
+    }
     wx.chooseImage({
-      count: that.data.book_photos.length, // 默认9
+      count: count, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
@@ -79,11 +86,18 @@ Page({
         that.setData({
           image_list: tempFilePaths
         });
-        for (var i = 0; i < tempFilePaths.length; i++) {
-          console.log("start....", tempFilePaths[i])
+        for (var i= 0; i < tempFilePaths.length; i++) {
+          console.log("start....", tempFilePaths[i], e.currentTarget.dataset.id + i )
           var tmpData = that.data.book_photos;
-          tmpData[i].path = tempFilePaths[i];
+          if (tmpData.length < e.currentTarget.dataset.id + i ) {
+            tmpData.push({
+              id: e.currentTarget.dataset.id + i
+            })
+          }
+      
+          tmpData[e.currentTarget.dataset.id + i - 1].path = tempFilePaths[i];
           that.setData({ book_photos:tmpData});
+          function as ( tmpI ){
           wx.uploadFile({
             url: 'https://www.xianpeng.org/upload_file', //仅为示例，非真实的接口地址
             filePath: tempFilePaths[i],
@@ -93,7 +107,8 @@ Page({
             success: function (res) {
               var data = res.data
               var tmpData = that.data.book_photos;
-              tmpData[i].src = tempFilePaths[i];
+              console.log("set", e.currentTarget.dataset.id + tmpI - 1, tmpData.length, tmpI)
+              tmpData[e.currentTarget.dataset.id + tmpI - 1].src = tempFilePaths[tmpI];
               that.setData({ book_photos: tmpData });
             },
             fail: function(e) {
@@ -103,7 +118,17 @@ Page({
               console.log("complete");
             }
           })
+        }(i)
         }
+        var tmpData = that.data.book_photos;
+
+        if (e.currentTarget.dataset.id>2 && tmpData.length < 9) {
+          tmpData.push({
+            id: tmpData.length + 1
+          })
+        }
+        that.setData({ book_photos: tmpData });
+
        
       }
     })
