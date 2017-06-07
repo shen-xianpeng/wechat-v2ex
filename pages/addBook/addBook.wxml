@@ -15,13 +15,28 @@
   <view class="section section_gap form-entry">
 
    <label class="form-label">图书名称</label>  
-   <input class="book-title-input"  bindinput="" value="{{book.title}}" placeholder="书名"/>
+   <input class="book-title-input"  bindinput="" value="{{book.title}}" placeholder="手动输入或点击扫码按钮"/>
 <image  catchtap="onTabAdd" class="scan-icon" mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
   </view>
 
   <view class="section section_gap form-entry">
    <label class="form-label">ISBN</label>  <input  bindinput="" value="{{book.isbn}}" placeholder="ISBN"/>
 
+  </view>
+
+  <view class="section section_gap form-entry">
+   <label class="form-label">出版社</label>  <input  bindinput="" value="{{book.publisher}}" placeholder="出版社"/>
+
+  </view>
+
+  <view class="section section_gap form-entry">
+
+  <label class="form-label">新旧程度</label>
+  <picker bindchange="bindPickerChange" value="{{newOldIndex}}" range="{{array}}">
+    <view class="picker">
+      {{array[newOldIndex]}}
+    </view>
+  </picker>
   </view>
 
 
@@ -33,6 +48,7 @@
   <view  class="photo-box {{(item.src.length>0)==false? 'default': 'uploading'}}">
   </view>
   <label  wx:if="{{(item.src.length>0)==false}}" class="photo-image-label">{{item.label}}</label>
+  <image    wx:if="{{(item.src.length>0)==true}}" catchtap="resetImage" mode="aspectFit"  data-id="{{item.id}}" class="delete-photo" src="http://image.xianpeng.org/1496838401.83.png"></image>
 </view>
 
 

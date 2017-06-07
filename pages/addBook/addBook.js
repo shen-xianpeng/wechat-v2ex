@@ -5,6 +5,8 @@ Page({
   data: {
     title: '添加图书',
     book: {},
+    array: ["全新", "九成新", "八成新", "五成新"],
+    newOldIndex: 0,
     hidden: false,
     image_list: [],
     book_photos: [
@@ -15,6 +17,12 @@ Page({
     errMsg: ""
   },
   // 事件处理函数
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      newOldIndex: e.detail.value
+    })
+  },
   onTabAdd: function (e) {
     var that = this;
 
@@ -65,6 +73,17 @@ Page({
         })
       }
     })
+  },
+  resetImage: function (e) {
+    var that = this;
+    console.log(e.currentTarget.dataset.id);
+    var data = that.data.book_photos;
+    data[e.currentTarget.dataset.id - 1].src = "";
+    data[e.currentTarget.dataset.id - 1].path = "";
+    that.setData({
+      book_photos: data
+    })
+    
   },
   chooseImages: function (e) {
     var that = this;
