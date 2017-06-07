@@ -5,12 +5,15 @@ var Api = require('../../utils/api.js');
 Page({
   data: {
     title: '我的',
+    user: {},
     logged: false
   },
   fetchDetail: function(id) {
    
   },
   popLogin: function (e) {
+    var that = this;
+
     wx.login({
       success: function (res) {
         console.log(res);
@@ -42,7 +45,12 @@ Page({
                 method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT    
                 // header: {}, // 设置请求的 header    
                 success: function (res) {
+                  console.log("jscode_to_secrets....")
+                  console.log(res);
                   var obj = {};
+                  that.setData({
+                    user: res.data.data
+                  })
                   obj.openid = res.data.openid;
                   obj.expires_in = Date.now() + res.data.expires_in;
                   //console.log(obj);  
@@ -57,6 +65,6 @@ Page({
       }    });
   },
   onLoad: function (options) {
-  
+    this.popLogin()
   }
 })
