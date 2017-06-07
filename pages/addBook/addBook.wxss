@@ -47,7 +47,6 @@ height:60rpx;
   margin-bottom: 10rpx;
 }
 .photo-wrap {
-  width: 100%;
   margin: 20rpx;
   overflow:hidden;
 
