@@ -1,11 +1,8 @@
 <!--index.wxml-->
 <view class="container">
 
-<button type="default" bindtap="btn_default" catchtap="onTabAdd">
-扫码添加</button>
-
-
-
+ 
+ 
 <form class="book-form" bindsubmit="formSubmit" bindreset="formReset">
   <view class="section section_gap hidden">
     <view class="section__title">switch</view>
@@ -16,8 +13,10 @@
     <slider name="slider" show-value ></slider>
   </view>
   <view class="section section_gap form-entry">
-   <label class="form-label">图书名称</label>  <input  bindinput="" value="{{book.title}}" placeholder="书名"/>
 
+   <label class="form-label">图书名称</label>  
+   <input class="book-title-input"  bindinput="" value="{{book.title}}" placeholder="书名"/>
+<image  catchtap="onTabAdd" class="scan-icon" mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
   </view>
 
   <view class="section section_gap form-entry">
@@ -31,8 +30,9 @@
 
 <view  class="image-item photo-box-wrapper"  wx:for="{{book_photos}}"  wx:for-index="j" wx:key=""  catchtap="chooseImages" data-id="{{item.id}}">
 <image class="photo-image" mode="aspectFit" src="{{item.path}}"></image>
-  <view class="photo-box">
+  <view  class="photo-box {{(item.src.length>0)==false? 'default': 'uploading'}}">
   </view>
+  <label  wx:if="{{(item.src.length>0)==false}}" class="photo-image-label">{{item.label}}</label>
 </view>
 
 

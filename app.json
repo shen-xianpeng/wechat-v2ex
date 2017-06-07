@@ -14,24 +14,24 @@
 },
   "tabBar": {
     "color":"#000",
-    "selectedColor":"#56abe4",
+    "selectedColor":"#1296db",
     "backgroundColor":"#fff",
     "borderStyle":"white",
     "list": [{
         "pagePath": "pages/bookList/bookList",
         "text": "书籍",
-        "iconPath": "images/latest.png",
-        "selectedIconPath": "images/lastest_on.png"
+        "iconPath": "images/hot.png",
+        "selectedIconPath": "images/hot_on.png"
       },{
       "pagePath": "pages/addBook/addBook",
       "text": "添加",
-      "iconPath": "images/node.png",
-      "selectedIconPath": "images/node_on.png"
+      "iconPath": "images/add.png",
+      "selectedIconPath": "images/add_on.png"
     },  {
       "pagePath": "pages/home/home",
       "text": "我的",
-      "iconPath": "images/node.png",
-      "selectedIconPath": "images/node_on.png"
+      "iconPath": "images/my.png",
+      "selectedIconPath": "images/my_on.png"
     }]
   }
 }

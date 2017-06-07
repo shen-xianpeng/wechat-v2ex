@@ -14,20 +14,26 @@
 
 
 .book-form {
-  margin: 20rpx;
+  margin: 5rpx;
 
 }
 .form-entry {
   padding: 10rpx;
 }
+.form-entry input{
+line-height:60rpx;
+height:60rpx;
+ width:400rpx;
 
+}
 .form-label {
     /* Other styling.. */
     text-align: right;
     clear: both;
     float:left;
     margin-right:15px;
-    line-height:1.4rem;
+    line-height:60rpx;
+    width:160rpx;
 
 }
 
@@ -38,6 +44,7 @@
   height:250rpx;
   border: 3rpx solid #D9D9D9;
   margin-left: 20rpx;
+  margin-bottom: 10rpx;
 }
 .photo-wrap {
   width: 100%;
@@ -54,11 +61,11 @@
   width: 50%;
 }
 
-.photo-box:before {
+.photo-box.default:before {
     width: 2px;
     height: 39.5px;
 }
-.photo-box:before, .photo-box:after {
+.photo-box.default:before, .photo-box.default:after {
     content: " ";
     position: absolute;
     top: 50%;
@@ -75,4 +82,29 @@
 
 .hidden {
   display: none;
+}
+
+
+.photo-image-label  {
+  position:absolute;
+  color:gray;
+  z-index:200000;
+  color:gray;
+  display:block;
+  top:10rpx;
+  margin:0 auto;
+  width:100%;
+  text-align:center;
+  font-size:30rpx;
+
+}
+
+.scan-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.book-title-input {
+  float:left;
+
 }
