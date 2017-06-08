@@ -3,7 +3,7 @@
 
  
  
-<form class="book-form" bindsubmit="formSubmit" bindreset="formReset">
+<form class="book-form" bindsubmit="onAddUserBook" bindreset="formReset">
   <view class="section section_gap hidden">
     <view class="section__title">switch</view>
     <switch name="switch"/>
@@ -15,17 +15,17 @@
   <view class="section section_gap form-entry">
 
    <label class="form-label">图书名称</label>  
-   <input class="book-title-input"  bindinput="" value="{{book.title}}" placeholder="手动输入或点击扫码按钮"/>
+   <input name="bookTitle" class="book-title-input"  bindinput="" value="{{book.id>0?book.title:form.title}}" placeholder="手动输入或点击扫码按钮"/>
 <image  catchtap="onTabAdd" class="scan-icon" mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
   </view>
 
   <view class="section section_gap form-entry">
-   <label class="form-label">ISBN</label>  <input  bindinput="" value="{{book.isbn}}" placeholder="ISBN"/>
+   <label class="form-label">ISBN</label>  <input  bindinput="" value="{{book.id>0?book.isbn:form.isbn}}" placeholder="ISBN"/>
 
   </view>
 
   <view class="section section_gap form-entry">
-   <label class="form-label">出版社</label>  <input  bindinput="" value="{{book.publisher}}" placeholder="出版社"/>
+   <label class="form-label">出版社</label>  <input  bindinput="" value="{{book.id>0?book.publisher:form.publisher}}" placeholder="出版社"/>
 
   </view>
 
@@ -91,3 +91,5 @@
 
 
 
+
+<toast hidden="{{addBookToast.hidden}}" duration="1000" bindchange="toastHidden" >{{addBookToast.msg}}!</toast>

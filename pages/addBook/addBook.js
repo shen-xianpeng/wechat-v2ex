@@ -8,6 +8,10 @@ Page({
     array: ["全新", "九成新", "八成新", "五成新"],
     newOldIndex: 0,
     hidden: false,
+    addBookToast : {
+      hidden: true,
+      msg: "",
+    },
     image_list: [],
     book_photos: [
       { id: 1, label: "封面" }, { id: 2, label: "背面" }, { id: 3, label: "更多(可选多张)" }
@@ -21,6 +25,55 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       newOldIndex: e.detail.value
+    })
+  },
+  onAddUserBook: function (e) {
+    var that = this;
+    var data = {}
+    if (that.data.book.id>0) {
+      data["book_id"] = that.data.book.id
+    } else {
+      data["title"] = e.detail.value.bookTitle
+    }
+    wx.request({
+      url: 'https://www.xianpeng.org/add_book',
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+        },      
+      success: function (res) {
+        console.log(res, "ssssuccess");
+        // if (res.data.code && res.data.code > 0) {
+        //   console.log(res.data.msg);
+        //   that.setData({
+        //     showErrorModal: true,
+        //     errMsg: res.data.msg
+        //   })
+        //   return;
+        // }
+        that.setData({
+          "addBookToast.msg": res.data.msg,
+          "addBookToast.hidden": false,
+          book:{},
+          form: {}
+        })
+        setTimeout((function callback() {
+          that.setData({ "addBookToast.hidden": true});
+        }).bind(that), 1000);
+        // that.book_id = res.data.id;
+        // that.setData({
+        //   showSuccessModal: true
+        // })
+
+      },
+      fail: function (res) {
+        that.setData({
+          showErrorModal: true
+        })
+        console.log(res);
+      }
+
     })
   },
   onTabAdd: function (e) {
