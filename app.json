@@ -16,7 +16,7 @@
     "color":"#000",
     "selectedColor":"#1296db",
     "backgroundColor":"#fff",
-    "borderStyle":"white",
+    "borderStyle":"black",
     "list": [{
         "pagePath": "pages/bookList/bookList",
         "text": "书籍",
