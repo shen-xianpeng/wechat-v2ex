@@ -3,7 +3,7 @@
   <view class="container">
 
 
-
+{{globalData.userInfo.name}}
     <view class="item" wx:for="{{datalist}}"  wx:for-index="j" wx:key="id">
       <image  catchtap="goBookDetail"  id="{{item.id}}" mode="aspectFit" src="{{item.image}}"></image>
       <view class="text">

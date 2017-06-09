@@ -1,12 +1,12 @@
 .container {
-  padding: 30rpx;
+  background: #efeff4;
 }
 
 .topic-owner {
   display: block;
   text-align: center;
   align-items: center;
-  margin-bottom: 30rpx;
+  margin: 30rpx;
 }
 
 .owner-avatar {
@@ -50,4 +50,46 @@
 .user-name {
   width: 100%;
   display: block;
+}
+
+
+#mine .quote {
+    color: #323232;
+}
+
+#mine .quote > view {
+    height: 88rpx;
+    padding: 0 24rpx;
+    font-size: 28rpx;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mine .quote image {
+    width: 13rpx;
+}
+
+#mine .quote .get {
+    border-top: 1rpx solid #e1e1e1;
+    border-bottom: 1rpx solid #e1e1e1;
+}
+
+#mine .quote .news {
+    margin: 20rpx 0;
+}
+
+#mine .quote .prompt {
+    color: #909090;
+    transform:translate(0, -50%);
+    position: absolute;
+    top: 50%;
+    right: 58rpx;
+}
+
+#mine .quote .dot {
+    width: 14rpx;
+    height: 14rpx;
 }

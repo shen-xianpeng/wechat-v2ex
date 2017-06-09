@@ -1,26 +1,56 @@
 <!--detail.wxml-->
-<view class="container">
+<view id="mine" class="container">
   <view class="topic-detail {{logged?'':'hidden'}}">
     <view class="topic-owner ">
-        <image class="owner-avatar" src="https://ohe31mpy9.qnssl.com/test/thirdparty/avatar/IJEpt20170503110957.jpeg" id="{{detail.member.id}}" bindtap="showUserInfo"></image>
-        <view class="topic-tit">xianpeng</view>
+      <image class="owner-avatar" src="https://ohe31mpy9.qnssl.com/test/thirdparty/avatar/IJEpt20170503110957.jpeg" id="{{detail.member.id}}" bindtap="showUserInfo"></image>
+      <view class="topic-tit">xianpeng</view>
     </view>
     <view class="topic-desc">
-        <text>{{detail.content}}</text>
+      <text>{{detail.content}}</text>
     </view>
 
-  </view> 
+  </view>
 
-   <view class="topic-detail {{logged?'hidden':''}}">
+  <view class="topic-detail {{logged?'hidden':''}}">
     <view class="topic-owner ">
-        <image class="owner-avatar"  wx:if="{{user.id>0==false}}" src="https://imgqn.smm.cn/production/question/vjxIA20170509133549.png" id="{{user.id}}" bindtap="showUserInfo"></image>
-        <image class="owner-avatar"  wx:if="{{user.id>0}}"  src="{{user.avatar}}" id="{{user.id}}" bindtap="showUserInfo"></image>
-         <label class="user-name" wx:if="{{user.id>0}}" >{{user.name}}</label>
-        <button wx:if="{{user.id>0==false}}"  bindtap="popLogin" class="margin-button">去登录</button>
+      <image class="owner-avatar" wx:if="{{user.id>0==false}}" src="https://imgqn.smm.cn/production/question/vjxIA20170509133549.png" id="{{user.id}}" bindtap="showUserInfo"></image>
+      <image class="owner-avatar" wx:if="{{user.id>0}}" src="{{user.avatar}}" id="{{user.id}}" bindtap="showUserInfo"></image>
+      <label class="user-name" wx:if="{{user.id>0}}">{{user.name}}</label>
+      <button wx:if="{{user.id>0==false}}" bindtap="popLogin" class="margin-button">去登录</button>
 
     </view>
 
-</view> 
+
+
+    <view class="quote">
+      <view class="publish" bindtap="onMinePublish">
+        <view>我的发布</view>
+        <view class="prompt">{{ userInfo.my_quote_num }}</view>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+      <view class="get" bindtap="onGet">
+        <view>我的成交</view>
+        <view class="prompt">{{ userInfo.recv_quote_num }}</view>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+      <view class="end" bindtap="onEnd">
+        <view>我的收藏</view>
+        <view class="prompt">{{ userInfo.order_num }}</view>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+      <view class="news" bindtap="onNews">
+        <view>消息</view>
+        <image src="../../images/dot.png" class="prompt dot"></image>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+      <view class="set" bindtap="onSetting">
+        <view>设置</view>
+        <view class="prompt">{{ userInfo.time_length }}</view>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+    </view>
+
+  </view>
 
 
 </view>
