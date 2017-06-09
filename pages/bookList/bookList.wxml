@@ -8,7 +8,7 @@
       <image  catchtap="goBookDetail"  id="{{item.id}}" mode="aspectFit" src="{{item.image}}"></image>
       <view class="text">
         <text class="title">{{item.title}}</text>
-        <text class="description">
+        <text class="description hidden">
           {{item.publisher}}</text>
       </view>
     </view>

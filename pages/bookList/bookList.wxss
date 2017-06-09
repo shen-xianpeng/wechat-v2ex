@@ -7,9 +7,9 @@
 
 .item {
   display: inline-block;
-  width:350rpx;
+  width:230rpx;
   overflow:hidden;
-  height: 450rpx;
+  height: 350rpx;
   text-align: center;
   box-shadow:3rpx 3rpx 3rpx 3rpx #e9ebed;
   border-radius:8rpx;
@@ -20,8 +20,8 @@
 
 
 image {
-  max-height:360rpx;
-  max-width:270rpx;
+  max-height:300rpx;
+  max-width:200rpx;
   width: auto;
   margin: 0 auto;
   margin-top: 10rpx;
