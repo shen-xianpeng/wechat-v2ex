@@ -43,12 +43,12 @@
 <view class="photo-wrap">
 
 
-<view  class="image-item photo-box-wrapper"  wx:for="{{book_photos}}"  wx:for-index="j" wx:key=""  catchtap="chooseImages" data-id="{{item.id}}">
+<view  class="image-item photo-box-wrapper  {{(item.src.length>0)==false? 'default': 'uploading'}}"  wx:for="{{book_photos}}"  wx:for-index="j" wx:key=""  catchtap="chooseImages" data-id="{{item.id}}">
 <image class="photo-image" mode="aspectFit" src="{{item.path}}"></image>
   <view  class="photo-box {{(item.src.length>0)==false? 'default': 'uploading'}}">
   </view>
-  <label  wx:if="{{(item.src.length>0)==false}}" class="photo-image-label">{{item.label}}</label>
-  <image    wx:if="{{(item.src.length>0)==true}}" catchtap="resetImage" mode="aspectFit"  data-id="{{item.id}}" class="delete-photo" src="http://image.xianpeng.org/1496838401.83.png"></image>
+  <label    class="photo-image-label">{{item.label}}</label>
+  <image     catchtap="resetImage" mode="aspectFit"  data-id="{{item.id}}" class="delete-photo" src="http://image.xianpeng.org/1496838401.83.png"></image>
 </view>
 
 

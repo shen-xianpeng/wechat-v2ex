@@ -27,6 +27,18 @@ Page({
       newOldIndex: e.detail.value
     })
   },
+  showToast: function(msg) {
+    var that = this;
+    that.setData({
+      "addBookToast.msg": msg,
+      "addBookToast.hidden": false,
+      book: {},
+      form: {}
+    })
+    setTimeout((function callback() {
+      that.setData({ "addBookToast.hidden": true });
+    }).bind(that), 1000);
+  },
   onAddUserBook: function (e) {
     var that = this;
     var data = {}
@@ -52,15 +64,7 @@ Page({
         //   })
         //   return;
         // }
-        that.setData({
-          "addBookToast.msg": res.data.msg,
-          "addBookToast.hidden": false,
-          book:{},
-          form: {}
-        })
-        setTimeout((function callback() {
-          that.setData({ "addBookToast.hidden": true});
-        }).bind(that), 1000);
+        that.showToast(res.data.msg)
         // that.book_id = res.data.id;
         // that.setData({
         //   showSuccessModal: true
@@ -99,6 +103,10 @@ Page({
           method: 'GET',
           success: function (res) {
             console.log(res);
+            if (res.data.code && res.data.code > 0){
+              that.showToast(res.data.msg)
+              return
+            }
             // if (res.data.code && res.data.code > 0) {
             //   console.log(res.data.msg);
             //   that.setData({

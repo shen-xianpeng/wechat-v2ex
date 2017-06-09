@@ -128,3 +128,16 @@
   bottom: 100rpx;
   margin: 0 auto;
 }
+
+
+.photo-box-wrapper.uploading .photo-box {
+  display: none
+}
+
+.photo-box-wrapper.uploading .photo-image-label {
+  display: none
+}
+ 
+.photo-box-wrapper.default  .delete-photo{
+  display: none
+}
