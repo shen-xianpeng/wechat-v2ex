@@ -4,7 +4,7 @@
 
 
   <view class="left-detail">
-    <image catchtap="onPreviewImage" class="" mode="aspectFit" id="{{book.image}}" src="{{book.image}}">
+    <image catchtap="onPreviewImage" class="" mode="aspectFit" id="{{book.image}}" src="{{book.image_list[0] || book.image}}">
     </image>
   </view>
 
