@@ -3,13 +3,12 @@
   <view class="container">
 
 
-{{globalData.userInfo.name}}
     <view class="item" wx:for="{{datalist}}"  wx:for-index="j" wx:key="id">
-      <image  catchtap="goBookDetail"  id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
-      <view class="text">
+      <image class="book-image"  catchtap="goBookDetail"  id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
+      <view class="book-info">
         <text class="title">{{item.title}}</text>
-        <text class="description hidden">
-          {{item.publisher}}</text>
+        <text class="book-author ">
+          {{item.author}}</text>
       </view>
     </view>
 

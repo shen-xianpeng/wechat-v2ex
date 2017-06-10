@@ -23,7 +23,7 @@
 
 
     <view class="quote">
-      <view class="publish" bindtap="onMinePublish">
+      <view class="publish" bindtap="onMyPublish">
         <view>我的发布</view>
         <view class="prompt">{{ userInfo.my_quote_num }}</view>
         <image src="../../images/arrow.png" mode="widthFix"></image>

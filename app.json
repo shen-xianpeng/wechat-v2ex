@@ -3,7 +3,8 @@
     "pages/bookList/bookList",
     "pages/home/home",
     "pages/addBook/addBook",
-    "pages/bookDetail/bookDetail"
+    "pages/bookDetail/bookDetail",
+    "pages/myBookList/myBookList"
   ],
   "window":{
     "backgroundTextStyle":"dark",

@@ -8,6 +8,13 @@ Page({
     user: {},
     logged: false
   },
+  onMyPublish: function () {
+    var url = '../myBookList/myBookList';
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   fetchDetail: function(id) {
    
   },

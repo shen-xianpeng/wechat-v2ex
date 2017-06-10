@@ -62,18 +62,6 @@
 </form>
 
 
-<view class="topic-info">
-        <text class="container">{{book.title}}</text>
-    
-        <text class="container">{{book.publisher}}</text>
-
-        <image class="" mode="aspectFit" src="{{book.image}}">  
-        </image>  
-</view>
-
-
-
-
 
 </view>
 

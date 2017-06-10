@@ -12,7 +12,6 @@ Page({
       hidden: true,
       msg: "",
     },
-    image_list: [],
     book_photos: [
       { id: 1, label: "封面" }, { id: 2, label: "背面" }, { id: 3, label: "更多(可选多张)" }
     ],
@@ -27,17 +26,48 @@ Page({
       newOldIndex: e.detail.value
     })
   },
+  resetForm: function() {
+    this.setData({
+      form: {},
+      book: {},
+      book_photos: [
+        { id: 1, label: "封面" }, { id: 2, label: "背面" }, { id: 3, label: "更多(可选多张)" }]
+     } );
+  },
   showToast: function(msg) {
     var that = this;
     that.setData({
       "addBookToast.msg": msg,
       "addBookToast.hidden": false,
-      book: {},
-      form: {}
     })
     setTimeout((function callback() {
       that.setData({ "addBookToast.hidden": true });
     }).bind(that), 1000);
+  },
+  checkImages: function () {
+    for(var i = 0; i<this.data.book_photos.length; i++) {
+      var p = this.data.book_photos[i];
+      if (p.path && p.path.length>0)  {
+        if (p.src.length>0==false) {
+          return false
+        }
+      }
+    }
+
+    return true
+  },
+  getImages: function () {
+    var imageList = [];
+    for (var i = 0; i < this.data.book_photos.length; i++) {
+      var p = this.data.book_photos[i];
+      if (p.path && p.path.length > 0) {
+        if (p.src.length > 0 == false) {
+          return ""
+        }
+        imageList.push(p.src);
+      }
+    }
+    return imageList.join(",")
   },
   onAddUserBook: function (e) {
     var that = this;
@@ -47,6 +77,19 @@ Page({
     } else {
       data["title"] = e.detail.value.bookTitle
     }
+    if (that.checkImages()==false) {
+      that.showToast("图片上传中...")
+      return
+    }
+    if (!(that.data.book_photos[0].src && that.data.book_photos[0].src.length>0)) {
+      that.showToast("请上传封面")
+      return
+    }
+    if (!(that.data.book_photos[1].src && that.data.book_photos[1].src.length > 0)) {
+      that.showToast("请上传背面")
+      return
+    }
+    data["images"] = that.getImages();
     wx.request({
       url: 'https://www.xianpeng.org/add_book',
       data: data,
@@ -69,9 +112,8 @@ Page({
           return
         }
         that.book_id = res.data.data.id;
+        that.resetForm();
         that.setData({
-          form: {},
-          book: {},
           showSuccessModal: true
         })
 
