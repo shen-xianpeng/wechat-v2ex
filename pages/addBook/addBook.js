@@ -64,11 +64,16 @@ Page({
         //   })
         //   return;
         // }
-        that.showToast(res.data.msg)
-        // that.book_id = res.data.id;
-        // that.setData({
-        //   showSuccessModal: true
-        // })
+        if (res.data.code && res.data.code > 0) {
+          that.showToast(res.data.msg)
+          return
+        }
+        that.book_id = res.data.data.id;
+        that.setData({
+          form: {},
+          book: {},
+          showSuccessModal: true
+        })
 
       },
       fail: function (res) {
