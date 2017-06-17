@@ -21,8 +21,8 @@
     "list": [{
         "pagePath": "pages/bookList/bookList",
         "text": "书籍",
-        "iconPath": "images/hot.png",
-        "selectedIconPath": "images/hot_on.png"
+        "iconPath": "images/book.png",
+        "selectedIconPath": "images/book_on.png"
       },{
       "pagePath": "pages/addBook/addBook",
       "text": "添加",

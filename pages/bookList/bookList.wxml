@@ -1,15 +1,70 @@
 <!--latest.wxml-->
 
-  <view class="container">
+  <scroll-view  scroll-y  style="height:{{scrollHeight*2}}rpx" bindscroll="scroll" class="container">
+
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{true}}" circular="true" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="alarm">
+<image src="../../images/alarm.png">
+
+</image>
+<swiper class="swiper_msg"   circular="true" indicator-dots="{{indicatorDots}}" vertical="{{true}}"
+            autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+        <block wx:for="{{[1,2,3]}}">
+            <swiper-item bindtap="itemclick" data-id="{{item.id}}" data-name="{{item.name}}">
+              <label>xianpeng上传了新书“一点巴黎”</label>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    </view>
+
+<view class="menuholder {{menuClass}}">
+
+</view>
+<dl class="menu {{menuClass}}">
+  <dt data-index="0" bindtap="tapMainMenu">全部分类</dt>
+ <dt data-index="1" bindtap="tapMainMenu">推荐排序</dt>
+<dd class="{{subMenuDisplay[0]}}">
+   <ul>
+     <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">100以内</li>
+     <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">100-500</li>
+     <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">500-1000</li>
+     <li class="{{subMenuHighLight[0][3]}}" data-index="0-3" bindtap="tapSubMenu">1000-3000</li>
+     <li class="{{subMenuHighLight[0][4]}}" data-index="0-4" bindtap="tapSubMenu">3000以上</li>
+   </ul>
+ </dd>
+
+ <dd class="{{subMenuDisplay[1]}}">
+   <ul>
+     <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">100以内</li>
+     <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">100-500</li>
+   </ul>
+ </dd>
+
+</dl>
 
 
-{{globalData.userInfo.name}}
+
     <view class="item" wx:for="{{datalist}}"  wx:for-index="j" wx:key="id">
-      <image  catchtap="goBookDetail"  id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
+      <image class="book-photo"  catchtap="goBookDetail"  id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
       <view class="text">
         <text class="title">{{item.title}}</text>
+        <text class="price">{{item.price || 10}}书币</text>
         <text class="description hidden">
           {{item.publisher}}</text>
+      </view>
+      <view class="book-user-info">
+       <image   id="{{item.user.avatar}}" mode="" src="{{item.user.avatar}}"></image>
+               <text class="recommend">很不错的一本书 我买了快很久了</text>
+
       </view>
     </view>
 
@@ -22,6 +77,6 @@
           
           
           </view>
-  </view>
+  </scroll-view>
 
 

@@ -1,52 +1,183 @@
 .container {
- /** column-count: 2; */
-  width:100%;
-  display:block;
-
+  /** column-count: 2; */
+  width: 100%;
+  display: block;
 }
 
-.item {
-  display: inline-block;
-  width:230rpx;
-  overflow:hidden;
-  height: 350rpx;
-  text-align: center;
-  box-shadow:3rpx 3rpx 3rpx 3rpx #e9ebed;
-  border-radius:8rpx;
-  margin:10rpx;
-}
-
-
-
-
-image {
-  max-height:300rpx;
-  max-width:200rpx;
+.book-photo {
+  max-height: 300rpx;
+  max-width: 200rpx;
   width: auto;
   margin: 0 auto;
   margin-top: 10rpx;
   display: block;
 }
 
+.book-user-info {
+  height: 60rpx;
+  width: 100%;
+}
+
+.book-user-info image {
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 30rpx;
+  float: left;
+}
+
+.item .price {
+  width: 100%;
+  display: block;
+  color: #ffeb3b;
+}
+
+.book-user-info .recommend {
+  color: gray;
+  font-size: 30rpx;
+  text-align: left;
+  width: 290rpx;
+  padding: 0 5rpx 0 5rpx;
+  display: block;
+  float: left;
+}
+
+.item {
+  display: inline-block;
+  width: 350rpx;
+  overflow: hidden;
+  height: 500rpx;
+  text-align: center;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #e9ebed;
+  border-radius: 8rpx;
+  margin: 10rpx;
+}
+
+image {
+}
+
 .text {
   font-size: 25rpx;
   line-height: 30rpx;
-  padding:5rpx;
-   text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow:hidden;
+  padding: 5rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .title {
-  padding:10rpx;
-
+  padding: 10rpx;
 }
-.description {
-  padding:10rpx;
 
+.description {
+  padding: 10rpx;
 }
 
 .bottom-loader {
-  text-align:center;
-  color:gray;
+  text-align: center;
+  color: gray;
+}
+
+swiper image {
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.alarm image {
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+  padding: 5rpx;
+}
+
+.alarm {
+  overflow: hidden;
+  padding-left: 20rpx;
+}
+
+.swiper_msg {
+  padding: 10rpx;
+  height: 50rpx;
+  float: left;
+  width: 600rpx;
+}
+
+.menuholder {
+  display:none;
+}
+.menuholder.sticked {
+  display: block;
+  height: 38px;
+
+}
+.menu.sticked {
+  position: fixed;
+  top: -1rpx;
+}
+
+/*总菜单容器*/
+
+.menu {
+  width: 100%;
+  display: block;
+  height: 38px;
+}
+
+/*一级菜单*/
+
+.menu dt {
+  font-size: 15px;
+  float: left;
+  /*hack*/
+  width: 50%;
+  height: 38px;
+  border-bottom: 1px solid #d2d2d2;
+  text-align: center;
+  background-color: #f4f4f4;
+  color: #5a5a5a;
+  line-height: 38px;
+}
+
+/*二级菜单外部容器样式*/
+
+.menu dd {
+  position: absolute;
+  width: 100%;
+  /*hack*/
+  top: 39px;
+  left: 0;
+  z-index: 999;
+}
+
+/*二级菜单普通样式*/
+
+.menu li {
+  font-size: 14px;
+  line-height: 34px;
+  color: #575757;
+  height: 34px;
+  display: block;
+  padding-left: 8px;
+  background-color: #fff;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+/* 显示与隐藏 */
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/*二级菜单高亮样式*/
+
+.menu li.highlight {
+  background-color: #f4f4f4;
+}
+
+dl.menu {
+  position: relative;
 }
