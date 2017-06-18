@@ -18,6 +18,7 @@ var initSubMenuHighLight = [
 Page({
   data: {
     lastScrollTop:0,
+    toView: "scrollmenu",
     subMenuDisplay: initSubMenuDisplay(),
     title: '最新话题',
     latest: [],
@@ -76,7 +77,8 @@ Page({
     initSubMenuHighLight[indexArray[0]][indexArray[1]] = 'highlight';
     // 设置为新的数组
     this.setData({
-      subMenuHighLight: initSubMenuHighLight
+      subMenuHighLight: initSubMenuHighLight,
+      toView:"item-list"
     });
   },
   onLoad: function () {
@@ -86,6 +88,9 @@ Page({
         console.info(res.windowHeight);
         that.setData({
           scrollHeight: res.windowHeight
+        });
+        that.setData({
+          toView: "scrollmenu",
         });
         that.fetchData();
 
@@ -198,6 +203,8 @@ Page({
         this.setData({
           menuClass: "sticked",
         })
+        console.log("stick.... ", e.detail.scrollTop)
+
       }
       if (e.detail.scrollHeight - e.detail.scrollTop < 800) {
         this.onReachBottom()
@@ -213,7 +220,13 @@ Page({
  
     this.lastScrollTop = e.detail.scrollTop;
   },
+  bindUpper: function(e) {
+ 
+  },
   swiperchange: function(e) {
 
+  },
+  handletouchmove : function(e) {
+    console.log(e, "handletouchmove");
   }
 })
