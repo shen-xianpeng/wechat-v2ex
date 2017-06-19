@@ -29,10 +29,11 @@ Page({
     //块级元素
   },
   onPreviewImage: function (e) {
+    var that=this
     console.log(e.currentTarget.id);
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
-      urls: [e.currentTarget.id] // 需要预览的图片http链接列表
+      urls: that.data.book.image_list// 需要预览的图片http链接列表
     })
   },
   clickTab: function (e) {

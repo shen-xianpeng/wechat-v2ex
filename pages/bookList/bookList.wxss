@@ -208,3 +208,9 @@ height: 0rpx;
 position:relative;
 
 }
+
+
+
+.ad-swiper image {
+  width: 100%;
+}

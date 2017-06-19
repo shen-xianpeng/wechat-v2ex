@@ -1,61 +1,71 @@
-<view class="page" style="height:100%;overflow: {{scroll}}">
+<view class="page" style="height:100%;overflow: ">
 
-<view class="container">
+  <view class="container">
 
+    <swiper class="book-imagelist" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{3000}}" duration="{{1000}}">
+      <block wx:for="{{book.image_list}}">
+        <view>
+          <image catchtap="onPreviewImage" src="{{item}}" id="{{item}}" mode="aspectFit" class="slide-image" />
+        </view>
+      </block>
+    </swiper>
 
-  <view class="left-detail">
-    <image catchtap="onPreviewImage" class="" mode="aspectFit" id="{{book.image}}" src="{{book.image_list[0] || book.image}}">
-    </image>
+    <view>
+
+    </view>
+
+  </view>
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="clickTab">简介</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="clickTab">目录</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="clickTab">评论</view>
   </view>
 
-  <view class="right-detail">
-   <view>
-    <text class="book-title">{{book.title}} </text>
-   </view>
-    <view class="sub-info">
-     <label>作者： </label> <text>{{book.author}} </text>
-   </view>
-    <view class="sub-info">
-     <label>出版社： </label> <text>{{book.publisher}} </text>
-   </view>
+
+
+  <view class=" {{currentTab==0?'default':'hidden'}}">
+
+
+    <view class="book-infos">
+      <view>
+        <text class="book-title">{{book.title}} </text>
+      </view>
       <view class="sub-info">
-     <label>ISBN： </label> <text>{{book.isbn}} </text>
-   </view>
+        <label>作者： </label>
+        <text>{{book.author}} </text>
+      </view>
       <view class="sub-info">
-     <label>价格： </label> <text>{{book.price}} </text>
-   </view>
+        <label>出版社： </label>
+        <text>{{book.publisher}} </text>
+      </view>
       <view class="sub-info">
-     <label>出版日期： </label> <text>{{book.pubdate}} </text>
-   </view>
+        <label>ISBN： </label>
+        <text>{{book.isbn}} </text>
+      </view>
+      <view class="sub-info">
+        <label>价格： </label>
+        <text>{{book.price}} </text>
+      </view>
+      <view class="sub-info">
+        <label>出版日期： </label>
+        <text>{{book.pubdate}} </text>
+      </view>
+    </view>
+    <view  class="book-summary">
+      <text>{{book.summary}} </text>
+    </view>
   </view>
+  <!-- 1 -->
+  <view class=" {{currentTab==1?'default':'hidden'}}">
+    <view class="book-catalog">
+      <text>{{book.catalog}} </text>
+    </view>
+  </view>
+  <!-- 2 -->
+  <view class=" {{currentTab==2?'default':'hidden'}}">
+    <view class="book-comments-empty" >
+      暂无评论</view>
+  </view>
+
 
 </view>
-<view class="swiper-tab">  
-    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="clickTab" >简介</view>  
-    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="clickTab" >目录</view>  
-    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="clickTab" >评论</view>  
-</view>  
-
-
-<swiper bindtouchstart="touchDesc" current="{{currentTab}}" class="swiper-box" duration="100" style="" bindchange="bindChange">  
-    <!-- 0 -->  
-    <swiper-item>  
-      <scroll-view scroll-y="true"  class="book-summary">
-     <text>{{book.summary}} </text>
-   </scroll-view> 
-    </swiper-item>  
-    <!-- 1 -->  
-    <swiper-item>  
-      <scroll-view scroll-y="true"  class="book-catalog">
-     <text>{{book.catalog}} </text>
-   </scroll-view>
-    </swiper-item>  
-    <!-- 2 -->  
-    <swiper-item>  
-      <scroll-view class="book-comments-empty" scroll-y="true" >
-        暂无评论</scroll-view>  
-    </swiper-item>  
-</swiper> 
-
-  
-  </view>

@@ -2,10 +2,10 @@
 
 <scroll-view bindtouchmove="handletouchmove" enable-back-to-top="true" scroll-y scroll-into-view="{{toView}}" upper-threshold="187" bindscrolltoupper="bindUpper" style="height:{{scrollHeight*2}}rpx" bindscroll="scroll" class="container">
 
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{interval}}" duration="{{duration}}">
+  <swiper class="ad-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" width="355" height="150" />
+        <image src="{{item}}" class="slide-image" width="100%" height="150" />
       </swiper-item>
     </block>
   </swiper>
@@ -25,7 +25,7 @@
 
   </view>
 
-          <view id="item-list"></view>
+  <view id="item-list"></view>
 
   <view class="menuholder {{menuClass}}">
 
@@ -66,18 +66,18 @@
         </view>
         <view class="book-user-info">
           <image id="{{item.user.avatar}}" mode="" src="{{item.user.avatar}}"></image>
-          <text class="recommend">很不错的一本书  内容很赞 生动有趣</text>
+          <text class="recommend">很不错的一本书 内容很赞 生动有趣</text>
 
         </view>
       </view>
     </view>
-    </view>
-    <view class="bottom-loader">
-      <text wx:if="{{hasMore==false}}">没有了</text>
-      <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
-      <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
+  </view>
+  <view class="bottom-loader">
+    <text wx:if="{{hasMore==false}}">没有了</text>
+    <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
+    <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
 
 
 
-    </view>
+  </view>
 </scroll-view>
