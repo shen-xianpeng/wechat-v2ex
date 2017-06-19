@@ -2,11 +2,13 @@
 
   <view class="container">
 
+ 
     <swiper class="book-imagelist" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{3000}}" duration="{{1000}}">
       <block wx:for="{{book.image_list}}">
-        <view>
+             <swiper-item>
+
           <image catchtap="onPreviewImage" src="{{item}}" id="{{item}}" mode="aspectFit" class="slide-image" />
-        </view>
+         </swiper-item>
       </block>
     </swiper>
 

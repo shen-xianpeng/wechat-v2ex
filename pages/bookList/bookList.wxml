@@ -36,18 +36,18 @@
     <dt data-index="1" bindtap="tapMainMenu">推荐排序</dt>
     <dd class="{{subMenuDisplay[0]}}">
       <ul>
-        <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">100以内</li>
-        <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">100-500</li>
-        <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">500-1000</li>
-        <li class="{{subMenuHighLight[0][3]}}" data-index="0-3" bindtap="tapSubMenu">1000-3000</li>
-        <li class="{{subMenuHighLight[0][4]}}" data-index="0-4" bindtap="tapSubMenu">3000以上</li>
+        <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">小学</li>
+        <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">中学</li>
+        <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">高中</li>
+        <li class="{{subMenuHighLight[0][3]}}" data-index="0-3" bindtap="tapSubMenu">大学</li>
+        <li class="{{subMenuHighLight[0][4]}}" data-index="0-4" bindtap="tapSubMenu">xxx</li>
       </ul>
     </dd>
 
     <dd class="{{subMenuDisplay[1]}}">
       <ul>
-        <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">100以内</li>
-        <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">100-500</li>
+        <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">距离优先</li>
+        <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">添加时间</li>
       </ul>
     </dd>
 
