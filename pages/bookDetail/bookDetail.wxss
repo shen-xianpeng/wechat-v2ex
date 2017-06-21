@@ -2,9 +2,7 @@
   width: 250rpx;
   display: inline-block;
   float: left;
-
 }
-
 
 .right-detail {
   width: 450rpx;
@@ -14,16 +12,13 @@
   height: 100%;
 }
 
-
 image {
   width: 200rpx;
   padding: 0rpx 80rpx 20rpx 50rpx;
 }
 
-
-
 .right-detail text {
-  display:inline-block;
+  display: inline-block;
   font-size: 25rpx;
 }
 
@@ -43,69 +38,64 @@ image {
 }
 
 .sub-info {
-    line-height: 25rpx;
-    padding-bottom: 5rpx;
+  line-height: 25rpx;
+  padding-bottom: 5rpx;
 }
 
-
 .container {
-  display:block;
-  width:100%;
+  display: block;
+  width: 100%;
   overflow: hidden;
 }
 
-
 .book-summary {
   font-size: 30rpx;
-  padding:50rpx;
+  padding: 50rpx;
 }
 
 .book-catalog {
   font-size: 30rpx;
-  padding:50rpx;
+  padding: 50rpx;
 }
 
 .book-comments-empty {
   font-size: 30rpx;
-  padding:50rpx;
-  text-align: center
+  padding: 50rpx;
+  text-align: center;
 }
 
 swiper-item {
-  display:block;
+  display: block;
 }
 
-
-.swiper-tab{  
-    width: 60%;  
-    text-align: center;  
-    line-height: 60rpx;
-    color: gray;  
-    margin-left:50rpx;  
+.swiper-tab {
+  width: 60%;
+  text-align: center;
+  line-height: 60rpx;
+  color: gray;
+  margin-left: 50rpx;
 }
 
-.swiper-tab-list{  font-size: 30rpx;  
-    display: inline-block;  
-    width: 33.33%;  
-    color: gray;  
-}  
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33.33%;
+  color: gray;
+}
 
-.on{ 
-    color: #3b5998;  
-    border-bottom: 5rpx solid #3b5998;}  
-  
-.swiper-box{ 
-  display: block; 
+.on {
+  color: #3b5998;
+  border-bottom: 5rpx solid #3b5998;
+}
+
+.swiper-box {
+  display: block;
   height: auto;
+}
 
- }  
-
-
- 
-scroll-view {  
+scroll-view {
   width: 640rpx !important;
 }
-
 
 .page {
   display: block;
@@ -118,17 +108,23 @@ scroll-view {
 }
 
 .book-imagelist image {
-  margin:0 auto;
-  display:block;
-  height: 250rpx;
+  margin: 0 auto;
+  display: block;
+  height: 280rpx;
+  padding: 0;
+-webkit-box-shadow:0 0 10px rgba(100, 204, 204, .5);  
+  -moz-box-shadow:0 0 10px rgba(0, 204, 204, .5);  
+  box-shadow:0 0 10px rgba(0, 204, 204, .5);  
+  position:relative;
+top:10rpx;
 
-}
+  }
 
 .book-imagelist {
   height: 300rpx;
 }
 
-.book-infos  {
+.book-infos {
   padding: 50rpx 50rpx 0 50rpx;
 }
 
@@ -136,8 +132,123 @@ scroll-view {
   padding: 10rpx;
 }
 
-
 .swiper-item {
   height: auto !important;
   overflow: hidden;
+}
+
+.bottom-menu {
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 80rpx;
+  padding-bottom: 0px;
+}
+
+.bottom-menu .menu-item {
+  width: 50%;
+  height: 100%;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  color: white;
+  padding: 15rpx 0 15rpx 0;
+}
+
+.add-cart {
+  background: lightseagreen;
+}
+
+.buy-now {
+  background: red;
+}
+
+.book-info .book-name {
+width:450rpx;
+display:inline-block;
+height:60rpx;
+text-align:left;
+padding-left:80rpx;
+
+}
+
+.book-info .book-price {
+  width: 25%;
+  display: inline-block;
+  height: 60rpx;
+    font-size: 32rpx;
+
+  text-align: center;
+}
+
+.book-info .book-tags {
+  display: inline-block;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.book-info .book-ship {
+  width: 25%;
+  display: inline-block;
+  height: 60rpx;
+      font-size: 32rpx;
+
+  text-align: center;
+}
+
+.book-info .book-degree {
+  width: 48%;
+  display: inline-block;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.book-info .book-distance {
+  width: 25%;
+  display: inline-block;
+  height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.book-location-icon {
+  height: 36rpx;
+  width: 40rpx;
+  padding: 0;
+position:relative;
+top:5rpx;
+
+
+}
+
+.book-labels {
+  width: 50%;
+  float: left;
+}
+
+.book-labels  view {
+  height: 30rpx !important;
+  width: 100rpx !important;
+  padding: 5rpx;
+  margin: 10rpx 0rpx 10rpx 50rpx;
+  border: 1rpx solid gray;
+  border-radius: 5rpx;
+  line-height: 30rpx !important;
+  color: gray;
+}
+
+.book-info view {
+  height: 60rpx;
+  line-height: 58rpx;
+}
+
+.book-info {
+  border-bottom:5rpx solid #efeff4;
+
+}
+
+.distance-text {
+    display: inline-block;
 }

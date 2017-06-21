@@ -1,7 +1,12 @@
 .container {
   background: #efeff4;
+  height:100%;
 }
 
+page {
+    height:100%;
+
+}
 .topic-owner {
   display: block;
   text-align: center;

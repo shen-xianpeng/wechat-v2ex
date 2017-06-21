@@ -129,7 +129,7 @@ swiper image {
 /*一级菜单 f4f4f4*/
 
 .menu dt {
-  font-size: 40rpx;
+  font-size: 36rpx;
   float: left;
   /*hack*/
   width: 50%;

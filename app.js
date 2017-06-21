@@ -1,6 +1,22 @@
 //app.js
 App({
   onLaunch: function () {
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+
+        console.log(latitude, longitude)
+        // wx.openLocation({
+        //   latitude: latitude,
+        //   longitude: longitude,
+        //   scale: 28
+        // })
+      }
+    })
       var that = this  
      var user=wx.getStorageSync('user') || {};    
      var userInfo=wx.getStorageSync('userInfo') || {};   

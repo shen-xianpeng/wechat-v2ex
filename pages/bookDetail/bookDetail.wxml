@@ -17,6 +17,45 @@
     </view>
 
   </view>
+
+  <view class="book-info">
+    <view>
+      <view class=" book-name">    {{book.title}}
+
+      </view>
+       <view class="book-price">   
+        100书币
+      </view>
+    </view>
+
+    <view>
+
+    <view class="book-labels">
+     <view class="book-tags">  
+      中小学
+
+      </view>
+       <view class="book-degree">  
+      九成新
+
+      </view>
+
+    </view>
+      <view class="book-distance">  
+
+        <image mode="aspectFit" class="book-location-icon" src="../../images/location.png"></image>
+        <view class="distance-text">
+       12km
+
+        </view>
+
+      </view>
+       <view class="book-ship">  
+      邮费10元
+
+      </view>
+    </view>
+  </view>
   <view class="swiper-tab">
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="clickTab">简介</view>
     <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="clickTab">目录</view>
@@ -29,9 +68,7 @@
 
 
     <view class="book-infos">
-      <view>
-        <text class="book-title">{{book.title}} </text>
-      </view>
+
       <view class="sub-info">
         <label>作者： </label>
         <text>{{book.author}} </text>
@@ -69,5 +106,18 @@
       暂无评论</view>
   </view>
 
+
+
+<view class="bottom-menu">
+
+  <view class="menu-item add-cart">
+    加入购物车
+  </view>
+
+  <view class="menu-item buy-now">
+    立即购买
+  </view>
+
+</view>
 
 </view>
