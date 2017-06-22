@@ -54,6 +54,7 @@ Page({
     });
   },
   tapSubMenu: function (e) {
+    this.onPullDownRefresh();
     // 隐藏所有一级菜单
     this.setData({
       subMenuDisplay: initSubMenuDisplay()

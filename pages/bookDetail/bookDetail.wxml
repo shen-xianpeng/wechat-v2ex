@@ -28,7 +28,7 @@
       </view>
     </view>
 
-    <view>
+    <view class="book-info-sub">
 
     <view class="book-labels">
      <view class="book-tags">  
@@ -55,7 +55,17 @@
 
       </view>
     </view>
+
+    
+      <view class="book-user-info">
+          <image id="{{book.user.avatar}}" mode="" src="{{book.user.avatar}}"></image>
+          <text class="user-name">{{book.user.name}}</text>
+          <text class="recommend">很不错的一本书 内容很赞 生动有趣</text>
+
+        </view>
   </view>
+
+  
   <view class="swiper-tab">
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="clickTab">简介</view>
     <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="clickTab">目录</view>
@@ -64,7 +74,7 @@
 
 
 
-  <view class=" {{currentTab==0?'default':'hidden'}}">
+  <view class="book-extra-infos {{currentTab==0?'default':'hidden'}}">
 
 
     <view class="book-infos">
@@ -95,13 +105,13 @@
     </view>
   </view>
   <!-- 1 -->
-  <view class=" {{currentTab==1?'default':'hidden'}}">
+  <view class="book-extra-infos {{currentTab==1?'default':'hidden'}}">
     <view class="book-catalog">
       <text>{{book.catalog}} </text>
     </view>
   </view>
   <!-- 2 -->
-  <view class=" {{currentTab==2?'default':'hidden'}}">
+  <view class="book-extra-infos {{currentTab==2?'default':'hidden'}}">
     <view class="book-comments-empty" >
       暂无评论</view>
   </view>

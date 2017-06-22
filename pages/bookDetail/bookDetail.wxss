@@ -112,13 +112,12 @@ scroll-view {
   display: block;
   height: 280rpx;
   padding: 0;
--webkit-box-shadow:0 0 10px rgba(100, 204, 204, .5);  
-  -moz-box-shadow:0 0 10px rgba(0, 204, 204, .5);  
-  box-shadow:0 0 10px rgba(0, 204, 204, .5);  
-  position:relative;
-top:10rpx;
-
-  }
+  -webkit-box-shadow: 0 0 5px rgba(100, 204, 204, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(0, 204, 204, 0.5);
+  box-shadow: 0 0 5px rgba(0, 204, 204, 0.5);
+  position: relative;
+  top: 10rpx;
+}
 
 .book-imagelist {
   height: 300rpx;
@@ -166,21 +165,20 @@ top:10rpx;
 }
 
 .book-info .book-name {
-width:450rpx;
-display:inline-block;
-height:60rpx;
-text-align:left;
-padding-left:80rpx;
-
+  width: 450rpx;
+  display: inline-block;
+  height: 60rpx;
+  text-align: left;
+  padding-left: 55rpx;
 }
 
 .book-info .book-price {
-  width: 25%;
+  width: 225rpx;
   display: inline-block;
   height: 60rpx;
-    font-size: 32rpx;
-
-  text-align: center;
+  font-size: 32rpx;
+  padding-right: 20rpx;
+  text-align: right;
 }
 
 .book-info .book-tags {
@@ -193,9 +191,8 @@ padding-left:80rpx;
   width: 25%;
   display: inline-block;
   height: 60rpx;
-      font-size: 32rpx;
-
-  text-align: center;
+  font-size: 32rpx;
+  text-align: right;
 }
 
 .book-info .book-degree {
@@ -217,10 +214,12 @@ padding-left:80rpx;
   height: 36rpx;
   width: 40rpx;
   padding: 0;
-position:relative;
-top:5rpx;
+  position: relative;
+  top: 6rpx;
+}
 
-
+.book-info-sub {
+  padding-right: 20rpx;
 }
 
 .book-labels {
@@ -245,10 +244,38 @@ top:5rpx;
 }
 
 .book-info {
-  border-bottom:5rpx solid #efeff4;
-
+  border-bottom: 5rpx solid #efeff4;
 }
 
 .distance-text {
-    display: inline-block;
+  display: inline-block;
+}
+
+.book-extra-infos {
+  padding-bottom: 80rpx;
+}
+
+.book-user-info {
+  padding: 10rpx 10rpx 20rpx 55rpx;
+  height: 120rpx !important;
+}
+
+.book-user-info image {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50rpx;
+  float: left;
+  padding: 0;
+}
+
+.book-user-info .recommend {
+  color: gray;
+  font-size: 30rpx;
+  text-align: left;
+  width: 500rpx;
+  padding: 0 5rpx 0 5rpx;
+  display: block;
+  float: left;
+  line-height: 36rpx;
+  overflow: hidden;
 }
