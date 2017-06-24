@@ -104,18 +104,18 @@ swiper image {
 }
 
 .menuholder {
-  display:none;
+  display: none;
 }
+
 .menuholder.sticked {
   display: block;
   height: 80rpx;
-
 }
+
 .menu.sticked {
   position: fixed;
   top: -1rpx;
-      z-index:1;
-
+  z-index: 1;
 }
 
 /*总菜单容器*/
@@ -124,8 +124,7 @@ swiper image {
   width: 100%;
   display: block;
   height: 80rpx;
-    border-top: 1px solid #d2d2d2;
-
+  border-top: 1px solid #d2d2d2;
 }
 
 /*一级菜单 f4f4f4*/
@@ -146,10 +145,11 @@ swiper image {
 /*二级菜单外部容器样式*/
 
 .menu dd {
+  text-align: center;
   position: absolute;
   width: 100%;
   /*hack*/
-top:83rpx;
+  top: 83rpx;
   left: 0;
   z-index: 999;
 }
@@ -187,31 +187,25 @@ dl.menu {
   position: relative;
 }
 
-
 swiper {
-  z-index:2;
+  z-index: 2;
   width: 100%;
   background: white;
   position: relative;
 }
 
-
-#scrollmenu  {
-  z-index:1;
-position:absolute;
-
+#scrollmenu {
+  z-index: 1;
+  position: absolute;
 }
 
 #item-list {
-background:white;
-width:100%;
-top:0rpx;
-height: 0rpx;
-position:relative;
-
+  background: white;
+  width: 100%;
+  top: 0rpx;
+  height: 0rpx;
+  position: relative;
 }
-
-
 
 .ad-swiper image {
   width: 100%;
