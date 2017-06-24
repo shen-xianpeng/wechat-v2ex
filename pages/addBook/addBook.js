@@ -91,11 +91,12 @@ Page({
     }
     data["images"] = that.getImages();
     wx.request({
-      url: 'https://www.xianpeng.org/add_book',
+      url: getApp().config.host +'/add_book',
       data: data,
       method: 'POST',
       header: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": getApp().globalData.userInfo.token
         },      
       success: function (res) {
         console.log(res, "ssssuccess");
@@ -145,7 +146,7 @@ Page({
         params["code_type"] = res.scanType;
         console.log("start")
         wx.request({
-          url: 'https://www.xianpeng.org/add_book_by_barcode',
+          url: getApp().config.host+'/add_book_by_barcode',
           data: params,
           method: 'GET',
           success: function (res) {
@@ -227,7 +228,7 @@ Page({
           function as(tmpI) {
             console.log("upload....", tmpI)
             wx.uploadFile({
-              url: 'https://www.xianpeng.org/upload_file', //仅为示例，非真实的接口地址
+              url: getApp().config.host+'/upload_file', //仅为示例，非真实的接口地址
               filePath: tempFilePaths[tmpI],
               name: 'file',
               formData: {

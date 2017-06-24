@@ -88,7 +88,7 @@ Page({
       success: function (res) {
         console.info(res.windowHeight);
         that.setData({
-          scrollHeight: res.windowHeight
+          scrollHeight: res.windowHeight*2-120
         });
         that.setData({
           toView: "scrollmenu",
@@ -125,8 +125,7 @@ Page({
     }
     wx.request({
       url: "https://www.xianpeng.org/book_list",
-    //  url: "http://127.0.0.1:10000/book_list",
-      data: params,
+      url: getApp().config.host + "/book_list",      data: params,
       success: function(res) {
      
           var datas = data.concat(res.data.infos);

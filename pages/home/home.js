@@ -45,7 +45,7 @@ Page({
               params["code"] = jscode
               params["encrypt"] = res.encryptedData
               params["iv"] = res.iv
-              var l = 'https://www.xianpeng.org/jscode_to_secrets';
+              var l = getApp().config.host +'/jscode_to_secrets';
               wx.request({
                 url: l,
                 data: params,

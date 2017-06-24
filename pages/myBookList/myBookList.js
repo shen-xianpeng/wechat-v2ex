@@ -49,7 +49,7 @@ Page({
       params["offset"] = this.data.offset
     }
     wx.request({
-      url: "https://www.xianpeng.org/book_list",
+      url: getApp().config.host +"/book_list",
       data: params,
       success: function(res) {
      

@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
+    this.setUserInfo();
     wx.getLocation({
       type: 'wgs84',
       success: function (res) {
@@ -42,7 +43,7 @@ App({
                         params["code"] = jscode
                         params["encrypt"] = res.encryptedData
                         params["iv"] = res.iv
-                        var l = 'https://www.xianpeng.org/jscode_to_secrets';
+                        var l = that.config.host+'/jscode_to_secrets';
                         wx.request({
                           url: l,
                           data: params,
@@ -54,6 +55,7 @@ App({
                             obj.expires_in = Date.now() + res.data.expires_in;
                             //console.log(obj);  
                             wx.setStorageSync('user', res.data.data);//存储openid    
+                            
                             getApp().globalData.userInfo = res.data.data
                           }
                         });  
@@ -86,5 +88,16 @@ App({
   },
   globalData:{
     userInfo:null
+  },
+  config: {
+    host:"https://www.xianpeng.org",
+    //host:"http://127.0.0.1:10000",
+  },
+  setUserInfo: function(){
+    var user = wx.getStorageSync('user');   
+    if(user) {
+      getApp().globalData.userInfo = user;
+
+    }
   }
 })

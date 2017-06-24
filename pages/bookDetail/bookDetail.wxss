@@ -179,6 +179,7 @@ scroll-view {
   font-size: 32rpx;
   padding-right: 20rpx;
   text-align: right;
+  color: #ffeb3b;
 }
 
 .book-info .book-tags {
@@ -265,6 +266,7 @@ scroll-view {
   width: 100rpx;
   border-radius: 50rpx;
   float: left;
+  margin:10rpx;
   padding: 0;
 }
 

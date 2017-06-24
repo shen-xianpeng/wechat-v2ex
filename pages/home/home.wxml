@@ -29,17 +29,17 @@
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
       <view class="get" bindtap="onGet">
-        <view>我的成交</view>
+        <view>我的卖出</view>
         <view class="prompt">{{ userInfo.recv_quote_num }}</view>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
       <view class="end" bindtap="onEnd">
-        <view>我的收藏</view>
+        <view>我的买入</view>
         <view class="prompt">{{ userInfo.order_num }}</view>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
       <view class="news" bindtap="onNews">
-        <view>消息</view>
+        <view>我的帐户</view>
         <image src="../../images/dot.png" class="prompt dot"></image>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>

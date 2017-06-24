@@ -12,7 +12,7 @@ Page({
   fetchDetail: function (id) {
     var that = this;
     wx.request({
-      url: "https://www.xianpeng.org/book_detail?book_id=" + id,
+      url: getApp().config.host +"/book_detail?book_id=" + id,
       success: function (res) {
         that.setData({
           book: res.data.data

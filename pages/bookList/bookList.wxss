@@ -108,7 +108,7 @@ swiper image {
 }
 .menuholder.sticked {
   display: block;
-  height: 100rpx;
+  height: 80rpx;
 
 }
 .menu.sticked {
@@ -123,7 +123,9 @@ swiper image {
 .menu {
   width: 100%;
   display: block;
-  height: 100rpx;
+  height: 80rpx;
+    border-top: 1px solid #d2d2d2;
+
 }
 
 /*一级菜单 f4f4f4*/
@@ -133,12 +135,12 @@ swiper image {
   float: left;
   /*hack*/
   width: 50%;
-  height: 100rpx;
+  height: 80rpx;
   border-bottom: 1px solid #d2d2d2;
   text-align: center;
   background-color: white;
   color: #5a5a5a;
-  line-height: 100rpx;
+  line-height: 80rpx;
 }
 
 /*二级菜单外部容器样式*/
@@ -147,7 +149,7 @@ swiper image {
   position: absolute;
   width: 100%;
   /*hack*/
-top:105rpx;
+top:83rpx;
   left: 0;
   z-index: 999;
 }

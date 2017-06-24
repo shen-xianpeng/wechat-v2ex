@@ -1,6 +1,6 @@
 <!--latest.wxml-->
 
-<scroll-view bindtouchmove="handletouchmove" enable-back-to-top="true" scroll-y scroll-into-view="{{toView}}" upper-threshold="187" bindscrolltoupper="bindUpper" style="height:{{scrollHeight*2}}rpx" bindscroll="scroll" class="container">
+<scroll-view bindtouchmove="handletouchmove" enable-back-to-top="true" scroll-y scroll-into-view="{{toView}}" upper-threshold="187" bindscrolltoupper="bindUpper" style="height:{{scrollHeight}}rpx" bindscroll="scroll" class="container">
 
   <swiper class="ad-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}">
