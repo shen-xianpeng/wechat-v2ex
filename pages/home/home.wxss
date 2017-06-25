@@ -1,12 +1,12 @@
 .container {
   background: #efeff4;
-  height:100%;
+  height: 100%;
 }
 
 page {
-    height:100%;
-
+  height: 100%;
 }
+
 .topic-owner {
   display: block;
   text-align: center;
@@ -57,44 +57,49 @@ page {
   display: block;
 }
 
-
 #mine .quote {
-    color: #323232;
+  color: #323232;
 }
 
 #mine .quote > view {
-    height: 88rpx;
-    padding: 0 24rpx;
-    font-size: 28rpx;
-    background: #ffffff;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 88rpx;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  background: #fff;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #mine .quote image {
-    width: 13rpx;
+  width: 13rpx;
 }
 
 #mine .quote .get {
-    border-top: 1rpx solid #e1e1e1;
-    border-bottom: 1rpx solid #e1e1e1;
+  border-top: 1rpx solid #e1e1e1;
+  border-bottom: 1rpx solid #e1e1e1;
 }
 
 #mine .quote .news {
-    margin: 20rpx 0;
+  margin: 20rpx 0;
 }
 
 #mine .quote .prompt {
-    color: #909090;
-    transform:translate(0, -50%);
-    position: absolute;
-    top: 50%;
-    right: 58rpx;
+  color: #909090;
+  transform: translate(0, -50%);
+  position: absolute;
+  top: 50%;
+  right: 58rpx;
 }
 
 #mine .quote .dot {
-    width: 14rpx;
-    height: 14rpx;
+  width: 14rpx;
+  height: 14rpx;
+}
+
+.login-button {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
 }

@@ -24,8 +24,8 @@
     </swiper>
 
   </view>
-
   <view id="item-list"></view>
+
 
   <view class="menuholder {{menuClass}}">
 
@@ -37,9 +37,10 @@
     <dd class="{{subMenuDisplay[0]}}">
       <ul>
         <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" catchtouchstart="tapSubMenu">全部分类</li>
-        <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" catchtouchstart="tapSubMenu">小学</li>
-        <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" catchtouchstart="tapSubMenu">初中</li>
-        <li class="{{subMenuHighLight[0][3]}}" data-index="0-3" catchtouchstart="tapSubMenu">高中</li>
+        <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" catchtouchstart="tapSubMenu">小学1-3年级</li>
+        <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" catchtouchstart="tapSubMenu">小学4-6年级</li>
+        <li class="{{subMenuHighLight[0][3]}}" data-index="0-3" catchtouchstart="tapSubMenu">初中</li>
+        <li class="{{subMenuHighLight[0][4]}}" data-index="0-4" catchtouchstart="tapSubMenu">高中</li>
       </ul>
     </dd>
 
@@ -47,8 +48,8 @@
       <ul>
         <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">推荐排序</li>
         <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">离我最近</li>
-        <li class="{{subMenuHighLight[0][2]}}" data-index="0-1" bindtap="tapSubMenu">人气最高</li>
-        <li class="{{subMenuHighLight[0][3]}}" data-index="0-1" bindtap="tapSubMenu">最先发布</li>
+        <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">最新发布</li>
+        <li class="{{subMenuHighLight[0][3]}}" data-index="0-3" bindtap="tapSubMenu">人气最高</li>
       </ul>
     </dd>
 

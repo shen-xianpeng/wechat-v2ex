@@ -19,7 +19,7 @@
 .form-entry {
   padding: 10rpx;
   overflow:hidden;
-
+border-bottom: 3rpx solid #d9d9d9
 }
 
 .form-entry label {
@@ -117,6 +117,7 @@
 
 .book-title-input {
   float: left;
+  width: 500rpx !important;
 }
 
 .delete-photo {

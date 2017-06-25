@@ -1,37 +1,36 @@
 .container {
- /** column-count: 2; */
-  width:100%;
+  /** column-count: 2; */
+  width: 100%;
   background: #efeff4;
 }
 
 .item {
-  width:100%;
-  overflow:hidden;
+  width: 100%;
+  overflow: hidden;
   height: 250rpx;
   text-align: center;
-  margin-top:10rpx;
+  margin-bottom: 10rpx;
   background: white;
 }
 
-
 .book-image {
-width:150rpx;
-height:200rpx;
-display:inline-block;
-overflow:hidden;
-float:left;
-padding: 30rpx;
-
+  width: 150rpx;
+  height: 200rpx;
+  display: inline-block;
+  overflow: hidden;
+  float: left;
+  padding: 30rpx;
 }
 
 .book-info {
-display:block;
-float:left;
-height:250rpx;
-width: 450rpx;
-padding:30rpx;
-text-align: left;
+  display: block;
+  float: left;
+  height: 250rpx;
+  width: 450rpx;
+  padding: 30rpx;
+  text-align: left;
 }
+
 .book-info text {
   padding: 10rpx;
 }
@@ -43,23 +42,21 @@ text-align: left;
 .text {
   font-size: 25rpx;
   line-height: 30rpx;
-  padding:5rpx;
-   text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow:hidden;
+  padding: 5rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .title {
-  padding:10rpx;
-
+  padding: 10rpx;
 }
-.description {
-  padding:10rpx;
 
+.description {
+  padding: 10rpx;
 }
 
 .bottom-loader {
-  text-align:center;
-  color:gray;
+  text-align: center;
+  color: gray;
 }
-

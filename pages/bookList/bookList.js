@@ -2,8 +2,8 @@
 var Api = require('../../utils/api.js');
 function initSubMenuHighLight() {
   return [
-    ['','','','',''],
-    ['',''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
     ['','','']
   ];
 }
@@ -12,7 +12,7 @@ function initSubMenuDisplay() {
 }
 var initSubMenuHighLight = [
   ['', '', '', '', ''],
-  ['', ''],
+  ['', '', '', '', ''],
   ['', '', '']
 ];
 Page({
@@ -54,6 +54,7 @@ Page({
     });
   },
   tapSubMenu: function (e) {
+    this.lastScrollTop = 0;
     this.onPullDownRefresh();
     // 隐藏所有一级菜单
     this.setData({
@@ -143,6 +144,14 @@ Page({
       }
     })
   },
+  onShow: function () {
+    if (getApp().globalData.needFresh) {
+      getApp().globalData.needFresh=false;
+      this.onPullDownRefresh();
+
+    }
+
+  },
  onPullDownRefresh: function () {
    console.log("下拉刷新");
    var that=this;
@@ -194,12 +203,15 @@ Page({
     }
   },
   scroll: function (e) {
+    if (e.detail.scrollTop ==0) {
+      return
+    }
     console.log(e);
     console.log(e.detail.scrollTop, "current")
     console.log(this.lastScrollTop)
     if (e.detail.scrollTop > this.lastScrollTop) {
       console.log("scroll down")
-      if (e.detail.scrollTop >= 187 ) {
+      if (e.detail.scrollTop >= 250 ) {
         this.setData({
           menuClass: "sticked",
         })
@@ -211,7 +223,7 @@ Page({
       }
     } else {
       console.log("scroll up")
-      if (e.detail.scrollTop <=187){           this.setData({
+      if (e.detail.scrollTop <= 250){           this.setData({
           menuClass: "",
         })
       }

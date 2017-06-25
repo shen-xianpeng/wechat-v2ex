@@ -16,7 +16,7 @@
       <image class="owner-avatar" wx:if="{{user.id>0==false}}" src="https://imgqn.smm.cn/production/question/vjxIA20170509133549.png" id="{{user.id}}" bindtap="showUserInfo"></image>
       <image class="owner-avatar" wx:if="{{user.id>0}}" src="{{user.avatar}}" id="{{user.id}}" bindtap="showUserInfo"></image>
       <label class="user-name" wx:if="{{user.id>0}}">{{user.name}}</label>
-      <button wx:if="{{user.id>0==false}}" bindtap="popLogin" class="margin-button">去登录</button>
+      <button wx:if="{{user.id>0==false}}" bindtap="popLogin" class="login-button margin-button">登录</button>
 
     </view>
 
@@ -43,7 +43,7 @@
         <image src="../../images/dot.png" class="prompt dot"></image>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
-      <view class="set" bindtap="onSetting">
+      <view class="set hidden" bindtap="onSetting">
         <view>设置</view>
         <view class="prompt">{{ userInfo.time_length }}</view>
         <image src="../../images/arrow.png" mode="widthFix"></image>

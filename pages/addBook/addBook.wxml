@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="container">
 
+<image  style="margin:0 auto;" catchtap="onTabAdd" class="scan-icon " mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
  
  
 <form class="book-form" bindsubmit="onAddUserBook" bindreset="formReset">
@@ -16,7 +17,7 @@
 
    <label class="form-label">图书名称</label>  
    <input name="bookTitle" class="book-title-input"  bindinput="" value="{{book.id>0?book.title:form.title}}" placeholder="手动输入或点击扫码按钮"/>
-<image  catchtap="onTabAdd" class="scan-icon" mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
+<image  catchtap="onTabAdd" class="scan-icon hidden" mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
   </view>
 
   <view class="section section_gap form-entry">

@@ -113,6 +113,8 @@ Page({
           return
         }
         that.book_id = res.data.data.id;
+        getApp().globalData.needFresh = true;
+
         that.resetForm();
         that.setData({
           showSuccessModal: true

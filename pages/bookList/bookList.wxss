@@ -87,18 +87,20 @@ swiper image {
   width: 50rpx;
   height: 50rpx;
   float: left;
-  padding: 5rpx;
+  padding: 20rpx;
 }
 
 .alarm {
   overflow: hidden;
   padding-left: 20rpx;
+  height:91rpx;
 }
 
 .swiper_msg {
   position: relative;
-  padding: 10rpx;
+  padding: 20rpx;
   height: 50rpx;
+  line-height: 50rpx;
   float: left;
   width: 600rpx;
 }
@@ -114,13 +116,16 @@ swiper image {
 
 .menu.sticked {
   position: fixed;
-  top: -1rpx;
+  top: 0;
+  margin-top: 0;
+  padding-top: 0;
   z-index: 1;
 }
 
 /*总菜单容器*/
 
 .menu {
+   box-sizing:border-box;
   width: 100%;
   display: block;
   height: 80rpx;
@@ -202,11 +207,17 @@ swiper {
 #item-list {
   background: white;
   width: 100%;
-  top: 0rpx;
-  height: 0rpx;
-  position: relative;
+  top: 0;
+  height: 0;
+  border: 0;
 }
 
+/* 0rpx有高度 bug*////
 .ad-swiper image {
   width: 100%;
+}
+
+
+.ad-swiper {
+  height: 360rpx;
 }

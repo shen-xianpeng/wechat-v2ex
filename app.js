@@ -90,13 +90,13 @@ App({
     userInfo:null
   },
   config: {
-    host:"https://www.xianpeng.org",
-    //host:"http://127.0.0.1:10000",
+    host:"https://www.xianpeng.org/api",
+    //host:"http://127.0.0.1:10000/api",
   },
   setUserInfo: function(){
     var user = wx.getStorageSync('user');   
     if(user) {
-      getApp().globalData.userInfo = user;
+      this.globalData.userInfo = user;
 
     }
   }
