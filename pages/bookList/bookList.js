@@ -54,7 +54,16 @@ Page({
     });
   },
   tapSubMenu: function (e) {
-    this.lastScrollTop = 0;
+    this.tabLock = true; //locking时不改变menu 固定样式
+    var temp = this.data.lastScrollTop;
+    this.setData({
+      subMenuHighLight: initSubMenuHighLight,
+      toView: "item-list",
+      menuClass: "sticked",
+
+    });
+    this.data.lastScrollTop = temp;
+  
     this.onPullDownRefresh();
     // 隐藏所有一级菜单
     this.setData({
@@ -75,13 +84,21 @@ Page({
       }
     }
 
+    var that = this;
+    setTimeout(function () {
+      that.setData({
+        menuClass: "sticked",
+
+      });
+      that.tabLock = false;
+
+    }, 100)
+    //确保在界面滚动后执行
+ 
     // 与一级菜单不同，这里不需要判断当前状态，只需要点击就给class赋予highlight即可
     initSubMenuHighLight[indexArray[0]][indexArray[1]] = 'highlight';
     // 设置为新的数组
-    this.setData({
-      subMenuHighLight: initSubMenuHighLight,
-      toView:"item-list"
-    });
+
   },
   onLoad: function () {
     var that = this;
@@ -203,15 +220,20 @@ Page({
     }
   },
   scroll: function (e) {
-    if (e.detail.scrollTop ==0) {
+    //必须先临时变量 不然滑动式 这里会并发 没发固定顺序
+    var current = e.detail.scrollTop;
+    var last = this.data.lastScrollTop;
+    this.data.lastScrollTop = current;
+
+    console.log("lastScrollTop", last, current, this.tabLock)
+
+    if (this.tabLock) {
+
       return
     }
-    console.log(e);
-    console.log(e.detail.scrollTop, "current")
-    console.log(this.lastScrollTop)
-    if (e.detail.scrollTop > this.lastScrollTop) {
+    if (last>0 && current > last) {
       console.log("scroll down")
-      if (e.detail.scrollTop >= 250 ) {
+      if (current >= 248 ) {
         this.setData({
           menuClass: "sticked",
         })
@@ -221,16 +243,15 @@ Page({
       if (e.detail.scrollHeight - e.detail.scrollTop < 800) {
         this.onReachBottom()
       }
-    } else {
+    } else if(current<last) {
       console.log("scroll up")
-      if (e.detail.scrollTop <= 250){           this.setData({
+      if (current <= 248){           this.setData({
           menuClass: "",
         })
       }
-    }
+    } 
     
  
-    this.lastScrollTop = e.detail.scrollTop;
   },
   bindUpper: function(e) {
  
