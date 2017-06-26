@@ -4,6 +4,7 @@
     "pages/home/home",
     "pages/addBook/addBook",
     "pages/bookDetail/bookDetail",
+    "pages/cart/cart",
     "pages/myBookList/myBookList"
   ],
   "window":{

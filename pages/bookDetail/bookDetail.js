@@ -51,5 +51,14 @@ Page({
   onLoad: function (options) {
     console.log(options);
     this.fetchDetail(options.id);
-  }
+  },
+  goCart: function (e) {
+    var id = e.currentTarget.id;
+    console.log(id);
+    var url = '../cart/cart';
+
+    wx.navigateTo({
+      url: url
+    })
+  },
 })

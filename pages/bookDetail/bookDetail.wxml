@@ -124,7 +124,7 @@
     加入购物车
   </view>
 
-  <view class="menu-item buy-now">
+  <view catchtap="goCart" class="menu-item buy-now">
     立即购买
   </view>
 
