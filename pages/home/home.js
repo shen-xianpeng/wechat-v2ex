@@ -18,6 +18,25 @@ Page({
   fetchDetail: function(id) {
    
   },
+  touchStartElement: function(e) {
+    this.setData({
+      hoverState: true
+    })
+  },
+  touchEndElement: function (e) {
+    var that = this;
+    setTimeout(function() {
+      that.setData({
+        hoverState: false
+      })
+    }, 500)
+ 
+  },
+  touchMoveElement: function (e) {
+    this.setData({
+      hoverState: false
+    })
+  },
   popLogin: function (e) {
     var that = this;
 

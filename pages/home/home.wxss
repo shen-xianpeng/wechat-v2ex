@@ -73,7 +73,7 @@ page {
 }
 
 #mine .quote image {
-  width: 13rpx;
+  width: 50rpx;
 }
 
 #mine .quote .get {
@@ -94,12 +94,19 @@ page {
 }
 
 #mine .quote .dot {
-  width: 14rpx;
-  height: 14rpx;
+  width: 15rpx;
+  height: 15rpx;
+  margin-right:20rpx;
+
 }
 
 .login-button {
   width: 160rpx;
   height: 60rpx;
   line-height: 60rpx;
+}
+
+
+.hover-element {
+  background: #e6e6e6 !important;
 }
