@@ -61,4 +61,21 @@ Page({
       url: url
     })
   },
+  addToCart: function(e) {
+    var data = {
+
+      "user_book_id":this.data.book.id
+    }
+    wx.request({
+      url: getApp().config.host + '/add_to_cart',
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": getApp().globalData.userInfo.token
+      },
+      success: function (res) {
+      }
+    });
+  }
 })

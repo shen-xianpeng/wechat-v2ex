@@ -120,7 +120,7 @@
 
 <view class="bottom-menu">
 
-  <view class="menu-item add-cart">
+  <view catchtap="addToCart" class="menu-item add-cart">
     加入购物车
   </view>
 
