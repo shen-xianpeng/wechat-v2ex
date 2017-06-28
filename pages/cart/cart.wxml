@@ -5,58 +5,12 @@
       <image class="user-avatar" src="{{item[0].user.avatar}}"></image>
       <label class="user-name">{{item[0].user.name}}</label>
     </view>
-    <view class="nav-icon">1212</view>
+    <view class="nav-icon">
+    <label class="">去结算</label>
+     <image src="../../images/arrow.png" mode="aspectFit" ></image>
 
-  
-  </view>
-
-  <view class="entry-body">
-    <view class="book-list">
-      <view class="entry-book">212</view>
-      <view class="entry-book">212</view>
-      <view class="entry-book">212</view>
+      
     </view>
-    <view class="nav-cart">
-      共四本
-    </view>
-
-  
-  </view>
-
-
-</view>
-
-
-<view class="entry">
-
-  <view class="entry-header">
-    <view class="user-info">212</view>
-    <view class="nav-icon">1212</view>
-
-  
-  </view>
-
-  <view class="entry-body">
-    <view class="book-list">
-      <view class="entry-book">212</view>
-      <view class="entry-book">212</view>
-      <view class="entry-book">212</view>
-    </view>
-    <view class="nav-cart">
-      共四本
-    </view>
-
-  
-  </view>
-
-
-</view>
-
-<view class="entry">
-
-  <view class="entry-header">
-    <view class="user-info">212</view>
-    <view class="nav-icon">1212</view>
 
   
   </view>

@@ -1,5 +1,6 @@
-.entry-header  {
+.entry-header {
   height: 80rpx;
+  width: 100%;
 }
 
 .entry-header view {
@@ -22,15 +23,12 @@
 }
 
 .book-list {
-height:100%;
-background:yellow;
-width:500rpx;
-overflow-x:scroll;
-white-space:nowrap;
-
+  height: 100%;
+  background: yellow;
+  width: 500rpx;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
-
-
 
 .entry-book {
   width: 200rpx;
@@ -39,15 +37,14 @@ white-space:nowrap;
   background: green;
 }
 
-
 .entry-body view {
   display: inline-block;
 }
 
 .nav-cart {
-  float:right;
-  height:100%;
-  width:250rpx;
+  float: right;
+  height: 100%;
+  width: 250rpx;
   line-height: 300rpx;
   background: red;
 }
@@ -61,8 +58,7 @@ white-space:nowrap;
   height: 60rpx;
   border-radius: 30rpx;
   margin: 10rpx;
-  float: left
-
+  float: left;
 }
 
 .user-name {
@@ -70,4 +66,28 @@ white-space:nowrap;
   float: left;
   line-height: 80rpx;
   height: 80rpx;
+}
+
+.nav-icon {
+  width: 350rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  float: right;
+}
+
+.nav-icon image {
+  height: 80rpx !important;
+  display: inline-block;
+  width: 50rpx;
+  margin-right:20rpx;
+
+}
+
+.nav-icon label {
+  width: 280rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+  float: left;
+  text-align: right;
 }
