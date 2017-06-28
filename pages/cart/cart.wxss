@@ -7,11 +7,12 @@
 page {
   background: #fafafb;
 }
+
 .entry {
   background: white;
   border-top: 1rpx solid #e6e6e6;
   border-bottom: 1rpx solid #e6e6e6;
-  margin-top: 20rpx;
+  margin-top: 50rpx;
 }
 
 .entry-header view {
@@ -34,17 +35,18 @@ page {
 }
 
 .book-list {
-  height:240rpx;
+  height: 240rpx;
   width: 690rpx;
   padding: 30rpx;
   overflow-x: scroll;
+  overflow-y: hidden;
   white-space: nowrap;
 }
 
 .entry-book {
-  margin-right:20rpx;
+  margin-right: 20rpx;
   width: 200rpx;
-  height: 300rpx;
+  height: 240rpx;
   display: inline-block;
   background: white;
 }
@@ -57,16 +59,26 @@ page {
   position: absolute;
   right: 0;
   height: 100%;
-  width: 200rpx;
   line-height: 300rpx;
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
   filter: alpha(opacity=50);
   -moz-opacity: 0.5;
   -khtml-opacity: 0.5;
-  opacity: 0.5;
   text-align: right;
-  padding-right: 20rpx;
   color: #333;
+}
+
+.nav-cart-label {
+  float: left;
+  width: 150rpx;
+  background: white;
+  font-size: 36rpx;
+}
+
+.transform-bg {
+  height: 100%;
+  width: 150rpx;
+  float: left;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 }
 
 .user-avatar {
@@ -107,7 +119,7 @@ page {
   float: left;
   text-align: right;
   color: #333;
-  font-size: 36rpx;
+  font-size: 30rpx;
 }
 
 .entry-book image {
@@ -121,6 +133,33 @@ page {
   height: 90rpx;
   float: left;
   text-align: center;
-  color: #ffbb66;
+  color: #fb6;
   font-size: 30rpx;
 }
+
+.cart-item-list {
+  background: white;
+  float: left;
+  height: 100%;
+  width: 60rpx;
+  float: right;
+  padding-right: 20rpx;
+}
+
+.nav-btn-buy {
+  font-size: 30rpx;
+}
+
+.show-body-wrap .show-body {
+  position: absolute;
+  background: gray;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 0.1;
+}
+
+/*.show-body-wrap .book-list image {
+  z-index: 1000;
+  position: relative;
+}*/

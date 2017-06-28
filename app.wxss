@@ -81,3 +81,9 @@
 .hidden {
   display: none !important;
 }
+
+
+
+.hover-element {
+  background: #e6e6e6 !important;
+}

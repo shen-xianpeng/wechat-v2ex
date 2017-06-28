@@ -3,7 +3,8 @@ var Api = require('../../utils/api.js');
 
 Page({
   data: {
-    groupList: []
+    groupList: [],
+    activeHoverIndex: undefined
   },
   getCartInfo: function (callback) {
     var callback = callback;
@@ -22,13 +23,20 @@ Page({
         })
       },
       complete: function () {
-        callback();
+        if (callback) {
+          callback();
+        }
       }
     });
   },
   onLoad: function (options) {
     console.log(options);
-    this.getCartInfo(options.id);
+    wx.showNavigationBarLoading();   
+
+    this.getCartInfo(function() {
+      wx.hideNavigationBarLoading();   
+
+    });
   },
   onPullDownRefresh: function () {
     console.log("下拉刷新");
@@ -36,10 +44,8 @@ Page({
     wx.stopPullDownRefresh();
 
 
-    wx.showNavigationBarLoading()
 
     that.getCartInfo(function () {
-      wx.hideNavigationBarLoading();   
       wx.stopPullDownRefresh({
         complete: function (res) {
 
@@ -52,5 +58,34 @@ Page({
   stopPullDownRefresh: function () {
 
    
+  },
+  touchStartElement: function (e) {
+    console.log("start", e);
+    var id = e.currentTarget.id;
+    this.setData({
+      activeHoverIndex: id
+
+    })
+  },
+  touchEndElement: function (e) {
+    console.log("end", e);
+
+    var that = this;
+    setTimeout(function () {
+      that.setData({
+        //warnning undefined==""=="0"==0
+        activeHoverIndex: "none"
+
+      })
+    }, 500)
+
+  },
+  touchMoveElement: function (e) {
+    console.log("move", e);
+
+    this.setData({
+      activeHoverIndex: "none"
+
+    })
   },
 })
