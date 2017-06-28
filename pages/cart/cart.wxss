@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+.entry {
+  border-top:1rpx solid #e6e6e6;
+
+}
 .entry-header view {
   display: inline-block;
 }
