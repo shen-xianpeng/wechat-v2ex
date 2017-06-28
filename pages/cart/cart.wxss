@@ -34,13 +34,15 @@ page {
 }
 
 .book-list {
-  height: 100%;
-  width: 750rpx;
+  height:240rpx;
+  width: 690rpx;
+  padding: 30rpx;
   overflow-x: scroll;
   white-space: nowrap;
 }
 
 .entry-book {
+  margin-right:20rpx;
   width: 200rpx;
   height: 300rpx;
   display: inline-block;
@@ -64,6 +66,7 @@ page {
   opacity: 0.5;
   text-align: right;
   padding-right: 20rpx;
+  color: #333;
 }
 
 .user-avatar {
@@ -103,7 +106,7 @@ page {
   display: inline-block;
   float: left;
   text-align: right;
-  color: #999;
+  color: #333;
   font-size: 36rpx;
 }
 
