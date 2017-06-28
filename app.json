@@ -5,7 +5,9 @@
     "pages/addBook/addBook",
     "pages/bookDetail/bookDetail",
     "pages/cart/cart",
-    "pages/myBookList/myBookList"
+    "pages/myBookList/myBookList",
+    "pages/orderPreview/orderPreview",
+    "pages/cartBookList/cartBookList"
   ],
   "window":{
     "backgroundTextStyle":"dark",

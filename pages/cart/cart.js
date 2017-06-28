@@ -88,4 +88,19 @@ Page({
 
     })
   },
+  goOrderPreview: function(e) {
+    var url = '../orderPreview/orderPreview';
+
+    wx.navigateTo({
+      url: url
+    })
+  },
+  goCartBookList: function (e) {
+    var url = '../cartBookList/cartBookList';
+
+    wx.navigateTo({
+      url: url
+    })
+  }
+  
 })
