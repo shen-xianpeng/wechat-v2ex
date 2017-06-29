@@ -221,3 +221,7 @@ swiper {
 .ad-swiper {
   height: 360rpx;
 }
+
+.item {
+  background: white;
+}

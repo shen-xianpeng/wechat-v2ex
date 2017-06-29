@@ -17,7 +17,7 @@
   "enablePullDownRefresh": false
 },
   "tabBar": {
-    "color":"#000",
+    "color":"#8a8a8a",
     "selectedColor":"#1296db",
     "backgroundColor":"#fff",
     "borderStyle":"black",
@@ -37,5 +37,7 @@
       "iconPath": "images/my.png",
       "selectedIconPath": "images/my_on.png"
     }]
-  }
+  },
+  "navigationBarBackgroundColor": "#333",
+  "navigationBarTextStyle": "white"
 }

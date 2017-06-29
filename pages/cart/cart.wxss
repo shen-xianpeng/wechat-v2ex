@@ -20,7 +20,9 @@ page {
 }
 
 .user-info {
-  width: 400rpx;
+  width:360rpx;
+  padding-left:40rpx;
+
 }
 
 .nav-icon {
@@ -45,7 +47,7 @@ page {
 
 .entry-book {
   margin-right: 20rpx;
-  width: 200rpx;
+  width: 180rpx;
   height: 240rpx;
   display: inline-block;
   background: white;
