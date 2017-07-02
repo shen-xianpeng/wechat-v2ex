@@ -189,22 +189,45 @@ page {
 .form-input .input-element {
   width: 500rpx;
   height: 60rpx;
-  line-height:60rpx;
-  color:gray;
-
+  line-height: 60rpx;
+  color: gray;
 }
 
 .input-radio {
-  height:50rpx;
-line-height:50rpx;
-
-  margin-bottom:10rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-bottom: 10rpx;
 }
 
-
 .my-balance {
-  position:absolute;
-right:50rpx;
-line-height:50rpx;
+  position: absolute;
+  right: 50rpx;
+  line-height: 50rpx;
+}
+
+.my-book-coin {
+  height: 60rpx;
+}
+
+.my-coin {
+  position: absolute;
+  right: 25px;
+  line-height: 25px;
+  font-size: 32rpx;
+  right: 50rpx;
+  line-height: 50rpx;
+  padding: 10rpx;
+}
+
+.note br {
+  display: flex;
+  
+}
+.note {
+  padding:20rpx;
+  display:block;
+
+  color:gray;
+  font-size:30rpx;
 
 }

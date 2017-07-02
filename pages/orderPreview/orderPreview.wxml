@@ -84,3 +84,28 @@
   </radio-group>
 </view>
 
+<view class="section section_gap form-entry">
+
+  <label class="form-label">图书费用</label>
+  <picker class="form-input" bindchange="bindPickerChange" value="{{newOldIndex}}" range="{{tradeMethod}}">
+    <view class="input-element">
+      10元
+    </view>
+  </picker>
+</view>
+
+<view class="section section_gap form-entry-bot my-book-coin">
+  <label class="my-coin"> 我的书币 100
+  </label>
+
+</view>
+
+
+<p class='note'>
+<br>小提示：</br>
+<br>1、购买图书前，请联系卖家确认图书状态及自取或邮寄后再购买，可建议卖家用“印刷品信封”邮寄以节省运费；</br>
+<br>2、如非破损、涂染、盗版原因，不可拒收。</br>
+<br>3、运费按照快递公司运费标准计算。</br>
+<br>4、如一次性向同一个卖家购买多本图书，可与卖家协商修改运费。</br>
+
+</p>
