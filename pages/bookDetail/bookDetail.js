@@ -63,8 +63,7 @@ Page({
     })
   },
   toastHide: function (event) {
-    status = true
-    this.setData({ toastShow: status })
+    this.setData({ toastShow: true })
   },
   addToCart: function(e) {
     var that=this;

@@ -61,10 +61,10 @@
       <view class="item" wx:for="{{datalist}}" wx:for-index="j" wx:key="id">
         <image class="book-photo" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
         <view class="text">
-          <text class="title">{{item.title}}</text>
-          <text class="price">{{item.price || 10}}书币</text>
+          <text class="title">{{item.book.title}}</text>
+          <text class="price">{{item.book.price || 10}}书币</text>
           <text class="description hidden">
-            {{item.publisher}}</text>
+            {{item.book.publisher}}</text>
         </view>
         <view class="book-user-info">
           <image id="{{item.user.avatar}}" mode="" src="{{item.user.avatar}}"></image>
