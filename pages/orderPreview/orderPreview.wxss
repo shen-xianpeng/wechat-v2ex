@@ -1,0 +1,210 @@
+.entry-header {
+  height: 80rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+page {
+  background: #f3f2f5;
+}
+
+.entry {
+  background: white;
+  border-top: 1rpx solid #e6e6e6;
+  border-bottom: 1rpx solid #e6e6e6;
+  margin-top: 50rpx;
+}
+
+.entry-header view {
+  display: inline-block;
+}
+
+.user-info {
+  width: 360rpx;
+  padding-left: 40rpx;
+}
+
+.nav-icon {
+  width: 300rpx;
+  text-align: right;
+}
+
+.entry-body {
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+
+.book-list {
+  height: 240rpx;
+  width: 690rpx;
+  padding: 30rpx;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.entry-book {
+  margin-right: 20rpx;
+  width: 180rpx;
+  height: 240rpx;
+  display: inline-block;
+  background: white;
+}
+
+.entry-body view {
+  display: inline-block;
+}
+
+.nav-cart {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  line-height: 300rpx;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  text-align: right;
+  color: #333;
+}
+
+.nav-cart-label {
+  float: left;
+  width: 150rpx;
+  background: white;
+  font-size: 36rpx;
+}
+
+.transform-bg {
+  height: 100%;
+  width: 150rpx;
+  float: left;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+.user-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  margin: 10rpx;
+  float: left;
+}
+
+.user-name {
+  display: inline-block;
+  float: left;
+  line-height: 80rpx;
+  height: 80rpx;
+  color: #333;
+}
+
+.nav-icon {
+  width: 350rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  float: right;
+}
+
+.nav-icon image {
+  height: 80rpx !important;
+  display: inline-block;
+  width: 50rpx;
+  margin-right: 20rpx;
+}
+
+.nav-icon label {
+  width: 280rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+  float: left;
+  text-align: right;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.entry-book image {
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.book-price {
+  display: inline-block;
+  width: 200rpx;
+  height: 90rpx;
+  float: left;
+  text-align: center;
+  color: #fb6;
+  font-size: 30rpx;
+}
+
+.cart-item-list {
+  background: white;
+  float: left;
+  height: 100%;
+  width: 60rpx;
+  float: right;
+  padding-right: 20rpx;
+}
+
+.nav-btn-buy {
+  font-size: 30rpx;
+}
+
+.show-body-wrap .show-body {
+  position: absolute;
+  background: gray;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 0.1;
+}
+
+/*.show-body-wrap .book-list image {
+  z-index: 1000;
+  position: relative;
+}*/
+
+.form-entry {
+  padding: 10rpx 0rpx 10rpx 50rpx;
+  background: white;
+  border-top: 10rpx solid #f3f2f5;
+  font-size: 32rpx;
+}
+
+.form-label {
+  display: inline-block;
+  width: 200rpx;
+  height: 60rpx;
+  float: left;
+  line-height: 60rpx;
+}
+
+.form-input {
+  display: inline-block;
+  width: 500rpx;
+  height: 60rpx;
+}
+
+.form-input .input-element {
+  width: 500rpx;
+  height: 60rpx;
+  line-height:60rpx;
+  color:gray;
+
+}
+
+.input-radio {
+  height:50rpx;
+line-height:50rpx;
+
+  margin-bottom:10rpx;
+}
+
+
+.my-balance {
+  position:absolute;
+right:50rpx;
+line-height:50rpx;
+
+}

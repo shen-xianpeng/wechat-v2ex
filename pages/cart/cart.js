@@ -89,14 +89,14 @@ Page({
     })
   },
   goOrderPreview: function(e) {
-    var url = '../orderPreview/orderPreview';
+    var url = '../orderPreview/orderPreview?book_user_id=' + e.currentTarget.dataset.userid;
 
     wx.navigateTo({
       url: url
     })
   },
   goCartBookList: function (e) {
-    var url = '../cartBookList/cartBookList';
+    var url = '../cartBookList/cartBookList?book_user_id=' + e.currentTarget.dataset.userid;
 
     wx.navigateTo({
       url: url

@@ -6,6 +6,7 @@ Page({
   data: {
     title: '书本详情',
     currentTab: 0,
+    toastShow: true,
     scroll: 'auto',
     book: {},
   },
@@ -61,7 +62,12 @@ Page({
       url: url
     })
   },
+  toastHide: function (event) {
+    status = true
+    this.setData({ toastShow: status })
+  },
   addToCart: function(e) {
+    var that=this;
     var data = {
 
       "user_book_id":this.data.book.id
@@ -75,6 +81,10 @@ Page({
         "token": getApp().globalData.userInfo.token
       },
       success: function (res) {
+          that.setData({
+            "message": res.data.msg,
+            "toastShow": false
+          })
       }
     });
   }

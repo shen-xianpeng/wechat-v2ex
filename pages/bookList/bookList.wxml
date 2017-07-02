@@ -56,7 +56,7 @@
   </dl>
 
 
-  <view style="position:relative;background:#fafafb;">
+  <view style="position:relative;background:#f3f2f5;">
     <view style="position: relative;z-index: 0;">
       <view class="item" wx:for="{{datalist}}" wx:for-index="j" wx:key="id">
         <image class="book-photo" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>

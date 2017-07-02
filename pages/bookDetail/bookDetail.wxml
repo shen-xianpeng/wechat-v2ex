@@ -131,3 +131,9 @@
 </view>
 
 </view>
+
+
+
+<toast hidden="{{toastShow}}" duration="1000" bindchange="toastHide">
+        {{message}}
+</toast>

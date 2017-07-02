@@ -1,6 +1,6 @@
 <view class="entry" wx:for="{{groupList}}" wx:for-index="j" wx:key="id">
 
-  <view id="{{j}}" class="entry-header {{               activeHoverIndex==j?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goOrderPreview">
+  <view id="{{j}}" class="entry-header {{               activeHoverIndex==j?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-userid="{{item[0].user.id}}" bindtap="goOrderPreview">
     <view class="user-info">
       <image class="user-avatar" src="{{item[0].user.avatar}}"></image>
       <label class="user-name">{{item[0].user.name}}</label>
