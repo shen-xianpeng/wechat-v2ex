@@ -231,3 +231,22 @@ page {
   font-size:30rpx;
 
 }
+
+
+.bot-confirm {
+  position: fixed;
+  display: inline-block;
+  bottom:0;
+  background:white;
+  width:100%;
+}
+
+.bot-confirm .confirm-entry {
+  display: inline-block;
+  width: 200rpx;
+}
+
+.confirm-label {
+  float: right;
+  
+}

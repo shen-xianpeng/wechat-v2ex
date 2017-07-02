@@ -109,3 +109,17 @@
 <br>4、如一次性向同一个卖家购买多本图书，可与卖家协商修改运费。</br>
 
 </p>
+
+
+<view class="bot-confirm">
+
+<view class="confirm-label">
+  <label>合计</label>
+  <label>100元</label>
+</view>
+
+<view class="confirm-entry">
+  确认
+</view>
+
+</view>
