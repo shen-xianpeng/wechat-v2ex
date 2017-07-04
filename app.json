@@ -7,7 +7,8 @@
     "pages/cart/cart",
     "pages/myBookList/myBookList",
     "pages/orderPreview/orderPreview",
-    "pages/cartBookList/cartBookList"
+    "pages/cartBookList/cartBookList",
+    "pages/paySuccess/paySuccess"
   ],
   "window":{
     "backgroundTextStyle":"dark",

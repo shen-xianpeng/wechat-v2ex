@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
 
-<image  style="margin:0 auto;" catchtap="onTabAdd" class="scan-icon " mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
+<image  style="" catchtap="onTabAdd" class="scan-icon " mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
  
  
 <form class="book-form" bindsubmit="onAddUserBook" bindreset="formReset">

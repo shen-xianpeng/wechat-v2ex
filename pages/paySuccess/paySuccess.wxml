@@ -1,0 +1,10 @@
+<view class="paySuccess-note">购买成功</view>
+
+
+
+
+<view class="paySuccess-btn-order" catchtap="goOrder">查看订单</view>
+
+
+
+<view class="paySuccess-btn-index" catchtap="goIndex">返回首页</view>

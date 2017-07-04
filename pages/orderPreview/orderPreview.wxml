@@ -118,7 +118,7 @@
   <label>100元</label>
 </view>
 
-<view class="confirm-entry">
+<view class="confirm-entry" catchtap="startPay">
   确认
 </view>
 
