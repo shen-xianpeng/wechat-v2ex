@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/bookList/bookList",
+    "pages/myPublish/myPublish",
     "pages/home/home",
     "pages/addBook/addBook",
     "pages/bookDetail/bookDetail",

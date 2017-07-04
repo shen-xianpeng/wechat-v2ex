@@ -1,0 +1,177 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar nav-menu">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="width: {{sliderWidth}}px; left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class="container">
+
+
+            <view class="item" wx:for="{{dataSet[0].infos}}" wx:for-index="j" wx:key="id">
+              <view class="entry-header">
+                <view class="entry-label">
+                  <label class="entry-cat-label">全部</label>
+                </view>
+                <view class="entry-nav-icon">
+                  <label class="nav-btn-buy"></label>
+                  <image src="../../images/arrow.png" mode="aspectFit"></image>
+
+
+                </view>
+              </view>
+
+              <view class="entry-body">
+                <image class="book-cover" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
+                <view class="entry-book-info">
+                  <text class="title">{{item.title}}</text>
+                  <text class="book-author ">
+                    {{item.author}}</text>
+                </view>
+              </view>
+            </view>
+
+
+            <view class="bottom-loader">
+              <text wx:if="{{hasMore==false}}">没有了</text>
+              <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
+
+
+
+            </view>
+          </view>
+
+
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+        
+           <view class="container">
+
+
+            <view class="item" wx:for="{{dataSet[1].infos}}" wx:for-index="j" wx:key="id">
+              <view class="entry-header">
+                <view class="entry-label">
+                  <label class="entry-cat-label">在售</label>
+                </view>
+                <view class="entry-nav-icon">
+                  <label class="nav-btn-buy"></label>
+                  <image src="../../images/arrow.png" mode="aspectFit"></image>
+
+
+                </view>
+              </view>
+
+              <view class="entry-body">
+                <image class="book-cover" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
+                <view class="entry-book-info">
+                  <text class="title">{{item.title}}</text>
+                  <text class="book-author ">
+                    {{item.author}}</text>
+                </view>
+              </view>
+            </view>
+
+
+            <view class="bottom-loader">
+              <text wx:if="{{hasMore==false}}">没有了</text>
+              <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
+
+
+
+            </view>
+          </view>
+
+        
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+           <view class="container">
+
+
+            <view class="item" wx:for="{{dataSet[2].infos}}" wx:for-index="j" wx:key="id">
+              <view class="entry-header">
+                <view class="entry-label">
+                  <label class="entry-cat-label">全部</label>
+                </view>
+                <view class="entry-nav-icon">
+                  <label class="nav-btn-buy"></label>
+                  <image src="../../images/arrow.png" mode="aspectFit"></image>
+
+
+                </view>
+              </view>
+
+              <view class="entry-body">
+                <image class="book-cover" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
+                <view class="entry-book-info">
+                  <text class="title">{{item.title}}</text>
+                  <text class="book-author ">
+                    {{item.author}}</text>
+                </view>
+              </view>
+            </view>
+
+
+            <view class="bottom-loader">
+              <text wx:if="{{hasMore==false}}">没有了</text>
+              <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
+
+
+
+            </view>
+          </view>
+
+        
+        </view>
+         <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+           <view class="container">
+
+
+            <view class="item" wx:for="{{dataSet[3].infos}}" wx:for-index="j" wx:key="id">
+              <view class="entry-header">
+                <view class="entry-label">
+                  <label class="entry-cat-label">全部</label>
+                </view>
+                <view class="entry-nav-icon">
+                  <label class="nav-btn-buy"></label>
+                  <image src="../../images/arrow.png" mode="aspectFit"></image>
+
+
+                </view>
+              </view>
+
+              <view class="entry-body">
+                <image class="book-cover" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
+                <view class="entry-book-info">
+                  <text class="title">{{item.title}}</text>
+                  <text class="book-author ">
+                    {{item.author}}</text>
+                </view>
+              </view>
+            </view>
+
+
+            <view class="bottom-loader">
+              <text wx:if="{{hasMore==false}}">没有了</text>
+              <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
+
+
+
+            </view>
+          </view>
+
+        
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

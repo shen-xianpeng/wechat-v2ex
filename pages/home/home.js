@@ -9,7 +9,7 @@ Page({
     logged: false
   },
   onMyPublish: function () {
-    var url = '../myBookList/myBookList';
+    var url = '../myPublish/myPublish';
 
     wx.navigateTo({
       url: url

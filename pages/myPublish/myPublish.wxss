@@ -1,0 +1,60 @@
+page, .page, .page__bd {
+  height: 100%;
+}
+
+.page__bd {
+  padding-bottom: 0;
+}
+
+.weui-tab__content {
+}
+
+.nav-menu {
+  background: white;
+}
+
+.entry-header {
+  border-top: 10px solid #f3f2f5;
+  border-bottom: 1rpx solid #f3f2f5;
+  height: 60rpx;
+  width: 690rpx;
+  display: inline-block;
+  float: left;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  padding: 10rpx 10rpx 10rpx 50rpx;
+}
+
+.entry-nav-icon {
+  display: inline-block;
+  float: right;
+}
+
+.entry-nav-icon image {
+  height: 60rpx;
+  width: 100rpx;
+}
+
+.entry-label {
+  float: left;
+  display: inline-block;
+}
+
+.book-cover {
+  height: 200rpx;
+  width : 300rpx;
+  display: inline-block;
+  float: left;
+}
+
+.entry-body {
+  display: inline-block;
+  width: 710rpx;
+  padding: 20rpx;
+}
+
+.entry-book-info {
+  display: inline-block;
+  float: left;
+  width: 390rpx;
+}

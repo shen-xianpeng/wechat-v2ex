@@ -68,9 +68,9 @@ App({
         }
       });
     }
-    wx.reLaunch({
-      url: '/pages/paySuccess/paySuccess?id=1'
-    })
+    // wx.reLaunch({
+    //   url: '/pages/paySuccess/paySuccess?id=1'
+    // })
   },
   getUserInfo: function (cb) {
     var that = this;
