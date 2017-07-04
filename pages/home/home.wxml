@@ -23,7 +23,7 @@
 
 
     <view class="quote">
-      <view class="publish {{ hoverState?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="onMyPublish">
+      <view id="publish" class="publish {{ activeHoverIndex=='publish'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="onMyPublish">
         <view>我的发布</view>
         <view class="prompt">{{ userInfo.my_quote_num }}</view>
         <image src="../../images/arrow.png" mode="widthFix"></image>
@@ -38,7 +38,7 @@
         <view class="prompt">{{ userInfo.order_num }}</view>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
-      <view class="news" bindtap="onNews">
+      <view id="myAccount" class="news {{ activeHoverIndex=='myAccount'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="onMyAccount">
         <view>我的帐户</view>
         <image mode="widthFix" widthFix src="../../images/dot.png" class="prompt dot"></image>
         <image src="../../images/arrow.png" mode="widthFix"></image>

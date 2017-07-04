@@ -18,23 +18,33 @@ Page({
   fetchDetail: function(id) {
    
   },
-  touchStartElement: function(e) {
+  touchStartElement: function (e) {
+    console.log("start", e);
+    var id = e.currentTarget.id;
     this.setData({
-      hoverState: true
+      activeHoverIndex: id
+
     })
   },
   touchEndElement: function (e) {
+    console.log("end", e);
+
     var that = this;
-    setTimeout(function() {
+    setTimeout(function () {
       that.setData({
-        hoverState: false
+        //warnning undefined==""=="0"==0
+        activeHoverIndex: "none"
+
       })
     }, 500)
- 
+
   },
   touchMoveElement: function (e) {
+    console.log("move", e);
+
     this.setData({
-      hoverState: false
+      activeHoverIndex: "none"
+
     })
   },
   popLogin: function (e) {
@@ -101,5 +111,12 @@ Page({
       this.popLogin()
     }
   
+  },
+  onMyAccount: function () {
+    var url = '../myAccount/myAccount';
+
+    wx.navigateTo({
+      url: url
+    })
   }
 })

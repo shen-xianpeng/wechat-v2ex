@@ -9,7 +9,9 @@
     "pages/myBookList/myBookList",
     "pages/orderPreview/orderPreview",
     "pages/cartBookList/cartBookList",
+    "pages/myAccount/myAccount",
     "pages/paySuccess/paySuccess"
+    
   ],
   "window":{
     "backgroundTextStyle":"dark",
