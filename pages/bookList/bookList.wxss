@@ -129,7 +129,7 @@ swiper image {
   width: 100%;
   display: block;
   height: 80rpx;
-  border-top: 1px solid #d2d2d2;
+  border-top: 1px solid #f3f2f5;
 }
 
 /*一级菜单 f4f4f4*/
@@ -140,7 +140,7 @@ swiper image {
   /*hack*/
   width: 50%;
   height: 80rpx;
-  border-bottom: 1px solid #d2d2d2;
+  border-bottom: 1px solid #f3f2f5;
   text-align: center;
   background-color: white;
   color: #5a5a5a;

@@ -169,7 +169,7 @@ page {
 .form-entry {
   padding: 10rpx 0rpx 10rpx 50rpx;
   background: white;
-  border-top: 10rpx solid #f3f2f5;
+  border-top: 1rpx solid #f3f2f5;
   font-size: 32rpx;
 }
 

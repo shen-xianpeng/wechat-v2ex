@@ -10,13 +10,13 @@ Page({
     
   },
   goIndex: function () {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '/pages/bookList/bookList'
     })
   },
   goOrder: function () {
     wx.redirectTo({
-      url: '/pages/myBookList/myBookList'
+      url: '/pages/myPublish/myPublish'
     })
   }
 

@@ -62,29 +62,71 @@ page, .page, .page__bd {
 }
 
 .coin-num-amount {
-  line-height:180rpx;
+  line-height: 180rpx;
   font-size: 66rpx;
-  height:130rpx;
-
+  height: 130rpx;
 }
 
 .coin-num-label {
-  line-height:60rpx;
-  font-size:36rpx;
-  height:70rpx;
-
+  line-height: 60rpx;
+  font-size: 36rpx;
+  height: 70rpx;
 }
 
 .money-num-amount {
-  line-height:180rpx;
+  line-height: 180rpx;
   font-size: 66rpx;
-  height:130rpx;
-
+  height: 130rpx;
 }
 
 .money-num-label {
-  line-height:60rpx;
-  font-size:36rpx;
-  height:70rpx;
+  line-height: 60rpx;
+  font-size: 36rpx;
+  height: 70rpx;
+}
 
+.money-tab view {
+  display: inline-block;
+  float: left;
+  height: 60rpx;
+  width: 100rpx;
+  background: lightgray;
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+
+.money-tab-label {
+  width: 360rpx;
+  display: inline-block;
+  float: left;
+  color: #333333;
+  font-size: 36rpx;
+}
+
+.money-tab {
+  width: 350rpx;
+  display: inline-block;
+  float: left;
+  color: white;
+}
+
+.tab-wrap {
+  padding: 20rpx;
+  background: #f3f2f5;
+}
+
+.money-tab-all {
+  border-right: 1rpx solid #ccc;
+  border-radius: 5rpx 0 0 5rpx;
+}
+
+.money-tab-out {
+  border-left: 1rpx solid #ccc;
+  border-radius: 0 5rpx 5rpx 0;
+}
+
+.money-tab .active {
+  background: lightcyan;
+  color: #333333;
 }

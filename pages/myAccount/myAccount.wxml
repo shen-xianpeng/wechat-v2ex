@@ -23,6 +23,21 @@
                 </view>
               </view>
 
+
+
+
+            </view>
+
+            <view class="tab-wrap">
+              <view class="money-tab-label">书币明细</view>
+              <view class="money-tab">
+
+                <view class="money-tab-all active">全部</view>
+                <view class="money-tab-in">收入</view>
+                <view class="money-tab-out">支出</view>
+
+              </view>
+
             </view>
 
           </view>
@@ -47,7 +62,17 @@
                 提现
               </view>
             </view>
+            <view class="tab-wrap">
+              <view class="money-tab-label">余额明细</view>
+              <view class="money-tab">
 
+                <view class="money-tab-all active">全部</view>
+                <view class="money-tab-in">收入</view>
+                <view class="money-tab-out">支出</view>
+
+              </view>
+
+            </view>
           </view>
 
 
