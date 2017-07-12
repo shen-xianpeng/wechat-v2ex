@@ -24,7 +24,7 @@
 
       </view>
        <view class="book-price">   
-        100书币
+        {{book.price}}书币
       </view>
     </view>
 
@@ -51,7 +51,7 @@
 
       </view>
        <view class="book-ship">  
-      邮费10元
+      邮费{{book.express_fee}}元
 
       </view>
     </view>
@@ -60,7 +60,7 @@
       <view class="book-user-info">
           <image id="{{book.user.avatar}}" mode="" src="{{book.user.avatar}}"></image>
           <text class="user-name">{{book.user.name}}</text>
-          <text class="recommend">很不错的一本书 内容很赞 生动有趣</text>
+          <text class="recommend">{{book.description}}</text>
 
         </view>
   </view>
@@ -87,18 +87,8 @@
         <label>出版社： </label>
         <text>{{book.publisher}} </text>
       </view>
-      <view class="sub-info">
-        <label>ISBN： </label>
-        <text>{{book.isbn}} </text>
-      </view>
-      <view class="sub-info">
-        <label>价格： </label>
-        <text>{{book.price}} </text>
-      </view>
-      <view class="sub-info">
-        <label>出版日期： </label>
-        <text>{{book.pubdate}} </text>
-      </view>
+  
+ 
     </view>
     <view  class="book-summary">
       <text>{{book.summary}} </text>

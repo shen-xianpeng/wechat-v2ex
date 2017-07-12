@@ -74,9 +74,19 @@ Page({
     var data = {}
     if (that.data.book.id>0) {
       data["book_id"] = that.data.book.id
-    } else {
-      data["title"] = e.detail.value.bookTitle
-    }
+    } 
+    
+    data["title"] = e.detail.value.bookTitle;
+    data["author"] = e.detail.value.bookAuthor;
+    data["publisher"] = e.detail.value.bookPublisher;
+    data["summary"] = e.detail.value.bookSummary || "";
+    data["price"] = e.detail.value.bookPrice || 0;
+    data["express_fee"] = e.detail.value.bookExpress || 0;
+    data["old_degree_id"] = e.detail.value.bookOldDegreeId || 0;
+    data["category_id"] = e.detail.value.bookCategoryId || 0;
+    data["description"] = e.detail.value.bookDescription || "";
+    
+  console.log(data);
     if (that.checkImages()==false) {
       that.showToast("图片上传中...")
       return
@@ -165,6 +175,7 @@ Page({
             //   })
             //   return;
             // }
+            res.data.authors = res.data.author
             that.setData({
               book: res.data
             })

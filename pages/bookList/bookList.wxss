@@ -93,7 +93,7 @@ swiper image {
 .alarm {
   overflow: hidden;
   padding-left: 20rpx;
-  height:91rpx;
+  height: 91rpx;
 }
 
 .swiper_msg {
@@ -125,7 +125,7 @@ swiper image {
 /*总菜单容器*/
 
 .menu {
-   box-sizing:border-box;
+  box-sizing: border-box;
   width: 100%;
   display: block;
   height: 80rpx;
@@ -162,14 +162,14 @@ swiper image {
 /*二级菜单普通样式*/
 
 .menu li {
-  font-size: 36rpx;
+  font-size: 32rpx;
   line-height: 90rpx;
   color: #575757;
   height: 90rpx;
   display: block;
   padding-left: 8px;
   background-color: #fff;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid #f3f2f5;
 }
 
 /* 显示与隐藏 */
@@ -212,11 +212,12 @@ swiper {
   border: 0;
 }
 
-/* 0rpx有高度 bug*////
+/* 0rpx有高度 bug*/
+
+///
 .ad-swiper image {
   width: 100%;
 }
-
 
 .ad-swiper {
   height: 360rpx;

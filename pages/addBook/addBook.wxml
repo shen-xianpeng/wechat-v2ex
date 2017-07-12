@@ -1,66 +1,106 @@
 <!--index.wxml-->
 <view class="container">
 
-<image  style="" catchtap="onTabAdd" class="scan-icon " mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
- 
- 
-<form class="book-form" bindsubmit="onAddUserBook" bindreset="formReset">
-  <view class="section section_gap hidden">
-    <view class="section__title">switch</view>
-    <switch name="switch"/>
-  </view>
-  <view class="section section_gap hidden">
-    <view class="section__title">slider</view>
-    <slider name="slider" show-value ></slider>
-  </view>
-  <view class="section section_gap form-entry">
+  <image style="" catchtap="onTabAdd" class="scan-icon " mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
 
-   <label class="form-label">图书名称</label>  
-   <input name="bookTitle" class="book-title-input"  bindinput="" value="{{book.id>0?book.title:form.title}}" placeholder="手动输入或点击扫码按钮"/>
-<image  catchtap="onTabAdd" class="scan-icon hidden" mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
-  </view>
 
-  <view class="section section_gap form-entry">
-   <label class="form-label">ISBN</label>  <input  bindinput="" value="{{book.id>0?book.isbn:form.isbn}}" placeholder="ISBN"/>
-
-  </view>
-
-  <view class="section section_gap form-entry">
-   <label class="form-label">出版社</label>  <input  bindinput="" value="{{book.id>0?book.publisher:form.publisher}}" placeholder="出版社"/>
-
-  </view>
-
-  <view class="section section_gap form-entry">
-
-  <label class="form-label">新旧程度</label>
-  <picker bindchange="bindPickerChange" value="{{newOldIndex}}" range="{{array}}">
-    <view class="picker">
-      {{array[newOldIndex]}}
+  <form class="book-form" bindsubmit="onAddUserBook" bindreset="formReset">
+    <view class="section section_gap hidden">
+      <view class="section__title">switch</view>
+      <switch name="switch" />
     </view>
-  </picker>
-  </view>
+    <view class="section section_gap hidden">
+      <view class="section__title">slider</view>
+      <slider name="slider" show-value></slider>
+    </view>
+    <view class="section section_gap form-entry">
+
+      <label class="form-label">图书名称</label>
+      <input name="bookTitle" class="book-title-input" bindinput="" value="{{book.id>0?book.title:form.title}}" placeholder="请输入书名，必须" />
+      <image catchtap="onTabAdd" class="scan-icon hidden" mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
+    </view>
+
+    <view class="section section_gap form-entry">
+      <label class="form-label">作者</label>
+      <input name="bookAuthor" bindinput="" value="{{book.author.length>0>0?book.authors:form.authors}}" placeholder="请输入作者，非必须" />
+
+    </view>
+
+    <view class="section section_gap form-entry">
+      <label class="form-label">出版社</label>
+      <input name="bookPublisher" bindinput="" value="{{book.publisher.length>0?book.publisher:form.publisher}}" placeholder="请输入出版社，非必须" />
+
+    </view>
+
+    <view class="section section_gap form-entry">
+      <label class="form-label">简介</label>
+      <input name="bookSummary" bindinput="" value="{{book.summary>0?book.summary:form.summary}}" placeholder="请输入简介，非必须" />
+
+    </view>
 
 
-<view class="photo-wrap">
 
 
-<view  class="image-item photo-box-wrapper  {{(item.src.length>0)==false? 'default': 'uploading'}}"  wx:for="{{book_photos}}"  wx:for-index="j" wx:key=""  catchtap="chooseImages" data-id="{{item.id}}">
-<image class="photo-image" mode="aspectFit" src="{{item.path}}"></image>
-  <view  class="photo-box {{(item.src.length>0)==false? 'default': 'uploading'}}">
-  </view>
-  <label    class="photo-image-label">{{item.label}}</label>
-  <image     catchtap="resetImage" mode="aspectFit"  data-id="{{item.id}}" class="delete-photo" src="http://image.xianpeng.org/1496838401.83.png"></image>
-</view>
+    <view class="photo-wrap">
+
+
+      <view class="image-item photo-box-wrapper  {{(item.src.length>0)==false? 'default': 'uploading'}}" wx:for="{{book_photos}}" wx:for-index="j" wx:key="" catchtap="chooseImages" data-id="{{item.id}}">
+        <image class="photo-image" mode="aspectFit" src="{{item.path}}"></image>
+        <view class="photo-box {{(item.src.length>0)==false? 'default': 'uploading'}}">
+        </view>
+        <label class="photo-image-label">{{item.label}}</label>
+        <image catchtap="resetImage" mode="aspectFit" data-id="{{item.id}}" class="delete-photo" src="http://image.xianpeng.org/1496838401.83.png"></image>
+      </view>
 
 
 
-</view>
+    </view>
 
-  <view class="btn-area">
-    <button class="submit-book" type="primary" formType="submit">提交</button>
-    <button class="hidden"  formType="reset">Reset</button>
-  </view>
-</form>
+    <view class="top-entry  section section_gap form-entry">
+      <label class="form-label">价格</label>
+      <input name="bookPrice" bindinput="" value="{{book.authors>0?book.authors:form.authors}}" placeholder="建议金额为书本原价" />
+
+    </view>
+
+
+    <view class="section section_gap form-entry">
+      <label class="form-label">邮费</label>
+      <input name="bookExpress" bindinput="" value="{{book.authors>0?book.authors:form.authors}}" placeholder="请输入邮费金额" />
+
+    </view>
+
+
+    <view class="   section section_gap form-entry">
+
+      <label class="form-label">图书分类</label>
+      <picker bindchange="bindPickerChange" value="{{newOldIndex}}" range="{{array}}">
+        <view class="picker">
+          {{array[newOldIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="section section_gap form-entry">
+
+      <label class="form-label">新旧程度</label>
+      <picker bindchange="bindPickerChange" value="{{newOldIndex}}" range="{{array}}">
+        <view class="picker">
+          {{array[newOldIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="section section_gap form-entry">
+      <label class="form-label">书评推荐</label>
+      <input name="bookDescription" bindinput="" value="{{book.id>0?book.publisher:form.publisher}}" placeholder="写一下书评推荐呗，会更容易出售哦" />
+
+    </view>
+
+    <view class="btn-area">
+      <button class="submit-book" type="primary" formType="submit">提交</button>
+      <button class="hidden" formType="reset">Reset</button>
+    </view>
+  </form>
 
 
 
@@ -70,15 +110,15 @@
 
 
 <modal hidden="{{!showSuccessModal}}" title="添加成功" confirm-text="查看" cancel-text="继续添加" bindcancel="onCancelModal" bindconfirm="onConfirmModal" no-cancel="{{false}}">
-    
+
 </modal>
 
 
 <modal hidden="{{!showErrorModal}}" title="添加失败" confirm-text="关闭" cancel-text="" bindcancel="onCancelModal" bindconfirm="onErrorConfirmModal" no-cancel="yes">
-    {{errMsg}}
+  {{errMsg}}
 </modal>
 
 
 
 
-<toast hidden="{{addBookToast.hidden}}" duration="1000" bindchange="toastHidden" >{{addBookToast.msg}}!</toast>
+<toast hidden="{{addBookToast.hidden}}" duration="1000" bindchange="toastHidden">{{addBookToast.msg}}!</toast>

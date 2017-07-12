@@ -40,6 +40,32 @@
 
             </view>
 
+            <view class="entry-list">
+
+              <view wx:for="{{[1,2]}}">
+
+                <view class="log-entry">
+                  <view class="log-desc">
+                    <view class="log-cat-name">
+                      买书
+                    </view>
+
+                    <view class="log-time">
+                      2017-07-12
+                    </view>
+
+                  </view>
+                  <view class="log-amount">
+                    -100
+
+                  </view>
+
+                </view>
+
+              </view>
+
+            </view>
+
           </view>
 
 
@@ -73,6 +99,32 @@
               </view>
 
             </view>
+            <view class="entry-list">
+
+              <view wx:for="{{[1,2]}}">
+
+                <view class="log-entry">
+                  <view class="log-desc">
+                    <view class="log-cat-name">
+                      买书
+                    </view>
+
+                    <view class="log-time">
+                      2017-07-12
+                    </view>
+
+                  </view>
+                  <view class="log-amount">
+                    -100
+
+                  </view>
+
+                </view>
+
+              </view>
+
+            </view>
+
           </view>
 
 
@@ -80,6 +132,21 @@
 
 
       </view>
+
+
+
+
+
     </view>
+
+
+
+
+
   </view>
+
+
+
+
+
 </view>

@@ -100,7 +100,7 @@ page, .page, .page__bd {
   width: 360rpx;
   display: inline-block;
   float: left;
-  color: #333333;
+  color: #333;
   font-size: 36rpx;
 }
 
@@ -128,5 +128,36 @@ page, .page, .page__bd {
 
 .money-tab .active {
   background: lightcyan;
-  color: #333333;
+  color: #333;
+}
+
+.log-desc {
+  display: inline-block;
+  width: 60%;
+  height: 150rpx;
+  float: left;
+  padding-left: 50rpx;
+  box-sizing: border-box;
+}
+
+.log-entry {
+    border-bottom: 1px solid #f3f2f5;
+
+}
+.log-cat-name {
+  height: 100rpx;
+  line-height: 120rpx;
+}
+
+.log-time {
+  font-size: 30rpx;
+  color: gray;
+}
+
+.log-amount {
+  display: inline-block;
+  width: 40%;
+  height: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
 }

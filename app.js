@@ -95,7 +95,7 @@ App({
   },
   config: {
     host: "https://www.xianpeng.org/api",
-    //host:"http://127.0.0.1:10001/api",
+   // host:"http://127.0.0.1:10001/api",
   },
   setUserInfo: function () {
     var user = wx.getStorageSync('user');
