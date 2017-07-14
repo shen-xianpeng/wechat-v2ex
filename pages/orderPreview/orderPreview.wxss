@@ -135,7 +135,7 @@ page {
   height: 90rpx;
   float: left;
   text-align: center;
-  color: #fb6;
+  color: #f9b73b;
   font-size: 30rpx;
 }
 

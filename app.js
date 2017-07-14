@@ -3,6 +3,7 @@ App({
   onLaunch: function () {
 
     this.setUserInfo();
+    this.getChoiceList();
     wx.getLocation({
       type: 'wgs84',
       success: function (res) {
@@ -91,11 +92,12 @@ App({
     }
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    choices: {},
   },
   config: {
     host: "https://www.xianpeng.org/api",
-   // host:"http://127.0.0.1:10001/api",
+    //host: "http://127.0.0.1:10001/api",
   },
   setUserInfo: function () {
     var user = wx.getStorageSync('user');
@@ -103,5 +105,40 @@ App({
       this.globalData.userInfo = user;
 
     }
+  },
+  getNameList: function (infos) {
+    var res = [];
+    for (var i = 0; i < infos.length; i++) {
+      res.push(infos[i].name);
+    }
+    return res;
+  },
+  getIdList: function (infos) {
+    var res = [];
+    for (var i = 0; i < infos.length; i++) {
+      res.push(infos[i].id);
+    }
+    return res;
+  },
+  getChoiceList: function (callback) {
+    console.log("getChoiceList")
+    var that = this;
+    wx.request({
+      url: that.config.host + '/get_choice_list',
+      method: 'GET',
+      header: {
+      },
+      success: function (res) {
+        that.globalData.choices = res.data.data
+        if (callback) {
+          callback();
+        }
+      },
+      complete: function () {
+        if (callback) {
+          callback();
+        }
+      }
+    });
   }
 })

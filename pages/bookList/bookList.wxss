@@ -28,7 +28,7 @@
 .item .price {
   width: 100%;
   display: block;
-  color: #ffeb3b;
+  color: #f9b73b;
 }
 
 .book-user-info .recommend {

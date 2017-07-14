@@ -38,7 +38,7 @@ image {
 }
 
 .sub-info {
-  line-height: 25rpx;
+  font-size: 36rpx;
   padding-bottom: 5rpx;
 }
 
@@ -179,7 +179,7 @@ scroll-view {
   font-size: 32rpx;
   padding-right: 20rpx;
   text-align: right;
-  color: #ffeb3b;
+  color: #f9b73b;
 }
 
 .book-info .book-tags {
@@ -197,7 +197,6 @@ scroll-view {
 }
 
 .book-info .book-degree {
-  width: 48%;
   display: inline-block;
   font-size: 30rpx;
   text-align: center;
@@ -226,13 +225,14 @@ scroll-view {
 .book-labels {
   width: 50%;
   float: left;
+  padding-left: 50rpx;
+  box-sizing: border-box;
 }
 
 .book-labels  view {
   height: 30rpx !important;
-  width: 100rpx !important;
   padding: 5rpx;
-  margin: 10rpx 0rpx 10rpx 50rpx;
+  margin: 0 0 0 10rpx;
   border: 1rpx solid gray;
   border-radius: 5rpx;
   line-height: 30rpx !important;
@@ -266,7 +266,7 @@ scroll-view {
   width: 100rpx;
   border-radius: 50rpx;
   float: left;
-  margin:10rpx;
+  margin: 10rpx;
   padding: 0;
 }
 
@@ -280,4 +280,13 @@ scroll-view {
   float: left;
   line-height: 36rpx;
   overflow: hidden;
+}
+
+.cart-icon {
+  position: absolute;
+  top: 90rpx;
+  right: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
+  z-index: 10000;
 }

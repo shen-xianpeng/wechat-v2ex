@@ -58,9 +58,18 @@ Page({
     console.log(id);
     var url = '../cart/cart';
 
+
     wx.navigateTo({
       url: url
     })
+  },
+  buyNow: function(e) {
+    var url = '../orderPreview/orderPreview?user_book_id=' + this.data.book.id;
+
+    wx.navigateTo({
+      url: url
+    })
+    return
   },
   toastHide: function (event) {
     this.setData({ toastShow: true })

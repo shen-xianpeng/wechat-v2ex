@@ -20,6 +20,8 @@ Page({
               var sliderWidth = res.windowWidth / that.data.tabs.length - 30;
                 that.setData({
                   sliderWidth: sliderWidth,
+                  scrollHeight: res.windowHeight*2-220 ,
+
                     sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
                     sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
                 });

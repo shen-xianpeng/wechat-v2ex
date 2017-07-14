@@ -15,7 +15,7 @@
     </view>
     <view class="section section_gap form-entry">
 
-      <label class="form-label">图书名称</label>
+      <label class="form-label">图书名称*</label>
       <input name="bookTitle" class="book-title-input" bindinput="" value="{{book.id>0?book.title:form.title}}" placeholder="请输入书名，必须" />
       <image catchtap="onTabAdd" class="scan-icon hidden" mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
     </view>
@@ -57,14 +57,14 @@
     </view>
 
     <view class="top-entry  section section_gap form-entry">
-      <label class="form-label">价格</label>
+      <label class="form-label">价格*</label>
       <input name="bookPrice" bindinput="" value="{{book.authors>0?book.authors:form.authors}}" placeholder="建议金额为书本原价" />
 
     </view>
 
 
     <view class="section section_gap form-entry">
-      <label class="form-label">邮费</label>
+      <label class="form-label">邮费*</label>
       <input name="bookExpress" bindinput="" value="{{book.authors>0?book.authors:form.authors}}" placeholder="请输入邮费金额" />
 
     </view>
@@ -72,26 +72,31 @@
 
     <view class="   section section_gap form-entry">
 
-      <label class="form-label">图书分类</label>
-      <picker bindchange="bindPickerChange" value="{{newOldIndex}}" range="{{array}}">
+      <label class="form-label">图书分类*</label>
+      <picker name="category" bindchange="bindCategoryChange" value="{{categoryIndex}}" range="{{categoryList}}">
         <view class="picker">
-          {{array[newOldIndex]}}
+          {{categoryList[categoryIndex]}}
         </view>
       </picker>
     </view>
 
     <view class="section section_gap form-entry">
 
-      <label class="form-label">新旧程度</label>
-      <picker bindchange="bindPickerChange" value="{{newOldIndex}}" range="{{array}}">
+      <label class="form-label">新旧程度*</label>
+      <picker name="oldDegree" bindchange="bindOldNewChange" value="{{newOldIndex}}" range="{{degreeList}}">
         <view class="picker">
-          {{array[newOldIndex]}}
+          {{degreeList[newOldIndex]}}
         </view>
       </picker>
     </view>
+ <view class="section section_gap form-entry">
+      <label class="form-label">所在位置*</label>
+      <input name="bookLocation" bindinput="" value="{{book.id>0?book.publisher:form.publisher}}" placeholder="" />
+
+    </view>
 
     <view class="section section_gap form-entry">
-      <label class="form-label">书评推荐</label>
+      <label class="form-label">书评推荐*</label>
       <input name="bookDescription" bindinput="" value="{{book.id>0?book.publisher:form.publisher}}" placeholder="写一下书评推荐呗，会更容易出售哦" />
 
     </view>

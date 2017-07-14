@@ -1,5 +1,4 @@
 page, .page, .page__bd {
-  height: 100%;
 }
 
 .page__bd {
@@ -11,6 +10,20 @@ page, .page, .page__bd {
 
 .nav-menu {
   background: white;
+  box-sizing: border-box;
+  height: 100rpx;
+  position: fixed !important;
+}
+
+.bottom-loader {
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.weui-tab__panel {
+  padding-top: 0 !important;
+  margin-top: 100rpx;
+  overflow: hidden;
 }
 
 .entry-header {
@@ -42,7 +55,7 @@ page, .page, .page__bd {
 
 .book-cover {
   height: 200rpx;
-  width : 300rpx;
+  width: 300rpx;
   display: inline-block;
   float: left;
 }

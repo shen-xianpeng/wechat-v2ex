@@ -9,9 +9,9 @@
         </block>
         <view class="weui-navbar__slider" style="width: {{sliderWidth}}px; left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
-      <view class="weui-tab__panel">
+      <view class="weui-tab__panel" style="height:{{scrollHeight}}rpx !important;">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <view class="container">
+          <scroll-view scroll-y style="height:{{scrollHeight}}rpx" class="container">
 
 
             <view class="item" wx:for="{{dataSet[0].infos}}" wx:for-index="j" wx:key="id">
@@ -38,7 +38,7 @@
             </view>
 
 
-            <view class="bottom-loader">
+            <view wx:if="{{dataSet[0].infos.length>0}}" class="bottom-loader">
               <text wx:if="{{hasMore==false}}">没有了</text>
               <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
               <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
@@ -46,13 +46,13 @@
 
 
             </view>
-          </view>
+          </scroll-view>
 
 
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-        
-           <view class="container">
+
+          <scroll-view scroll-y style="height:{{scrollHeight}}rpx" class="container">
 
 
             <view class="item" wx:for="{{dataSet[1].infos}}" wx:for-index="j" wx:key="id">
@@ -79,7 +79,7 @@
             </view>
 
 
-            <view class="bottom-loader">
+            <view  wx:if="{{dataSet[1].infos.length>0}}"  class="bottom-loader">
               <text wx:if="{{hasMore==false}}">没有了</text>
               <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
               <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
@@ -87,12 +87,12 @@
 
 
             </view>
-          </view>
+          </scroll-view>
 
-        
+
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-           <view class="container">
+          <scroll-view scroll-y style="height:{{scrollHeight}}rpx" class="container">
 
 
             <view class="item" wx:for="{{dataSet[2].infos}}" wx:for-index="j" wx:key="id">
@@ -119,7 +119,7 @@
             </view>
 
 
-            <view class="bottom-loader">
+            <view  wx:if="{{dataSet[2].infos.length>0}}"  class="bottom-loader">
               <text wx:if="{{hasMore==false}}">没有了</text>
               <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
               <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
@@ -127,12 +127,12 @@
 
 
             </view>
-          </view>
+          </scroll-view>
 
-        
+
         </view>
-         <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
-           <view class="container">
+        <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+          <scroll-view scroll-y style="height:{{scrollHeight}}rpx" class="container">
 
 
             <view class="item" wx:for="{{dataSet[3].infos}}" wx:for-index="j" wx:key="id">
@@ -159,7 +159,7 @@
             </view>
 
 
-            <view class="bottom-loader">
+            <view  wx:if="{{dataSet[3].infos.length>0}}"  class="bottom-loader">
               <text wx:if="{{hasMore==false}}">没有了</text>
               <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
               <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
@@ -167,9 +167,9 @@
 
 
             </view>
-          </view>
+          </scroll-view>
 
-        
+
         </view>
       </view>
     </view>

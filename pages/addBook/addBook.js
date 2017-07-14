@@ -5,10 +5,12 @@ Page({
   data: {
     title: '添加图书',
     book: {},
-    array: ["全新", "九成新", "八成新", "五成新"],
+    degreeList: [],
+    categoryList: [],
     newOldIndex: 0,
+    categoryIndex: 0,
     hidden: false,
-    addBookToast : {
+    addBookToast: {
       hidden: true,
       msg: "",
     },
@@ -20,21 +22,27 @@ Page({
     errMsg: ""
   },
   // 事件处理函数
-  bindPickerChange: function (e) {
+  bindOldNewChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       newOldIndex: e.detail.value
     })
   },
-  resetForm: function() {
+  bindCategoryChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      categoryIndex: e.detail.value
+    })
+  },
+  resetForm: function () {
     this.setData({
       form: {},
       book: {},
       book_photos: [
         { id: 1, label: "封面" }, { id: 2, label: "背面" }, { id: 3, label: "更多(可选多张)" }]
-     } );
+    });
   },
-  showToast: function(msg) {
+  showToast: function (msg) {
     var that = this;
     that.setData({
       "addBookToast.msg": msg,
@@ -45,10 +53,10 @@ Page({
     }).bind(that), 1000);
   },
   checkImages: function () {
-    for(var i = 0; i<this.data.book_photos.length; i++) {
+    for (var i = 0; i < this.data.book_photos.length; i++) {
       var p = this.data.book_photos[i];
-      if (p.path && p.path.length>0)  {
-        if (p.src.length>0==false) {
+      if (p.path && p.path.length > 0) {
+        if (p.src.length > 0 == false) {
           return false
         }
       }
@@ -72,26 +80,30 @@ Page({
   onAddUserBook: function (e) {
     var that = this;
     var data = {}
-    if (that.data.book.id>0) {
+    if (that.data.book.id > 0) {
       data["book_id"] = that.data.book.id
-    } 
-    
+    }
+
     data["title"] = e.detail.value.bookTitle;
     data["author"] = e.detail.value.bookAuthor;
     data["publisher"] = e.detail.value.bookPublisher;
     data["summary"] = e.detail.value.bookSummary || "";
     data["price"] = e.detail.value.bookPrice || 0;
     data["express_fee"] = e.detail.value.bookExpress || 0;
-    data["old_degree_id"] = e.detail.value.bookOldDegreeId || 0;
-    data["category_id"] = e.detail.value.bookCategoryId || 0;
+    data["old_degree_id"] = that.data.degreeIdList[e.detail.value.oldDegree || 0];
+    data["category_id"] = that.data.categoryIdList[e.detail.value.category || 0];
     data["description"] = e.detail.value.bookDescription || "";
-    
-  console.log(data);
-    if (that.checkImages()==false) {
+    data["location"] = e.detail.value.bookLocation || "";
+
+    console.log(e.detail.value.oldDegree);
+    console.log(that.data.categoryList[e.detail.value.category])
+    console.log(that.data.degreeList[e.detail.value.oldDegree])
+    console.log(data);
+    if (that.checkImages() == false) {
       that.showToast("图片上传中...")
       return
     }
-    if (!(that.data.book_photos[0].src && that.data.book_photos[0].src.length>0)) {
+    if (!(that.data.book_photos[0].src && that.data.book_photos[0].src.length > 0)) {
       that.showToast("请上传封面")
       return
     }
@@ -101,13 +113,13 @@ Page({
     }
     data["images"] = that.getImages();
     wx.request({
-      url: getApp().config.host +'/add_book',
+      url: getApp().config.host + '/add_book',
       data: data,
       method: 'POST',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         "token": getApp().globalData.userInfo.token
-        },      
+      },
       success: function (res) {
         console.log(res, "ssssuccess");
         // if (res.data.code && res.data.code > 0) {
@@ -147,7 +159,7 @@ Page({
       success: (res) => {
         console.log(res);
         if (res.result.length == "") {
-          alter("获取不到isbn");
+          alter("获取不到图书信息，请手动添加");
           return
         }
         console.log(res.result);
@@ -158,12 +170,12 @@ Page({
         params["code_type"] = res.scanType;
         console.log("start")
         wx.request({
-          url: getApp().config.host+'/add_book_by_barcode',
+          url: getApp().config.host + '/add_book_by_barcode',
           data: params,
           method: 'GET',
           success: function (res) {
             console.log(res);
-            if (res.data.code && res.data.code > 0){
+            if (res.data.code && res.data.code > 0) {
               that.showToast(res.data.msg)
               return
             }
@@ -205,7 +217,7 @@ Page({
     that.setData({
       book_photos: data
     })
-    
+
   },
   chooseImages: function (e) {
     var that = this;
@@ -241,7 +253,7 @@ Page({
           function as(tmpI) {
             console.log("upload....", tmpI)
             wx.uploadFile({
-              url: getApp().config.host+'/upload_file', //仅为示例，非真实的接口地址
+              url: getApp().config.host + '/upload_file', //仅为示例，非真实的接口地址
               filePath: tempFilePaths[tmpI],
               name: 'file',
               formData: {
@@ -310,6 +322,15 @@ Page({
     this.setData({
       showErrorModal: false
     })
+  },
+  onShow: function () {
+    this.setData({
+      categoryList: getApp().getNameList(getApp().globalData.choices.category_list),
+      categoryIdList: getApp().getIdList(getApp().globalData.choices.category_list),
+      degreeList: getApp().getNameList(getApp().globalData.choices.old_degree_list),
+      degreeIdList: getApp().getIdList(getApp().globalData.choices.old_degree_list)
+    })
+
   },
   onLoad: function (options) {
     this.fetchData(options.id);

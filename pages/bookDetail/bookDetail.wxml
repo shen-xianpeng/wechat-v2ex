@@ -2,13 +2,15 @@
 
   <view class="container">
 
- 
+    <image catchtap="goCart" mode="aspectFit" class="cart-icon" src="../../images/cart.png"></image>
+
+
     <swiper class="book-imagelist" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{3000}}" duration="{{1000}}">
       <block wx:for="{{book.image_list}}">
-             <swiper-item>
+        <swiper-item>
 
           <image catchtap="onPreviewImage" src="{{item}}" id="{{item}}" mode="aspectFit" class="slide-image" />
-         </swiper-item>
+        </swiper-item>
       </block>
     </swiper>
 
@@ -20,52 +22,52 @@
 
   <view class="book-info">
     <view>
-      <view class=" book-name">    {{book.title}}
+      <view class=" book-name"> {{book.title}}
 
       </view>
-       <view class="book-price">   
+      <view class="book-price">
         {{book.price}}书币
       </view>
     </view>
 
     <view class="book-info-sub">
 
-    <view class="book-labels">
-     <view class="book-tags">  
-      中小学
+      <view class="book-labels">
+        <view class="book-tags">
+          {{book.category}}
 
-      </view>
-       <view class="book-degree">  
-      九成新
-
-      </view>
-
-    </view>
-      <view class="book-distance">  
-
-        <image mode="aspectFit" class="book-location-icon" src="../../images/location.png"></image>
-        <view class="distance-text">
-       12km
+        </view>
+        <view class="book-degree">
+          {{book.old_degree}}
 
         </view>
 
       </view>
-       <view class="book-ship">  
-      邮费{{book.express_fee}}元
+      <view class="book-distance ">
+
+        <image mode="aspectFit" class=" hidden book-location-icon" src="../../images/location.png"></image>
+        <view class="hidden distance-text">
+          12km
+
+        </view>
+
+      </view>
+      <view class="book-ship">
+        邮费{{book.express_fee}}元
 
       </view>
     </view>
 
-    
-      <view class="book-user-info">
-          <image id="{{book.user.avatar}}" mode="" src="{{book.user.avatar}}"></image>
-          <text class="user-name">{{book.user.name}}</text>
-          <text class="recommend">{{book.description}}</text>
 
-        </view>
+    <view class="book-user-info">
+      <image id="{{book.user.avatar}}" mode="" src="{{book.user.avatar}}"></image>
+      <text class="user-name">{{book.user.name}}</text>
+      <text class="recommend">{{book.description}}</text>
+
+    </view>
   </view>
 
-  
+
   <view class="swiper-tab">
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="clickTab">简介</view>
     <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="clickTab">目录</view>
@@ -87,10 +89,10 @@
         <label>出版社： </label>
         <text>{{book.publisher}} </text>
       </view>
-  
- 
+
+
     </view>
-    <view  class="book-summary">
+    <view class="book-summary">
       <text>{{book.summary}} </text>
     </view>
   </view>
@@ -102,28 +104,28 @@
   </view>
   <!-- 2 -->
   <view class="book-extra-infos {{currentTab==2?'default':'hidden'}}">
-    <view class="book-comments-empty" >
+    <view class="book-comments-empty">
       暂无评论</view>
   </view>
 
 
 
-<view class="bottom-menu">
+  <view class="bottom-menu">
 
-  <view catchtap="addToCart" class="menu-item add-cart">
-    加入购物车
+    <view catchtap="addToCart" class="menu-item add-cart">
+      加入购物车
+    </view>
+
+    <view catchtap="buyNow" class="menu-item buy-now">
+      立即购买
+    </view>
+
   </view>
-
-  <view catchtap="goCart" class="menu-item buy-now">
-    立即购买
-  </view>
-
-</view>
 
 </view>
 
 
 
 <toast hidden="{{toastShow}}" duration="1000" bindchange="toastHide">
-        {{message}}
+  {{message}}
 </toast>
