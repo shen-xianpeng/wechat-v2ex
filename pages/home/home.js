@@ -8,6 +8,20 @@ Page({
     user: {},
     logged: false
   },
+  onMySold: function () {
+    var url = '../mySold/mySold';
+
+    wx.navigateTo({
+      url: url
+    })
+  },
+  onMyBought: function () {
+    var url = '../myBought/myBought';
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   onMyPublish: function () {
     var url = '../myPublish/myPublish';
 

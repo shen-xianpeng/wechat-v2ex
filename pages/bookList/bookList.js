@@ -18,6 +18,8 @@ var initSubMenuHighLight = [
 Page({
   data: {
     lastScrollTop:0,
+    sortList: ["离我最近", "最新发布", "人气最高"],
+    mainMenuList: ["全部分类","推荐排序"],
     toView: "scrollmenu",
     subMenuDisplay: initSubMenuDisplay(),
     title: '最新话题',
@@ -34,6 +36,8 @@ Page({
     ],
     indicatorDots: false,
     autoplay: false,
+    activeCat: 0,
+    activeSort: 0,
     interval: 5000,
     duration: 1000
   },
@@ -58,19 +62,25 @@ Page({
     var temp = this.data.lastScrollTop;
     this.setData({
       subMenuHighLight: initSubMenuHighLight,
-      toView: "item-list",
-      menuClass: "sticked",
+      // toView: "item-list",
+      // menuClass: "sticked",  //数据变少时存在bug
 
     });
     this.data.lastScrollTop = temp;
-  
+    var indexArray = e.currentTarget.dataset.index.split('-');
+    if (indexArray[0]==0) {
+      this.data.activeCat = indexArray[1];
+
+    } else {
+      this.data.activeSort = indexArray[1];
+
+    }
     this.onPullDownRefresh();
     // 隐藏所有一级菜单
     this.setData({
       subMenuDisplay: initSubMenuDisplay()
     });
     // 处理二级菜单，首先获取当前显示的二级菜单标识
-    var indexArray = e.currentTarget.dataset.index.split('-');
     // 初始化状态
     // var newSubMenuHighLight = initSubMenuHighLight;
     for (var i = 0; i < initSubMenuHighLight.length; i++) {
@@ -87,7 +97,7 @@ Page({
     var that = this;
     setTimeout(function () {
       that.setData({
-        menuClass: "sticked",
+        // menuClass: "sticked",
 
       });
       that.tabLock = false;
@@ -97,6 +107,10 @@ Page({
  
     // 与一级菜单不同，这里不需要判断当前状态，只需要点击就给class赋予highlight即可
     initSubMenuHighLight[indexArray[0]][indexArray[1]] = 'highlight';
+    this.setData({
+      subMenuHighLight: initSubMenuHighLight,
+
+    });
     // 设置为新的数组
 
   },
@@ -106,7 +120,7 @@ Page({
       success: function (res) {
         console.info(res.windowHeight);
         that.setData({
-          scrollHeight: res.windowHeight*2-120
+          scrollHeight: res.windowHeight*2-115
         });
         that.setData({
           toView: "scrollmenu",
@@ -133,13 +147,21 @@ Page({
       url: url
     })
   },
-  fetchData: function(callback) {
+  fetchData: function( callback) {
     var that = this;
     var params = {};
     var data = [];
     if (this.data.offset) {
       data = this.data.datalist
       params["offset"] = this.data.offset
+    }
+    var activeSort = this.data.activeSort;
+    var activeCat = this.data.activeCat;
+    if (activeSort>0) {
+      params["sort"] = activeSort
+    }
+    if (activeCat > 0) {
+      params["category_id"] = this.data.categoryIdList[activeCat-1];
     }
     wx.request({
       url: "https://www.xianpeng.org/book_list",
@@ -162,6 +184,10 @@ Page({
     })
   },
   onShow: function () {
+    this.setData({
+      categoryList: getApp().getNameList(getApp().globalData.choices.category_list),
+      categoryIdList: getApp().getIdList(getApp().globalData.choices.category_list),
+    })
     if (getApp().globalData.needFresh) {
       getApp().globalData.needFresh=false;
       this.onPullDownRefresh();
@@ -169,7 +195,7 @@ Page({
     }
 
   },
- onPullDownRefresh: function () {
+ onPullDownRefresh: function (cat, sort) {
    console.log("下拉刷新");
    var that=this;
    wx.stopPullDownRefresh();
@@ -182,7 +208,7 @@ Page({
    })
   wx.showNavigationBarLoading()
 
-   that.fetchData(function () {
+   that.fetchData( function () {
      that.stopPullDownRefresh();
    })
   

@@ -2,6 +2,7 @@
   /** column-count: 2; */
   width: 100%;
   display: block;
+  background: #f3f2f5;
 }
 
 .book-photo {
@@ -23,6 +24,7 @@
   width: 50rpx;
   border-radius: 30rpx;
   float: left;
+  margin-left: 10rpx;
 }
 
 .item .price {
@@ -35,7 +37,7 @@
   color: gray;
   font-size: 30rpx;
   text-align: left;
-  width: 290rpx;
+  width: 280rpx;
   padding: 0 5rpx 0 5rpx;
   display: block;
   float: left;
@@ -49,7 +51,7 @@
   text-align: center;
   box-shadow: 3rpx 3rpx 3rpx 3rpx #e9ebed;
   border-radius: 8rpx;
-  margin: 10rpx;
+  margin: 10rpx 0rpx 10rpx 18rpx;
 }
 
 image {
@@ -75,6 +77,9 @@ image {
 .bottom-loader {
   text-align: center;
   color: gray;
+  background: #f3f2f5;
+  margin: 10rpx;
+  font-size: 30rpx;
 }
 
 swiper image {
@@ -94,6 +99,7 @@ swiper image {
   overflow: hidden;
   padding-left: 20rpx;
   height: 91rpx;
+  background: white;
 }
 
 .swiper_msg {

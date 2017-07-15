@@ -28,12 +28,12 @@
         <view class="prompt">{{ userInfo.my_quote_num }}</view>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
-      <view class="get" bindtap="onGet">
+      <view id="sold" class="sold {{ activeHoverIndex=='sold'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="onMySold">
         <view>我的卖出</view>
         <view class="prompt">{{ userInfo.recv_quote_num }}</view>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
-      <view class="end" bindtap="onEnd">
+      <view id="bought" class="bought {{ activeHoverIndex=='bought'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="onMyBought">
         <view>我的买入</view>
         <view class="prompt">{{ userInfo.order_num }}</view>
         <image src="../../images/arrow.png" mode="widthFix"></image>

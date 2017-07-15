@@ -1,0 +1,279 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar nav-menu">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="width: {{sliderWidth}}px; left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel" style="height:{{scrollHeight}}rpx !important;">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <scroll-view scroll-y bindscroll="scroll"  style="height:{{scrollHeight}}rpx" class="container">
+
+
+            <view class="item" wx:for="{{dataSet[0].infos}}" wx:for-index="j" wx:key="id">
+              <view class="entry-header">
+                <view class="entry-label">
+                  <label class="entry-cat-label">{{item.status_label}}</label>
+                </view>
+                <view class="entry-nav-icon">
+                  <label class="nav-btn-buy"></label>
+                  <image src="../../images/arrow.png" mode="aspectFit"></image>
+
+
+                </view>
+              </view>
+
+
+
+              <view class="entry-body {{               activeHoverIndex=='body-'+j?'show-body-wrap': '' }}">
+                <view class="show-body"></view>
+                <view class="book-list">
+                  <view class="entry-book" wx:for="{{item.book_list}}" wx:for-index="k" wx:key="id">
+                    <image mode="aspectFit" src="{{item.image_list[0]}}"></image>
+                    <label class="book-price">{{item.price}}书币</label>
+                  </view>
+
+                </view>
+                <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goCartBookList">
+                  <view class=" transform-bg">
+                  </view>
+                  <view class=" nav-cart-label">
+                    共{{item.book_list.length}}本
+                  </view>
+                  <image class="cart-item-list" src="../../images/arrow.png" mode="aspectFit"></image>
+
+                </view>
+
+
+              </view>
+
+              <view class="entry-footer">
+                <view class="entry-footer-buyer">买家:{{item.seller.name}}</view>
+                <view wx:if="{{item.status==5 && item.confirm_delivery==0 && item.confirm_receive==0}}" class="entry-footer-btns">
+                  <view class="entry-foonter-btn">已交货</view>
+                  <view class="entry-foonter-btn">取消订单</view>
+
+                </view>
+
+              </view>
+
+            </view>
+
+
+            <view wx:if="{{dataSet[0].infos.length>0}}" class="bottom-loader">
+              <text wx:if="{{dataSet[0].hasMore==false}}">没有了</text>
+              <text wx:if="{{dataSet[0].hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{dataSet[0].hasMore==true &&loadingBottom==true}}">加载中...</text>
+
+
+
+            </view>
+          </scroll-view>
+
+
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+
+          <scroll-view scroll-y bindscroll="scroll"  style="height:{{scrollHeight}}rpx" class="container">
+
+
+            <view class="item" wx:for="{{dataSet[1].infos}}" wx:for-index="j" wx:key="id">
+              <view class="entry-header">
+                <view class="entry-label">
+                  <label class="entry-cat-label">{{item.status_label}}</label>
+                </view>
+                <view class="entry-nav-icon">
+                  <label class="nav-btn-buy"></label>
+                  <image src="../../images/arrow.png" mode="aspectFit"></image>
+
+
+                </view>
+              </view>
+
+
+
+              <view class="entry-body {{               activeHoverIndex=='body-'+j?'show-body-wrap': '' }}">
+                <view class="show-body"></view>
+                <view class="book-list">
+                  <view class="entry-book" wx:for="{{item.book_list}}" wx:for-index="k" wx:key="id">
+                    <image mode="aspectFit" src="{{item.image_list[0]}}"></image>
+                    <label class="book-price">{{item.price}}书币</label>
+                  </view>
+
+                </view>
+                <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goCartBookList">
+                  <view class=" transform-bg">
+                  </view>
+                  <view class=" nav-cart-label">
+                    共{{item.book_list.length}}本
+                  </view>
+                  <image class="cart-item-list" src="../../images/arrow.png" mode="aspectFit"></image>
+
+                </view>
+
+
+              </view>
+              <view class="entry-footer">
+                <view class="entry-footer-buyer">买家:{{item.seller.name}}</view>
+                <view class="entry-footer-btns">
+                  <view class="entry-foonter-btn">已交货</view>
+                  <view class="entry-foonter-btn">取消订单</view>
+
+                </view>
+
+              </view>
+
+
+            </view>
+
+
+            <view wx:if="{{dataSet[1].infos.length>0}}" class="bottom-loader">
+              <text wx:if="{{dataSet[1].hasMore==false}}">没有了</text>
+              <text wx:if="{{dataSet[1].hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{dataSet[1].hasMore==true &&loadingBottom==true}}">加载中...</text>
+
+
+
+            </view>
+          </scroll-view>
+
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+          <scroll-view scroll-y bindscroll="scroll"  style="height:{{scrollHeight}}rpx" class="container">
+
+
+            <view class="item" wx:for="{{dataSet[2].infos}}" wx:for-index="j" wx:key="id">
+              <view class="entry-header">
+                <view class="entry-label">
+                  <label class="entry-cat-label">{{item.status_label}}</label>
+                </view>
+                <view class="entry-nav-icon">
+                  <label class="nav-btn-buy"></label>
+                  <image src="../../images/arrow.png" mode="aspectFit"></image>
+
+
+                </view>
+              </view>
+
+
+
+              <view class="entry-body {{               activeHoverIndex=='body-'+j?'show-body-wrap': '' }}">
+                <view class="show-body"></view>
+                <view class="book-list">
+                  <view class="entry-book" wx:for="{{item.book_list}}" wx:for-index="k" wx:key="id">
+                    <image mode="aspectFit" src="{{item.image_list[0]}}"></image>
+                    <label class="book-price">{{item.price}}书币</label>
+                  </view>
+
+                </view>
+                <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goCartBookList">
+                  <view class=" transform-bg">
+                  </view>
+                  <view class=" nav-cart-label">
+                    共{{item.book_list.length}}本
+                  </view>
+                  <image class="cart-item-list" src="../../images/arrow.png" mode="aspectFit"></image>
+
+                </view>
+
+
+              </view>
+
+              <view class="entry-footer">
+                <view class="entry-footer-buyer">买家:{{item.seller.name}}</view>
+                <view class="entry-footer-btns">
+                  <view class="entry-foonter-btn">已交货</view>
+                  <view class="entry-foonter-btn">取消订单</view>
+
+                </view>
+
+              </view>
+
+            </view>
+
+
+            <view wx:if="{{dataSet[2].infos.length>0}}" class="bottom-loader">
+              <text wx:if="{{dataSet[2].hasMore==false}}">没有了</text>
+              <text wx:if="{{dataSet[2].hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{dataSet[2].hasMore==true &&loadingBottom==true}}">加载中...</text>
+
+
+
+            </view>
+          </scroll-view>
+
+
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+          <scroll-view scroll-y bindscroll="scroll"  style="height:{{scrollHeight}}rpx" class="container">
+
+            <view class="item" wx:for="{{dataSet[3].infos}}" wx:for-index="j" wx:key="id">
+              <view class="entry-header">
+                <view class="entry-label">
+                  <label class="entry-cat-label">{{item.status_label}}</label>
+                </view>
+                <view class="entry-nav-icon">
+                  <label class="nav-btn-buy"></label>
+                  <image src="../../images/arrow.png" mode="aspectFit"></image>
+
+
+                </view>
+              </view>
+
+
+
+              <view class="entry-body {{               activeHoverIndex=='body-'+j?'show-body-wrap': '' }}">
+                <view class="show-body"></view>
+                <view class="book-list">
+                  <view class="entry-book" wx:for="{{item.book_list}}" wx:for-index="k" wx:key="id">
+                    <image mode="aspectFit" src="{{item.image_list[0]}}"></image>
+                    <label class="book-price">{{item.price}}书币</label>
+                  </view>
+
+                </view>
+                <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goCartBookList">
+                  <view class=" transform-bg">
+                  </view>
+                  <view class=" nav-cart-label">
+                    共{{item.book_list.length}}本
+                  </view>
+                  <image class="cart-item-list" src="../../images/arrow.png" mode="aspectFit"></image>
+
+                </view>
+
+
+              </view>
+
+              <view class="entry-footer">
+                <view class="entry-footer-buyer">买家:{{item.seller.name}}</view>
+                <view class="entry-footer-btns">
+                  <view class="entry-foonter-btn">已交货</view>
+                  <view class="entry-foonter-btn">取消订单</view>
+
+                </view>
+
+              </view>
+
+            </view>
+
+
+            <view wx:if="{{dataSet[3].infos.length>0}}" class="bottom-loader">
+              <text wx:if="{{dataSet[3].hasMore==false}}">没有了</text>
+              <text wx:if="{{dataSet[3].hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{dataSet[3].hasMore==true &&loadingBottom==true}}">加载中...</text>
+
+
+
+            </view>
+          </scroll-view>
+
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

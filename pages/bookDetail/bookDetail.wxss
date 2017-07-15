@@ -145,7 +145,7 @@ scroll-view {
 }
 
 .bottom-menu .menu-item {
-  width: 50%;
+  width: 325rpx;
   height: 100%;
   line-height: 50rpx;
   font-size: 36rpx;
@@ -283,10 +283,15 @@ scroll-view {
 }
 
 .cart-icon {
-  position: absolute;
-  top: 90rpx;
-  right: 60rpx;
-  width: 80rpx;
-  height: 80rpx;
-  z-index: 10000;
+ position:fixed;
+bottom:0;
+right:0;
+width:80rpx;
+height:90rpx;
+z-index:10000;
+padding:0;
+padding-left:10rpx;
+background:white;
+padding-right:10rpx;
+
 }

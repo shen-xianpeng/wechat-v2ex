@@ -2,6 +2,8 @@
   "pages":[
     "pages/bookList/bookList",
     "pages/myPublish/myPublish",
+    "pages/myBought/myBought",
+    "pages/mySold/mySold",
     "pages/home/home",
     "pages/addBook/addBook",
     "pages/bookDetail/bookDetail",

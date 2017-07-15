@@ -1,0 +1,257 @@
+page, .page, .page__bd {
+}
+
+.page__bd {
+  padding-bottom: 0;
+}
+
+.weui-tab__content {
+}
+
+.nav-menu {
+  background: white;
+  box-sizing: border-box;
+  height: 100rpx;
+  position: fixed !important;
+}
+
+.bottom-loader {
+  text-align: center;
+  font-size: 30rpx;  
+  padding: 10rpx;
+
+}
+
+.weui-tab__panel {
+  padding-top: 0 !important;
+  margin-top: 100rpx;
+  overflow: hidden;
+}
+
+.entry-header {
+  height: 80rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #f3f2f5;
+}
+
+page {
+  background: #fafafb;
+}
+
+.nav-icon {
+  width: 300rpx;
+  text-align: right;
+}
+
+.book-list {
+  height: 240rpx;
+  width: 690rpx;
+  padding: 30rpx;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.entry-book {
+  margin-right: 20rpx;
+  width: 180rpx;
+  height: 240rpx;
+  display: inline-block;
+}
+
+.nav-cart {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  line-height: 300rpx;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  text-align: right;
+  color: #333;
+  z-index: 10000;
+}
+
+.nav-cart-label {
+  float: left;
+  width: 150rpx;
+  background: white;
+  font-size: 36rpx;
+}
+
+.transform-bg {
+  height: 100%;
+  width: 150rpx;
+  float: left;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+}
+
+.user-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  margin: 10rpx;
+  float: left;
+}
+
+.entry-body view {
+  display: inline-block;
+}
+
+.entry-header view {
+  display: inline-block;
+}
+
+.entry {
+  background: white;
+  border-top: 1rpx solid #f3f2f5;
+  border-bottom: 1rpx solid #f3f2f5;
+  margin-top: 50rpx;
+}
+
+.user-info {
+  width: 360rpx;
+  padding-left: 40rpx;
+}
+
+.entry-body {
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+  display: inline-block;
+}
+
+.user-name {
+  display: inline-block;
+  float: left;
+  line-height: 80rpx;
+  height: 80rpx;
+  color: #333;
+}
+
+.nav-icon {
+  width: 350rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  float: right;
+}
+
+.nav-icon image {
+  height: 80rpx !important;
+  display: inline-block;
+  width: 50rpx;
+  margin-right: 20rpx;
+}
+
+.nav-icon label {
+  width: 280rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+  float: left;
+  text-align: right;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.entry-book image {
+  height: 200rpx;
+  width: 160rpx;
+}
+
+.book-price {
+  display: inline-block;
+  width: 180rpx;
+  height: 90rpx;
+  float: left;
+  text-align: center;
+  color: #fb6;
+  font-size: 30rpx;
+}
+
+.cart-item-list {
+  background: white;
+  float: left;
+  height: 100%;
+  width: 60rpx;
+  float: right;
+  padding-right: 20rpx;
+}
+
+.nav-btn-buy {
+  font-size: 30rpx;
+}
+
+.show-body-wrap .show-body {
+  position: absolute;
+  background: gray;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 0.1;
+}
+
+/*.show-body-wrap .book-list image {
+  z-index: 1000;
+  position: relative;
+}*/
+
+.entry-header {
+  border-top: 10px solid #f3f2f5;
+  border-bottom: 1rpx solid #f3f2f5;
+  height: 60rpx;
+  width: 690rpx;
+  display: inline-block;
+  float: left;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  padding: 10rpx 10rpx 10rpx 50rpx;
+}
+
+.entry-nav-icon {
+  display: inline-block;
+  float: right;
+}
+
+.entry-nav-icon image {
+  height: 60rpx;
+  width: 100rpx;
+}
+
+.entry-footer {
+  height: 100rpx;
+}
+
+.entry-footer-buyer {
+  display: inline-block;
+  width: 300rpx;
+  padding-left: 50rpx;
+  float: left;
+  height: 100rpx;
+  line-height: 100rpx;
+  box-sizing: border-box;
+    font-size: 32rpx;
+
+
+}
+
+.entry-footer-btns {
+  display: inline-block;
+  width: 450rpx;
+  height: 100rpx;
+
+}
+
+.entry-foonter-btn {
+  padding: 5rpx;
+  display: inline-block;
+  float: right;
+  box-sizing: border-box;
+  height: 50rpx;
+  line-height: 40rpx;
+  margin-top: 25rpx;
+  margin: 20rpx;
+  border: 1rpx solid gray;
+  border-radius: 5rpx;
+  font-size: 30rpx;
+}

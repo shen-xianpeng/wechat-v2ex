@@ -76,7 +76,12 @@ page {
   width: 50rpx;
 }
 
-#mine .quote .get {
+#mine .quote .sold {
+  border-bottom: 1rpx solid #e1e1e1;
+}
+
+
+#mine .quote .publish {
   border-top: 1rpx solid #e1e1e1;
   border-bottom: 1rpx solid #e1e1e1;
 }
