@@ -21,7 +21,7 @@
       </view>
 
     </view>
-    <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goCartBookList">
+    <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-books="{{data.user_book_ids}}" bindtap="goChooseBookList">
       <view class=" transform-bg">
       </view>
       <view class=" nav-cart-label">

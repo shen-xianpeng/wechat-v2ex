@@ -12,7 +12,8 @@
     "pages/orderPreview/orderPreview",
     "pages/cartBookList/cartBookList",
     "pages/myAccount/myAccount",
-    "pages/paySuccess/paySuccess"
+    "pages/paySuccess/paySuccess",
+    "pages/chooseBookList/chooseBookList"
     
   ],
   "window":{

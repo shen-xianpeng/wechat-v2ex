@@ -40,7 +40,7 @@
       </view>
       <view id="myAccount" class="news {{ activeHoverIndex=='myAccount'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="onMyAccount">
         <view>我的帐户</view>
-        <image mode="widthFix" widthFix src="../../images/dot.png" class="prompt dot"></image>
+        <image mode="widthFix" widthFix src="../../images/dot.png" class="hidden prompt dot"></image>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
       <view class="set hidden" bindtap="onSetting">

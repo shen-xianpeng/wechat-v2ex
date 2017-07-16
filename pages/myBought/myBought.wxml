@@ -11,7 +11,7 @@
       </view>
       <view class="weui-tab__panel" style="height:{{scrollHeight}}rpx !important;">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <scroll-view scroll-y bindscroll="scroll"  style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
 
 
             <view class="item" wx:for="{{dataSet[0].infos}}" wx:for-index="j" wx:key="id">
@@ -38,7 +38,7 @@
                   </view>
 
                 </view>
-                <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goCartBookList">
+                <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-books="{{item.user_book_ids}}" bindtap="goChooseBookList">
                   <view class=" transform-bg">
                   </view>
                   <view class=" nav-cart-label">
@@ -52,10 +52,10 @@
               </view>
 
               <view class="entry-footer">
-                <view class="entry-footer-buyer">买家:{{item.seller.name}}</view>
-                <view wx:if="{{item.status==5 && item.confirm_delivery==0 && item.confirm_receive==0}}" class="entry-footer-btns">
-                  <view class="entry-foonter-btn">已交货</view>
-                  <view class="entry-foonter-btn">取消订单</view>
+                <view class="entry-footer-buyer">卖家:{{item.seller.name}}</view>
+                <view wx:if="{{ item.status==5 && (item.confirm_delivery==0 || item.confirm_receive==0)}}" class="entry-footer-btns">
+                  <view wx:if="{{item.status==5 || item.status==0}}" data-order="{{item.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
+                  <view wx:if="{{item.status==5}}" data-order="{{item.order_no}}" catchtap="onConfirmReceive" class="entry-foonter-btn entry-btn-ok">已收货</view>
 
                 </view>
 
@@ -78,7 +78,7 @@
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
 
-          <scroll-view scroll-y bindscroll="scroll"  style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
 
 
             <view class="item" wx:for="{{dataSet[1].infos}}" wx:for-index="j" wx:key="id">
@@ -117,16 +117,17 @@
 
 
               </view>
+
+
               <view class="entry-footer">
-                <view class="entry-footer-buyer">买家:{{item.seller.name}}</view>
-                <view class="entry-footer-btns">
-                  <view class="entry-foonter-btn">已交货</view>
-                  <view class="entry-foonter-btn">取消订单</view>
+                <view class="entry-footer-buyer">卖家:{{item.seller.name}}</view>
+                <view wx:if="{{ item.status==5 && (item.confirm_delivery==0 || item.confirm_receive==0)}}" class="entry-footer-btns">
+                  <view wx:if="{{item.status==5 || item.status==0}}" data-order="{{item.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
+                  <view wx:if="{{item.status==5}}" data-order="{{item.order_no}}" catchtap="onConfirmReceive" class="entry-foonter-btn entry-btn-ok">已收货</view>
 
                 </view>
 
               </view>
-
 
             </view>
 
@@ -143,7 +144,7 @@
 
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-          <scroll-view scroll-y bindscroll="scroll"  style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
 
 
             <view class="item" wx:for="{{dataSet[2].infos}}" wx:for-index="j" wx:key="id">
@@ -184,10 +185,10 @@
               </view>
 
               <view class="entry-footer">
-                <view class="entry-footer-buyer">买家:{{item.seller.name}}</view>
-                <view class="entry-footer-btns">
-                  <view class="entry-foonter-btn">已交货</view>
-                  <view class="entry-foonter-btn">取消订单</view>
+                <view class="entry-footer-buyer">卖家:{{item.seller.name}}</view>
+                <view wx:if="{{ item.status==5 && (item.confirm_delivery==0 || item.confirm_receive==0)}}" class="entry-footer-btns">
+                  <view wx:if="{{item.status==5 || item.status==0}}" data-order="{{item.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
+                  <view wx:if="{{item.status==5}}" data-order="{{item.order_no}}" catchtap="onConfirmReceive" class="entry-foonter-btn entry-btn-ok">已收货</view>
 
                 </view>
 
@@ -209,7 +210,7 @@
 
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
-          <scroll-view scroll-y bindscroll="scroll"  style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
 
             <view class="item" wx:for="{{dataSet[3].infos}}" wx:for-index="j" wx:key="id">
               <view class="entry-header">
@@ -247,17 +248,15 @@
 
 
               </view>
-
               <view class="entry-footer">
-                <view class="entry-footer-buyer">买家:{{item.seller.name}}</view>
-                <view class="entry-footer-btns">
-                  <view class="entry-foonter-btn">已交货</view>
-                  <view class="entry-foonter-btn">取消订单</view>
+                <view class="entry-footer-buyer">卖家:{{item.seller.name}}</view>
+                <view wx:if="{{ item.status==5 && (item.confirm_delivery==0 || item.confirm_receive==0)}}" class="entry-footer-btns">
+                  <view wx:if="{{item.status==5 || item.status==0}}" data-order="{{item.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
+                  <view wx:if="{{item.status==5}}" data-order="{{item.order_no}}" catchtap="onConfirmReceive" class="entry-foonter-btn entry-btn-ok">已收货</view>
 
                 </view>
 
               </view>
-
             </view>
 
 

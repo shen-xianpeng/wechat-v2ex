@@ -1,9 +1,9 @@
 <view class="entry" wx:for="{{groupList}}" wx:for-index="j" wx:key="id">
 
-  <view id="{{j}}" class="entry-header {{               activeHoverIndex==j?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-userid="{{item[0].user.id}}" bindtap="goOrderPreview">
+  <view id="{{j}}" class="entry-header {{               activeHoverIndex==j?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-userid="{{item.infos[0].user.id}}" bindtap="goOrderPreview">
     <view class="user-info">
-      <image class="user-avatar" src="{{item[0].user.avatar}}"></image>
-      <label class="user-name">{{item[0].user.name}}</label>
+      <image class="user-avatar" src="{{item.infos[0].user.avatar}}"></image>
+      <label class="user-name">{{item.infos[0].user.name}}</label>
     </view>
     <view class="nav-icon">
     <label class="nav-btn-buy">去结算</label>
@@ -18,17 +18,17 @@
   <view  class="entry-body {{               activeHoverIndex=='body-'+j?'show-body-wrap': '' }}" >
     <view class="show-body"></view>
     <view class="book-list">
-      <view class="entry-book" wx:for="{{item}}" wx:for-index="k" wx:key="id" >
+      <view class="entry-book" wx:for="{{item.infos}}" wx:for-index="k" wx:key="id" >
         <image mode="aspectFit"  src="{{item.image_list[0]}}"></image>
-        <label class="book-price">100书币</label>
+        <label class="book-price">{{item.price}}书币</label>
       </view>
 
     </view>
-    <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goCartBookList">
+    <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-books="{{item.user_book_ids}}" bindtap="goCartBookList">
       <view class=" transform-bg">
        </view>
       <view class=" nav-cart-label">
-      共{{item.length}}本
+      共{{item.infos.length}}本
       </view>
          <image  class="cart-item-list" src="../../images/arrow.png" mode="aspectFit" ></image>
 

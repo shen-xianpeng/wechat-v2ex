@@ -11,17 +11,17 @@
       </view>
       <view class="weui-tab__panel" style="height:{{scrollHeight}}rpx !important;">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <scroll-view scroll-y style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view bindscroll="scroll" scroll-y style="height:{{scrollHeight}}rpx" class="container">
 
 
             <view class="item" wx:for="{{dataSet[0].infos}}" wx:for-index="j" wx:key="id">
               <view class="entry-header">
                 <view class="entry-label">
-                  <label class="entry-cat-label">全部</label>
+                  <label class="entry-cat-label">{{item.status_label}}</label>
                 </view>
                 <view class="entry-nav-icon">
                   <label class="nav-btn-buy"></label>
-                  <image src="../../images/arrow.png" mode="aspectFit"></image>
+                  <image class="hidden" src="../../images/arrow.png" mode="aspectFit"></image>
 
 
                 </view>
@@ -35,17 +35,31 @@
                     {{item.author}}</text>
                 </view>
               </view>
-            </view>
 
+
+              <view class="entry-footer">
+                <view class="entry-footer-btns">
+
+                  <view wx:if="{{item.status==1 || item.status==0}}" data-book="{{item.id}}" data-status="-1" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-red">删除</view>
+                  <view wx:if="{{item.status==1}}" data-book="{{item.id}}" data-status="0" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-red">下架</view>
+                  <view wx:if="{{item.status==0}}" data-book="{{item.id}}" data-status="1" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-ok">上架</view>
+
+                </view>
+
+              </view>
+
+
+            </view>
 
             <view wx:if="{{dataSet[0].infos.length>0}}" class="bottom-loader">
-              <text wx:if="{{hasMore==false}}">没有了</text>
-              <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
-              <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
-
-
-
+              <text wx:if="{{dataSet[0].hasMore==false}}">没有了</text>
+              <text wx:if="{{dataSet[0].hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{dataSet[0].hasMore==true &&loadingBottom==true}}">加载中...</text>
             </view>
+
+
+
+
           </scroll-view>
 
 
@@ -58,12 +72,11 @@
             <view class="item" wx:for="{{dataSet[1].infos}}" wx:for-index="j" wx:key="id">
               <view class="entry-header">
                 <view class="entry-label">
-                  <label class="entry-cat-label">在售</label>
+                  <label class="entry-cat-label">{{item.status_label}}</label>
                 </view>
                 <view class="entry-nav-icon">
                   <label class="nav-btn-buy"></label>
-                  <image src="../../images/arrow.png" mode="aspectFit"></image>
-
+ 
 
                 </view>
               </view>
@@ -76,17 +89,33 @@
                     {{item.author}}</text>
                 </view>
               </view>
+
+
+              <view class="entry-footer">
+                <view class="entry-footer-btns">
+
+                  <view wx:if="{{item.status==1 || item.status==0}}" data-book="{{item.id}}" data-status="-1" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-red">删除</view>
+                  <view wx:if="{{item.status==1}}" data-book="{{item.id}}" data-status="0" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-red">下架</view>
+                  <view wx:if="{{item.status==0}}" data-book="{{item.id}}" data-status="1" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-ok">上架</view>
+
+                </view>
+
+              </view>
+
+
+
             </view>
 
 
-            <view  wx:if="{{dataSet[1].infos.length>0}}"  class="bottom-loader">
-              <text wx:if="{{hasMore==false}}">没有了</text>
-              <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
-              <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
-
-
-
+            <view wx:if="{{dataSet[1].infos.length>0}}" class="bottom-loader">
+              <text wx:if="{{dataSet[1].hasMore==false}}">没有了</text>
+              <text wx:if="{{dataSet[1].hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{dataSet[1].hasMore==true &&loadingBottom==true}}">加载中...</text>
             </view>
+
+
+
+
           </scroll-view>
 
 
@@ -98,12 +127,11 @@
             <view class="item" wx:for="{{dataSet[2].infos}}" wx:for-index="j" wx:key="id">
               <view class="entry-header">
                 <view class="entry-label">
-                  <label class="entry-cat-label">全部</label>
+                  <label class="entry-cat-label">{{item.status_label}}</label>
                 </view>
                 <view class="entry-nav-icon">
                   <label class="nav-btn-buy"></label>
-                  <image src="../../images/arrow.png" mode="aspectFit"></image>
-
+ 
 
                 </view>
               </view>
@@ -116,17 +144,30 @@
                     {{item.author}}</text>
                 </view>
               </view>
+
+              <view class="entry-footer">
+                <view class="entry-footer-btns">
+
+                  <view wx:if="{{item.status==1 || item.status==0}}" data-book="{{item.id}}" data-status="-1" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-red">删除</view>
+                  <view wx:if="{{item.status==1}}" data-book="{{item.id}}" data-status="0" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-red">下架</view>
+                  <view wx:if="{{item.status==0}}" data-book="{{item.id}}" data-status="1" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-ok">上架</view>
+
+                </view>
+
+              </view>
+
+
             </view>
 
 
-            <view  wx:if="{{dataSet[2].infos.length>0}}"  class="bottom-loader">
-              <text wx:if="{{hasMore==false}}">没有了</text>
-              <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
-              <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
-
-
-
+           <view wx:if="{{dataSet[2].infos.length>0}}" class="bottom-loader">
+              <text wx:if="{{dataSet[2].hasMore==false}}">没有了</text>
+              <text wx:if="{{dataSet[2].hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{dataSet[2].hasMore==true &&loadingBottom==true}}">加载中...</text>
             </view>
+
+
+
           </scroll-view>
 
 
@@ -138,12 +179,11 @@
             <view class="item" wx:for="{{dataSet[3].infos}}" wx:for-index="j" wx:key="id">
               <view class="entry-header">
                 <view class="entry-label">
-                  <label class="entry-cat-label">全部</label>
+                  <label class="entry-cat-label">{{item.status_label}}</label>
                 </view>
                 <view class="entry-nav-icon">
                   <label class="nav-btn-buy"></label>
-                  <image src="../../images/arrow.png" mode="aspectFit"></image>
-
+ 
 
                 </view>
               </view>
@@ -156,17 +196,31 @@
                     {{item.author}}</text>
                 </view>
               </view>
+
+
+              <view class="entry-footer">
+                <view class="entry-footer-btns">
+
+                  <view wx:if="{{item.status==1 || item.status==0}}" data-book="{{item.id}}" data-status="-1" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-red">删除</view>
+                  <view wx:if="{{item.status==1}}" data-book="{{item.id}}" data-status="0" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-red">下架</view>
+                  <view wx:if="{{item.status==0}}" data-book="{{item.id}}" data-status="1" catchtap="onSetStatus" class="entry-foonter-btn entry-btn-ok">上架</view>
+
+                </view>
+
+              </view>
+
+
+
             </view>
 
 
-            <view  wx:if="{{dataSet[3].infos.length>0}}"  class="bottom-loader">
-              <text wx:if="{{hasMore==false}}">没有了</text>
-              <text wx:if="{{hasMore==true && loadingBottom==false}}">加载更多</text>
-              <text wx:if="{{hasMore==true &&loadingBottom==true}}">加载中...</text>
-
-
-
+            <view wx:if="{{dataSet[3].infos.length>0}}" class="bottom-loader">
+              <text wx:if="{{dataSet[3].hasMore==false}}">没有了</text>
+              <text wx:if="{{dataSet[3].hasMore==true && loadingBottom==false}}">加载更多</text>
+              <text wx:if="{{dataSet[3].hasMore==true &&loadingBottom==true}}">加载中...</text>
             </view>
+
+
           </scroll-view>
 
 

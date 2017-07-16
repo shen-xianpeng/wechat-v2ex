@@ -16,7 +16,7 @@
             <view class="coin-wrapper">
               <view class="coin-num">
                 <view class="coin-num-amount">
-                  100
+                  <span wx:if="{{coin>=0}}">{{coin}}</span>
                 </view>
                 <view class="coin-num-label">
                   书币
@@ -42,21 +42,21 @@
 
             <view class="entry-list">
 
-              <view wx:for="{{[1,2]}}">
+              <view wx:for="{{dataSet[0].infos}}" wx:for-index="j" wx:key="id">
 
                 <view class="log-entry">
                   <view class="log-desc">
                     <view class="log-cat-name">
-                      买书
+                      {{item.log_cat_name}}
                     </view>
 
                     <view class="log-time">
-                      2017-07-12
+                      {{item.create_time}}
                     </view>
 
                   </view>
-                  <view class="log-amount">
-                    -100
+                  <view class="log-amount  {{item.amount>0 ? 'log-yellow':'log-red'}}">
+                    <span wx:if="{{item.amount>0}}">+</span>{{item.amount}}
 
                   </view>
 
@@ -77,7 +77,7 @@
             <view class="money-wrapper">
               <view class="money-num">
                 <view class="money-num-amount">
-                  100
+                  <span wx:if="{{balance>=0}}">{{balance}}</span>
                 </view>
                 <view class="money-num-label">
                   元
@@ -101,21 +101,21 @@
             </view>
             <view class="entry-list">
 
-              <view wx:for="{{[1,2]}}">
+              <view wx:for="{{dataSet[1].infos}}" wx:for-index="j" wx:key="id">
 
                 <view class="log-entry">
                   <view class="log-desc">
                     <view class="log-cat-name">
-                      买书
+                      {{item.log_cat_name}}
                     </view>
 
                     <view class="log-time">
-                      2017-07-12
+                      {{item.create_time}}
                     </view>
 
                   </view>
-                  <view class="log-amount">
-                    -100
+                  <view class="log-amount  {{item.amount>0 ? 'log-green':'log-red'}}">
+                    <span wx:if="{{item.amount>0}}">+</span>{{item.amount}}
 
                   </view>
 

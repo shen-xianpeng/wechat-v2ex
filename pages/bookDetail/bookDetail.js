@@ -14,6 +14,10 @@ Page({
     var that = this;
     wx.request({
       url: getApp().config.host +"/book_detail?book_id=" + id,
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": getApp().globalData.userInfo.token
+      },
       success: function (res) {
         that.setData({
           book: res.data.data
@@ -80,6 +84,9 @@ Page({
 
       "user_book_id":this.data.book.id
     }
+    if (this.data.book.in_cart) {
+      data["status"] = 0
+    }
     wx.request({
       url: getApp().config.host + '/add_to_cart',
       data: data,
@@ -89,9 +96,12 @@ Page({
         "token": getApp().globalData.userInfo.token
       },
       success: function (res) {
+
           that.setData({
             "message": res.data.msg,
-            "toastShow": false
+            "toastShow": false,
+            "book.in_cart": (data["status"]==0)==false
+
           })
       }
     });

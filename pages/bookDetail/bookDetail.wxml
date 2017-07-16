@@ -2,7 +2,6 @@
 
   <view class="container">
 
-    <image catchtap="goCart" mode="aspectFit" class="cart-icon" src="../../images/cart.png"></image>
 
 
     <swiper class="book-imagelist" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{3000}}" duration="{{1000}}">
@@ -110,14 +109,22 @@
 
 
 
-  <view class="bottom-menu">
+  <view wx:if="{{book.id>0}}" class="bottom-menu">
 
-    <view catchtap="addToCart" class="menu-item add-cart">
+    <view wx:if="{{book.in_cart==false}}" catchtap="addToCart" class="menu-item add-cart">
       加入购物车
     </view>
+    <view  wx:if="{{book.in_cart}}" catchtap="addToCart" class="menu-item remove-cart">
+      移出购物车
+    </view>
+
 
     <view catchtap="buyNow" class="menu-item buy-now">
       立即购买
+    </view>
+
+ <view   class=" go-cart">
+    <image catchtap="goCart" mode="aspectFit" class="cart-icon" src="../../images/cart.png"></image>
     </view>
 
   </view>

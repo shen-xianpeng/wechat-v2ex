@@ -46,6 +46,76 @@ Page({
       url: url
     })
   },
+  onCancel: function (e) {
+    var that = this;
+    var order_no = e.currentTarget.dataset.order;
+    console.log(order_no);
+
+    var params = {}
+    params["order_no"] = order_no
+    wx.request({
+      method: 'POST',
+      url: getApp().config.host + "/cancel_order_after_pay",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": getApp().globalData.userInfo.token
+      },
+      data: params,
+      success: function (res) {
+        if (res.data.code != 0) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'error',
+            duration: 1000
+          })
+          return
+        }
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'error',
+          duration: 1000
+        })
+        that.fetchData(that.data.activeIndex);
+
+      }
+    });
+
+  },
+  onConfirmReceive: function (e) {
+    var that = this;
+    var order_no = e.currentTarget.dataset.order;
+    console.log(order_no);
+
+    var params = {}
+    params["order_no"] = order_no
+    wx.request({
+      method: 'POST',
+      url: getApp().config.host + "/confirm_receive",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": getApp().globalData.userInfo.token
+      },
+      data: params,
+      success: function (res) {
+        if (res.data.code != 0) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'error',
+            duration: 1000
+          })
+          return
+        }
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'error',
+          duration: 1000
+        })
+        that.fetchData(that.data.activeIndex);
+
+      }
+    });
+
+  },
   fetchData: function (tab, callback) {
     var that = this;
     var params = {};
@@ -128,4 +198,12 @@ Page({
 
 
   },
+  goChooseBookList: function (e) {
+    var bookIds = e.currentTarget.dataset.books;
+    var url = '../chooseBookList/chooseBookList?user_book_ids=' + bookIds;
+
+    wx.navigateTo({
+      url: url
+    })
+  }
 });

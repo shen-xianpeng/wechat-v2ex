@@ -142,6 +142,7 @@ scroll-view {
   width: 100%;
   height: 80rpx;
   padding-bottom: 0px;
+  border-top:1px solid #f3f2f5;
 }
 
 .bottom-menu .menu-item {
@@ -158,6 +159,10 @@ scroll-view {
 
 .add-cart {
   background: lightseagreen;
+}
+.remove-cart {
+  background: gray;
+
 }
 
 .buy-now {
@@ -283,12 +288,8 @@ scroll-view {
 }
 
 .cart-icon {
- position:fixed;
-bottom:0;
-right:0;
 width:80rpx;
-height:90rpx;
-z-index:10000;
+height:80rpx;
 padding:0;
 padding-left:10rpx;
 background:white;

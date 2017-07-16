@@ -90,3 +90,15 @@
 .hover-element {
   background: #e6e6e6 !important;
 }
+
+
+.entry-btn-ok {
+  border: 1rpx solid #1aad19 !important;
+  color:  #1aad19 !important;
+}
+
+
+.entry-btn-red {
+  border: 1rpx solid red !important;
+  color:  red !important;
+}

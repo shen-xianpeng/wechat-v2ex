@@ -1,7 +1,7 @@
 
 Page({
   data: {
-    tabs: ["全部", "待交货", "已交货", "已完成"],
+    tabs: ["全部", "待交货", "已交货", "已完成", "已取消"],
     activeIndex: 0,
     sliderWidth: 0,
     sliderOffset: 0,
@@ -11,6 +11,7 @@ Page({
       1: { offset: "", infos: [] },
       2: { offset: "", infos: [] },
       3: { offset: "", infos: [] },
+      4: { offset: "", infos: [] },
     }
   },
   onLoad: function () {
@@ -45,6 +46,76 @@ Page({
     wx.navigateTo({
       url: url
     })
+  },
+  onCancel: function (e) {
+    var that = this;
+    var order_no = e.currentTarget.dataset.order;
+    console.log(order_no);
+
+    var params = {}
+    params["order_no"] = order_no
+    wx.request({
+      method: 'POST',
+      url: getApp().config.host + "/cancel_order_after_pay",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": getApp().globalData.userInfo.token
+      },
+      data: params,
+      success: function (res) {
+        if (res.data.code != 0) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'error',
+            duration: 1000
+          })
+          return
+        }
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'error',
+          duration: 1000
+        })
+        that.fetchData(that.data.activeIndex);
+
+      }
+    });
+
+  },
+  onConfirmDelivery: function (e) {
+    var that = this;
+    var order_no = e.currentTarget.dataset.order;
+    console.log(order_no);
+
+    var params = {}
+    params["order_no"] = order_no
+    wx.request({
+      method: 'POST',
+      url: getApp().config.host + "/confirm_delivery",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": getApp().globalData.userInfo.token
+      },
+      data: params,
+      success: function (res) {
+        if (res.data.code != 0) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'error',
+            duration: 1000
+          })
+          return
+        }
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'error',
+          duration: 1000
+        })
+        that.fetchData(that.data.activeIndex);
+
+      }
+    });
+
   },
   fetchData: function (tab, callback) {
     var that = this;
@@ -103,6 +174,15 @@ Page({
             'dataSet.3.offset': res.data.data.offset,
           })
         }
+        if (tab == 4) {
+          that.setData({
+            hidden: true,
+            'dataSet.4.infos': datas,
+            loadingBottom: false,
+            'dataSet.4.hasMore': res.data.data.has_more,
+            'dataSet.4.offset': res.data.data.offset,
+          })
+        }
 
         if (callback) {
           callback();
@@ -128,4 +208,12 @@ Page({
 
 
   },
+  goChooseBookList: function (e) {
+    var bookIds = e.currentTarget.dataset.books;
+    var url = '../chooseBookList/chooseBookList?user_book_ids=' + bookIds;
+
+    wx.navigateTo({
+      url: url
+    })
+  }
 });

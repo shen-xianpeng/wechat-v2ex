@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "书单",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#333",
+  "navigationBarTextStyle": "white"
+}

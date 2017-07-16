@@ -55,7 +55,7 @@ page, .page, .page__bd {
 
 .book-cover {
   height: 200rpx;
-  width: 300rpx;
+  width: 200rpx;
   display: inline-block;
   float: left;
 }
@@ -70,4 +70,68 @@ page, .page, .page__bd {
   display: inline-block;
   float: left;
   width: 390rpx;
+}
+.book-title {
+text-overflow:ellipsis;
+white-space:nowrap;
+width:400rpx;
+overflow:hidden;
+height:100rpx;
+line-height:100rpx;
+font-size:36rpx;
+
+
+}
+
+.book-author {
+text-overflow:ellipsis;
+white-space:nowrap;
+width:400rpx;
+overflow:hidden;
+height:100rpx;
+line-height:100rpx;
+font-size:36rpx;
+
+
+}
+
+
+.entry-footer {
+  height: 100rpx;
+  border-top: 1rpx solid #f3f2f5;
+}
+
+.entry-footer-buyer {
+  display: inline-block;
+  width: 300rpx;
+  padding-left: 50rpx;
+  float: left;
+  height: 100rpx;
+  line-height: 100rpx;
+  box-sizing: border-box;
+    font-size: 32rpx;
+
+
+}
+
+.entry-footer-btns {
+  display: inline-block;
+  width: 450rpx;
+  height: 100rpx;
+  float: right;
+
+}
+
+.entry-foonter-btn {
+  padding: 5rpx;
+  display: inline-block;
+  float: right;
+  box-sizing: border-box;
+  height: 50rpx;
+  line-height: 40rpx;
+  margin-top: 25rpx;
+  margin: 20rpx;
+  border: 1rpx solid gray;
+  border-radius: 5rpx;
+  font-size: 30rpx;
 }

@@ -11,6 +11,7 @@ page, .page, .page__bd {
 
 .nav-menu {
   background: white;
+  position: fixed !important;
 }
 
 .coin-wrapper {
@@ -160,4 +161,18 @@ page, .page, .page__bd {
   height: 150rpx;
   line-height: 150rpx;
   text-align: center;
+}
+
+
+.log-yellow {
+  color: #f9b73b;
+}
+
+.log-green {
+  color: #1aad19;
+}
+
+
+.log-red {
+  color: red;
 }

@@ -1,4 +1,17 @@
-<view class="paySuccess-note">购买成功</view>
+<view class="paySuccess-note">
+
+  <image class="successImage" src="../../images/success.png" mode="aspectFit"></image>
+
+
+  <view class="pay-success-title">
+    购买成功
+  </view>
+  <view class="pay-success-desc">
+    您已成功购买图书，后续如有任何问题可与卖家联系沟通。阅读完后记得继续上传分享给其他读者哦
+
+</view>
+
+</view>
 
 
 
