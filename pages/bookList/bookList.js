@@ -41,6 +41,15 @@ Page({
     interval: 5000,
     duration: 1000
   },
+  goMap: function(e) {
+    var id = e.currentTarget.id;
+    console.log(id);
+    var url = '../amap/amap?id=' + id;
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   tapMainMenu: function (e) {
     //    获取当前显示的一级菜单标识
     var index = parseInt(e.currentTarget.dataset.index);

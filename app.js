@@ -96,6 +96,7 @@ App({
     choices: {},
   },
   config: {
+    amapKey: "cbd35e0e051954c68624956df462aceb",
     host: "https://www.xianpeng.org/api",
     //host: "http://127.0.0.1:10001/api",
   },

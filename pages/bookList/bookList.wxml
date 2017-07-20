@@ -4,7 +4,7 @@
 
   <swiper class="ad-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}">
-      <swiper-item>
+      <swiper-item catchtap="goMap">
         <image src="{{item}}" class="slide-image" width="100%" height="150" />
       </swiper-item>
     </block>
