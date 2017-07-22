@@ -1,4 +1,8 @@
 var amapFile = require('../../libs/amap-wx.js');
+var lonlat = "116.398419,39.909729";
+var city = "北京市";
+
+
 
 var markersData = [];
 Page({
@@ -96,7 +100,49 @@ Page({
     }
     myAmapFun.getPoiAround(params)
   },
-  bindInput: function(e){
+  bindInput: function (e) {
+    var that = this;
+    var keywords = e.detail.value;
+    var key = getApp().config.amapKey;
+    console.log("bindInput", e, keywords, lonlat, city)
+    var myAmapFun = new amapFile.AMapWX({ key: key });
+    myAmapFun.getInputtips({
+      keywords: keywords,
+      location: lonlat,
+      city: city,
+      success: function (data) {
+        console.log("bindInput, success")
+    
+        if (data && data.tips) {
+          var list = [];
+          for (var i = 0; i < data.tips.length; i++) {
+            var tmp = data.tips[i];
+            var info = {};
+            console.log(tmp.address, tmp.address.length)
+            if (tmp.address.length>0) {
+              tmp.address = tmp.district + tmp.address
+            } else {
+              tmp.address = tmp.district
+            }
+            if (tmp.location) {
+
+            }  else {
+              tmp.location = ""
+            }
+            list.push(tmp)
+
+          }
+          that.setData({
+            tips: list
+          });
+        }
+      },
+      complete: function(data) {
+        console.log(data)
+      }
+    })
+  },
+  bindxInput: function(e){
     var that = this;
     var url = '../inputtips/input';
     if(e.target.dataset.latitude && e.target.dataset.longitude && e.target.dataset.city){
@@ -137,6 +183,19 @@ Page({
     that.setData({
       markers: markers
     });
+  },
+  onChoose: function (e) {
+    console.log("tap", e)
+    var name = e.currentTarget.dataset.name;
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    prevPage.setData({
+      addressInfo: { 
+        name:name
+       }
+    })
+    wx.navigateBack();
   }
+  
 
 })

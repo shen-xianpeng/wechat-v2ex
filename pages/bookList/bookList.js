@@ -50,6 +50,15 @@ Page({
       url: url
     })
   },
+  goMyAddr: function (e) {
+    var id = e.currentTarget.id;
+    console.log(id);
+    var url = '../myAddr/myAddr?id=' + id;
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   tapMainMenu: function (e) {
     //    获取当前显示的一级菜单标识
     var index = parseInt(e.currentTarget.dataset.index);

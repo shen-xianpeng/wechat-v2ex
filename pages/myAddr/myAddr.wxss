@@ -1,0 +1,141 @@
+@import '../../teml/city.wxss';
+
+.header-label {
+  padding: 20rpx 0 20rpx 0;
+  margin-left: 20rpx;
+  border-bottom: 1px solid #f3f2f5;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #333;
+  display: block;
+}
+
+page {
+  background: #e6e6e6;
+}
+
+.container {
+  background: white;
+}
+
+.item {
+  margin-left: 20rpx;
+  border-bottom: 1px solid #f3f2f5;
+  height: 90rpx;
+  padding: 20rpx 0 20rpx 0;
+  position: relative;
+}
+
+.addr-user {
+  display: block;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 32rpx;
+}
+
+.addr-detail {
+  display: block;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: gray;
+}
+
+.check-btn {
+  display: inline-block;
+  float: left;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.check-btn .checked {
+  height: 80rpx;
+  width: 60rpx;
+}
+
+.check-btn .check {
+  height: 80rpx;
+  width: 50rpx;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 20rpx;
+  top: 30rpx;
+  padding: 20rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 36rpx;
+  color: #d81e06;
+}
+
+.bot-add {
+  position: fixed;
+  bottom: 0;
+  padding-top: 15rpx;
+  font-size: 36rpx;
+  padding-bottom: 15rpx;
+  width: 100%;
+  height: 60rpx;
+  line-height:60rpx;
+  text-align: center;
+  background: white;
+  color: #d81e06;
+}
+
+.modal-form {
+  background: white;
+  z-index: 10000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: #e6e6e6;
+}
+
+.section .label {
+  color: #333;
+  float: left;
+  margin-left: 20rpx;
+  display: inline-block;
+  width: 180rpx;
+  text-align: left;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.section .form-group {
+  display: inline-block;
+  font-size: 32rpx;
+  height: 80rpx;
+  width: 500rpx;
+  line-height: 80rpx;
+}
+
+.section {
+  border-bottom: 1px solid #f3f2f5;
+  background: white;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.confirm-add-btn {
+  width: 600rpx;
+  margin: 20rpx auto 20rpx auto;
+  background: #1aad19;
+  color: white;
+}
+
+.confirm-del-btn {
+  width: 600rpx;
+  margin: 0 auto 20rpx auto;
+  background: white;
+}
+
+.form-group input {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+}

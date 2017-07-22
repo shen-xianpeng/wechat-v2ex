@@ -21,6 +21,15 @@ Page({
     showErrorModal: false,
     errMsg: ""
   },
+  goMap: function (e) {
+    var id = e.currentTarget.id;
+    console.log(id);
+    var url = '../amap/amap?id=' + id;
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   // 事件处理函数
   bindOldNewChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)

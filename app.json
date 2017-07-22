@@ -2,7 +2,8 @@
   "pages":[
     "pages/bookList/bookList",
     "pages/amap/amap",
-"pages/inputtips/input",    
+    "pages/myAddr/myAddr",
+    "pages/inputtips/input",    
     "pages/myPublish/myPublish",
     "pages/myBought/myBought",
     "pages/mySold/mySold",

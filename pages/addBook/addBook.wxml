@@ -91,8 +91,10 @@
     </view>
  <view class="section section_gap form-entry">
       <label class="form-label">所在位置*</label>
-      <input name="bookLocation" bindinput="" value="{{book.id>0?book.publisher:form.publisher}}" placeholder="" />
+      <view catchtap="goMap" class="location-info" name="bookLocation" bindinput="" value="{{addressInfo.name}}" placeholder="" >
+          <span>{{addressInfo.name}}</span>
 
+      </view>
     </view>
 
     <view class="section section_gap form-entry">

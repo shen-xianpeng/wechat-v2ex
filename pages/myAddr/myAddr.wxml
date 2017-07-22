@@ -1,0 +1,83 @@
+<import src="../../teml/city.wxml"/>
+
+<template is="cascade" data="{{animationData:animationData,sheng:sheng,shi:shi, currentCity:currentCity, currentProvince:currentProvince}}"/>
+
+
+<view class="container">
+
+  <label class="header-label">收货地址</label>
+
+
+
+
+
+  <view class="classname">
+
+    <view wx:for-item="item" class="item" wx:for="{{addrList}}" wx:for-index="j" wx:key="id">
+      <view class="check-btn" data-key="{{item.id}}"  catchtap="setDefaultAddr">
+        <image wx:if="{{item.is_default==1}}" class="checked" mode="aspectFit" src="../../images/checked.png"></image>
+        <image wx:if="{{!item.is_default}}" class="check" mode="aspectFit" src="../../images/check.png"></image>
+
+      </view>
+      <p class="addr-user">
+        {{item.name}} {{item.phone}}
+
+      </p>
+      <p class="addr-detail">
+        {{item.province.name+"" + item.city.name+ " "+item.detail}}
+      </p>
+
+      <label data-pid="{{item.province.id}}" data-cid="{{item.city.id}}" data-key="{{item.id}}"  catchtap="toggleModal" class="edit-btn">
+        编辑
+        </label>
+    </view>
+  </view>
+
+
+</view>
+
+
+<view catchtap="toggleModal" class="bot-add">添加地址</view>
+
+
+
+<view wx:if="{{showAddr}}" class="modal-form">
+
+  <form bindsubmit="addAddr" bindreset="reset">
+    <view class="section">
+      <view class="label section__title">收货人:</view>
+      <view class='form-group'>
+        <input type="text" class="input-text" value="{{chooseAddr.name}}" name="name" placeholder="请输入收货人姓名" />
+      </view>
+    </view>
+    <view class="section section_gap">
+      <view class="label section__title">联系方式:</view>
+      <view class='form-group'>
+        <input type="text" class="input-text" value="{{chooseAddr.phone}}" name="phone" placeholder="请输入手机号" />
+      </view>
+    </view>
+  
+      <view class="section">
+      <view class=" label section__title">地区选择:</view>
+      <view  bindtap="dianji"  class='form-group'>
+        <view type="text" class="input-text" name="area" placeholder="请选择填写所在地区" >
+
+          {{currentProvince.name + " " + currentCity .name || "" }}
+        </view>
+      </view>
+    </view>
+
+
+    <view class="section section_gap">
+      <view class="label section__title">详细地址:</view>
+      <view class='form-group'>
+        <input type="text" class="input-text" value="{{chooseAddr.detail}}"  name="detail" placeholder="请填写详细街道和门牌号" />
+      </view>
+    </view>
+
+    <view class=" btn-area">
+      <button  class="confirm-add-btn" formType="submit">确定</button>
+      <button wx:if="{{selectAddr>0}}" class="confirm-del-btn"  catchtap="delAddr" formType="reset">删除地址</button>
+    </view>
+  </form>
+</view>
