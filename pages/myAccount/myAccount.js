@@ -33,6 +33,15 @@ Page({
         });
         this.fetchData(e.currentTarget.id)
     },
+    goWithdraw: function (e) {
+      var id = e.currentTarget.id;
+      console.log(id);
+      var url = '../withdraw/withdraw';
+
+      wx.navigateTo({
+        url: url
+      })
+    },
   // 事件处理函数
   goBookDetail: function (e) {
       var id = e.currentTarget.id;
@@ -72,6 +81,7 @@ Page({
                 coin: res.data.data.coin,
                 balance: res.data.data.balance,
           })
+          getApp().globalData.balance =  res.data.data.balance;
           if (tab == 0) {
             that.setData({
               hidden: true,

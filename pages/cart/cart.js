@@ -90,16 +90,18 @@ Page({
   },
   goOrderPreview: function(e) {
     var url = '../orderPreview/orderPreview?book_user_id=' + e.currentTarget.dataset.userid;
-
-    wx.navigateTo({
+    console.log(e, "goOrderPreview", url)
+    wx.redirectTo({
       url: url
     })
   },
   goCartBookList: function (e) {
+
     var bookIds = e.currentTarget.dataset.books;
     var url = '../chooseBookList/chooseBookList?user_book_ids=' + bookIds;
+    console.log(e, "goCartBookList", url)
 
-    wx.navigateTo({
+    wx.redirectTo({
       url: url
     })
   }

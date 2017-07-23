@@ -181,6 +181,14 @@ Page({
     if (activeCat > 0) {
       params["category_id"] = this.data.categoryIdList[activeCat-1];
     }
+    var longitude = getApp().globalData.longitude;
+    var latitude = getApp().globalData.latitude;
+    if (longitude) {
+      params["longitude"] = longitude
+    }
+    if (latitude) {
+      params["latitude"] = latitude
+    }
     wx.request({
       url: "https://www.xianpeng.org/book_list",
       url: getApp().config.host + "/book_list",      data: params,

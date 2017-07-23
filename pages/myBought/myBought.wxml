@@ -15,7 +15,7 @@
 
 
             <view class="item" wx:for="{{dataSet[0].infos}}" wx:for-index="j" wx:key="id">
-              <view class="entry-header">
+              <view  id="order-detail-{{item.id}}" class=" entry-header {{ activeHoverIndex=='order-detail-'+item.id?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-order="{{item.order_no}}" catchtap="goOrderDetail">
                 <view class="entry-label">
                   <label class="entry-cat-label">{{item.status_label}}</label>
                 </view>
@@ -82,7 +82,7 @@
 
 
             <view class="item" wx:for="{{dataSet[1].infos}}" wx:for-index="j" wx:key="id">
-              <view class="entry-header">
+              <view  id="order-detail-{{item.id}}" class=" entry-header {{ activeHoverIndex=='order-detail-'+item.id?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-order="{{item.order_no}}" catchtap="goOrderDetail">
                 <view class="entry-label">
                   <label class="entry-cat-label">{{item.status_label}}</label>
                 </view>
@@ -148,7 +148,7 @@
 
 
             <view class="item" wx:for="{{dataSet[2].infos}}" wx:for-index="j" wx:key="id">
-              <view class="entry-header">
+              <view  id="order-detail-{{item.id}}" class=" entry-header {{ activeHoverIndex=='order-detail-'+item.id?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-order="{{item.order_no}}" catchtap="goOrderDetail">
                 <view class="entry-label">
                   <label class="entry-cat-label">{{item.status_label}}</label>
                 </view>
@@ -213,7 +213,7 @@
           <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
 
             <view class="item" wx:for="{{dataSet[3].infos}}" wx:for-index="j" wx:key="id">
-              <view class="entry-header">
+              <view  id="order-detail-{{item.id}}" class=" entry-header {{ activeHoverIndex=='order-detail-'+item.id?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-order="{{item.order_no}}" catchtap="goOrderDetail">
                 <view class="entry-label">
                   <label class="entry-cat-label">{{item.status_label}}</label>
                 </view>

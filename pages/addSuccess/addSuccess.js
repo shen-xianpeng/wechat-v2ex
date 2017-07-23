@@ -6,17 +6,17 @@ Page({
     title: '',
 
   },
-  onLoad: function() {
-    
+  onLoad: function(options) {
+      this.data.book_id = options.book_id
   },
   goIndex: function () {
     wx.reLaunch({
       url: '/pages/bookList/bookList'
     })
   },
-  goOrder: function () {
+  goBookDetail: function () {
     wx.redirectTo({
-      url: '/pages/myBought/myBought'
+      url: '/pages/bookDetail/bookDetail?book_id='+this.data.book_id
     })
   }
 

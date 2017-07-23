@@ -23,7 +23,7 @@ Page({
           book: res.data.data
         })
         wx.setNavigationBarTitle({
-          title: res.data.data.title
+          title: res.data.data.title || ""
         })
       }
     })

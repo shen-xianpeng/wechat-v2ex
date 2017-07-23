@@ -84,7 +84,7 @@
                 </view>
               </view>
 
-              <view class="widthdraw-btn">
+              <view catchtap="goWithdraw" class="widthdraw-btn">
                 提现
               </view>
             </view>

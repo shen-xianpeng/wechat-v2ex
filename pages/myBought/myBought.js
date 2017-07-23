@@ -46,6 +46,44 @@ Page({
       url: url
     })
   },
+  goOrderDetail: function (e) {
+    var order_no = e.currentTarget.dataset.order;
+
+    var url = '../orderDetail/orderDetail?order_no=' + order_no;
+
+    wx.navigateTo({
+      url: url
+    })
+  },
+  touchStartElement: function (e) {
+    console.log("start", e);
+    var id = e.currentTarget.id;
+    this.setData({
+      activeHoverIndex: id
+
+    })
+  },
+  touchEndElement: function (e) {
+    console.log("end", e);
+
+    var that = this;
+    setTimeout(function () {
+      that.setData({
+        //warnning undefined==""=="0"==0
+        activeHoverIndex: "none"
+
+      })
+    }, 500)
+
+  },
+  touchMoveElement: function (e) {
+    console.log("move", e);
+
+    this.setData({
+      activeHoverIndex: "none"
+
+    })
+  },
   onCancel: function (e) {
     var that = this;
     var order_no = e.currentTarget.dataset.order;

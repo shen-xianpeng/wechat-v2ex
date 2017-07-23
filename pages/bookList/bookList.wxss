@@ -109,6 +109,7 @@ swiper image {
   line-height: 50rpx;
   float: left;
   width: 600rpx;
+  color: #333;
 }
 
 .menuholder {

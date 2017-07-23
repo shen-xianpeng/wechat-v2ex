@@ -1,0 +1,179 @@
+<view class="status-wrap">
+
+  <image  wx:if="{{data.status==5 && (data.confirm_delivery==0 || data.confirm_receive==0 ) }}"   src="../../images/order_wait.png" class="order-status-icon"></image>
+  <image  wx:if="{{data.status==5 && (data.confirm_delivery==1 &&  data.confirm_receive==1) }}"   src="../../images/order_success.png" class="order-status-icon"></image>
+  <image wx:if="{{data.status==6 || data.status==7}}" src="../../images/order_cancel.png" class="order-status-icon"></image>
+
+  <label class="status-label-text">{{data.status_label}}</label>
+</view>
+
+<view class="entry">
+
+  <view id="{{j}}" class="entry-header" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="">
+    <view class="user-info">
+      <image class="user-avatar" src="{{data.seller.avatar}}"></image>
+      <label class="user-name">{{data.seller.name}}</label>
+    </view>
+    <view class="nav-icon">
+
+
+    </view>
+
+  </view>
+
+
+
+  <view class="address-wrap">
+    <view wx:if="{{data.trade_cat==2}}" class="bot-entry">
+
+      <view class="entry-trade-label">
+         交易方式：上门自取
+
+      </view>
+
+    
+
+    </view>
+    <view wx:if="{{data.trade_cat==1}}" class="bot-entry">
+
+      <view class="entry-label">
+        收货人
+
+      </view>
+
+      <view class="entry-value">
+        {{data.name}}
+
+      </view>
+
+    </view>
+
+
+    <view wx:if="{{data.trade_cat==1}}" class="bot-entry">
+
+
+      <view class="entry-label">
+        手机号
+      </view>
+      <view class="entry-value">
+        {{data.phone}}
+
+      </view>
+
+    </view>
+
+
+    <view wx:if="{{data.trade_cat==1}}" class="bot-entry">
+
+
+      <view class="entry-label">
+        地址
+      </view>
+      <view class="entry-value">
+        {{data.address}}
+
+      </view>
+
+    </view>
+
+  </view>
+
+  <view class="entry-body {{               activeHoverIndex=='body-'+j?'show-body-wrap': '' }}">
+    <view class="show-body"></view>
+    <view class="book-list">
+      <view class="entry-book" wx:for="{{data.book_list}}" wx:for-index="k" wx:key="id">
+        <image mode="aspectFit" src="{{item.image_list[0]}}"></image>
+        <label class="book-price">{{item.price}}书币</label>
+      </view>
+
+    </view>
+    <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-books="{{data.book_ids}}" bindtap="goChooseBookList">
+      <view class=" transform-bg">
+      </view>
+      <view class=" nav-cart-label">
+        共{{data.book_list.length}}本
+      </view>
+      <image class="cart-item-list" src="../../images/arrow.png" mode="aspectFit"></image>
+
+    </view>
+
+
+  </view>
+
+
+</view>
+
+
+
+
+
+
+
+<view class="section section_gap form-entry">
+
+  <label class="form-label">图书费用</label>
+    <view class="input-element">
+      {{data.book_fee}}书币
+    </view>
+</view>
+<view class="section section_gap form-entry">
+
+  <label class="form-label">运费</label>
+    <view class="input-element">
+      {{data.express_fee}}元
+    </view>
+</view>
+<view class="section section_gap form-entry">
+
+  <label class="form-label">合计</label>
+    <view class="input-element">
+      <label class="total-">{{data.book_fee}}书币</label>
+      <label class="total-" wx-if="{{data.express_fee>0}}">+</label>
+      <label class="total-" wx-if="{{data.express_fee>0}}">{{data.express_fee}}元</label>
+    </view>
+</view>
+
+
+<view class="bot-wrap">
+
+  <view class="bot-entry">
+
+    <view class="entry-label">
+      订单编号
+
+    </view>
+
+    <view class="entry-value">
+      {{data.order_no}}
+
+    </view>
+
+  </view>
+
+
+  <view class="bot-entry">
+
+
+    <view class="entry-label">
+      下单时间
+    </view>
+    <view class="entry-value">
+      {{data.create_time}}
+
+    </view>
+
+  </view>
+
+
+</view>
+
+<view wx:if="{{data.status==5 && (data.confirm_delivery==0 || data.confirm_receive==0)}}" class="bot-confirm">
+  <view wx:if="{{ data.buy && (data.status==5 || data.status==0) }}" data-order="{{data.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
+  <view wx:if="{{data.buy && (data.status==5) }}" data-order="{{data.order_no}}" catchtap="onConfirmReceive" class="entry-foonter-btn entry-btn-ok">已收货</view>
+
+  <view wx:if="{{  data.buy==false && (data.status==5 || data.status==0 ) }}" data-order="{{data.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
+  <view wx:if="{{ data.buy==false &&  (data.status==5) }}" data-order="{{data.order_no}}" catchtap="onConfirmDelivery" class="entry-foonter-btn entry-btn-ok">已交货</view>
+
+
+
+</view>

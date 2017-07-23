@@ -47,15 +47,21 @@
       {{tradeMethod[tradeMethodIndex]||'请选择交易方式'}}
     </view>
   </picker>
+              <image class="arrow-icon" src="../../images/arrow.png" mode="aspectFit"></image>
+
 </view>
 
 
 
 
-<view wx-if="{{tradeMethodIndex==0}}" class="section section_gap form-entry">
+<view wx-if="{{tradeMethodIndex==0}}" class="section section_gap form-entry input-addr">
 
   <label class="form-label">地址信息</label>
-  <input name="address" bindinput="" value="{{address}}" bindchange="bindChange" placeholder="请输入地址" />
+  <view class="addressBtn" name="address" bindinput="" value="{{address}}" catchtap="goMyAddr" placeholder="请输入地址" >
+        {{chooseAddr.province.name +""+chooseAddr.city.name + chooseAddr.detail}}
+  </view>
+              <image class="arrow-icon" src="../../images/arrow.png" mode="aspectFit"></image>
+
 </view>
 
 

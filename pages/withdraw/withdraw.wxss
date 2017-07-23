@@ -1,0 +1,51 @@
+page {
+    background: #efeff4;
+
+}
+
+
+.section {
+  padding: 20rpx;
+  background: white;
+  height: 60rpx;
+  line-height: 80rpx;
+}
+
+.form-label {
+height:60rpx;
+line-height:60rpx;
+float: left;
+width:200rpx;
+padding-left: 30rpx;
+font-size:36rpx;
+
+color: #333;
+
+}
+
+.section input {
+  height: 60rpx;
+line-height:60rpx;
+
+width:400rpx;
+font-size:36rpx;
+color: #333;
+}
+
+.confirm-btn {
+   margin: 40rpx auto 0 auto;
+  width: 650rpx;
+    background: #1aad19;
+  color: white;
+  font-size: 40rpx;
+  height:100rpx;
+line-height:100rpx;
+
+}
+
+.balance-label {
+color: #333;
+
+padding:30rpx 0 30rpx 50rpx;
+font-size:36rpx;
+}

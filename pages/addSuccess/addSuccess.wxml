@@ -1,0 +1,22 @@
+<view class="paySuccess-note">
+
+  <image class="successImage" src="../../images/success.png" mode="aspectFit"></image>
+
+
+  <view class="pay-success-title">
+    发布成功
+  </view>
+  <view class="pay-success-desc">
+您已成功发布图书，请随时关注图书咨询，售出图书后请及时邮寄或与买家约定自取。
+</view>
+
+</view>
+
+
+
+
+<view class="paySuccess-btn-order" catchtap="goBookDetail">查看订单</view>
+
+
+
+<view class="paySuccess-btn-index" catchtap="goIndex">返回首页</view>

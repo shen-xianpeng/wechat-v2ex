@@ -3,7 +3,9 @@
 
   <image style="" catchtap="onTabAdd" class="scan-icon " mode="aspectFit" src="http://image.xianpeng.org/1496817737.99.png"></image>
 
-
+  <view class="scan-tip">
+  扫描图书条形码或者手动填写以下图书信息
+  </view>
   <form class="book-form" bindsubmit="onAddUserBook" bindreset="formReset">
     <view class="section section_gap hidden">
       <view class="section__title">switch</view>
@@ -57,15 +59,15 @@
     </view>
 
     <view class="top-entry  section section_gap form-entry">
-      <label class="form-label">价格*</label>
-      <input name="bookPrice" bindinput="" value="{{book.authors>0?book.authors:form.authors}}" placeholder="建议金额为书本原价" />
+      <label class="form-label">价格(书币)*</label>
+      <input type="number" name="bookPrice" bindinput="" value="{{book.authors>0?book.authors:form.authors}}" placeholder="建议金额为书本原价" />
 
     </view>
 
 
     <view class="section section_gap form-entry">
-      <label class="form-label">邮费*</label>
-      <input name="bookExpress" bindinput="" value="{{book.authors>0?book.authors:form.authors}}" placeholder="请输入邮费金额" />
+      <label class="form-label">邮费(元)*</label>
+      <input type="digit" name="bookExpress" bindinput="" value="{{book.authors>0?book.authors:form.authors}}" placeholder="请输入邮费金额" />
 
     </view>
 
@@ -78,6 +80,8 @@
           {{categoryList[categoryIndex]}}
         </view>
       </picker>
+            <image class="arrow-icon" src="../../images/arrow.png" mode="aspectFit"></image>
+
     </view>
 
     <view class="section section_gap form-entry">
@@ -88,6 +92,8 @@
           {{degreeList[newOldIndex]}}
         </view>
       </picker>
+            <image class="arrow-icon" src="../../images/arrow.png" mode="aspectFit"></image>
+
     </view>
  <view class="section section_gap form-entry">
       <label class="form-label">所在位置*</label>
@@ -95,6 +101,8 @@
           <span>{{addressInfo.name}}</span>
 
       </view>
+            <image class="arrow-icon" src="../../images/arrow.png" mode="aspectFit"></image>
+
     </view>
 
     <view class="section section_gap form-entry">

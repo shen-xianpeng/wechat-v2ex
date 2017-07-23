@@ -1,6 +1,6 @@
 <view class="entry" wx:for="{{groupList}}" wx:for-index="j" wx:key="id">
 
-  <view id="{{j}}" class="entry-header {{               activeHoverIndex==j?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-userid="{{item.infos[0].user.id}}" bindtap="goOrderPreview">
+  <view id="{{j}}" class="entry-header {{               activeHoverIndex==j?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-userid="{{item.infos[0].user.id}}" catchtap="goOrderPreview">
     <view class="user-info">
       <image class="user-avatar" src="{{item.infos[0].user.avatar}}"></image>
       <label class="user-name">{{item.infos[0].user.name}}</label>
@@ -24,7 +24,7 @@
       </view>
 
     </view>
-    <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-books="{{item.user_book_ids}}" bindtap="goCartBookList">
+    <view class="nav-cart" id="body-{{j}}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-books="{{item.user_book_ids}}" catchtap="goCartBookList">
       <view class=" transform-bg">
        </view>
       <view class=" nav-cart-label">

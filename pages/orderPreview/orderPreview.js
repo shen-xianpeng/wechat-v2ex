@@ -4,6 +4,11 @@ var Api = require('../../utils/api.js');
 Page({
   data: {
     title: '最新话题',
+    chooseAddr: {
+      province: { name: "" },
+      city: { name: "" },
+      detail: "",
+    },
     selected: 'wechat',
     address: "",
     tradeMethodIndex: 0,
@@ -12,6 +17,15 @@ Page({
       { "id": "wechat", "name": "使用微信支付" },
       { "id": "balance", "name": "使用余额支付" }
       ]
+  },
+  goMyAddr: function (e) {
+    var id = e.currentTarget.id;
+    console.log(id);
+    var url = '../myAddr/myAddr?id=' + id;
+
+    wx.navigateTo({
+      url: url
+    })
   },
   bindChange: function (e) {
     this.setData({
@@ -77,6 +91,12 @@ Page({
         url: '/pages/paySuccess/paySuccess?id=1'
       })
     }
+
+
+    var name = this.data.chooseAddr.name
+    var phone = this.data.chooseAddr.phone
+    var lnglat = this.data.chooseAddr.city.lnglat;
+    var addr = this.data.chooseAddr.province.name + this.data.chooseAddr.city.name + this.data.chooseAddr.detail;
     var book_ids = getApp().getIdList(this.data.data.book_list);
     var data = {
       book_ids: book_ids.join(","),
@@ -84,8 +104,14 @@ Page({
       book_fee: this.data.data.book_fee,
       trade_cat: parseInt(this.data.tradeMethodIndex||0)+1,
       pay_express_method: this.data.selected,
-      address: this.data.address
+      address: addr,
+      addr_id: that.data.chooseAddr.id,
+      lnglat: lnglat,
+      name: name,
+      phone:phone
+
     }
+    data["openid"] = getApp().globalData.openid;
     wx.request({
       url: getApp().config.host + '/start_pay',
       method: 'POST',

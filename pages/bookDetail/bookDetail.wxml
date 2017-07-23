@@ -81,11 +81,11 @@
     <view class="book-infos">
 
       <view class="sub-info">
-        <label>作者： </label>
+        <label>作者 </label>
         <text>{{book.author}} </text>
       </view>
       <view class="sub-info">
-        <label>出版社： </label>
+        <label>出版社 </label>
         <text>{{book.publisher}} </text>
       </view>
 

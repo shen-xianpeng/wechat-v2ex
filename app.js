@@ -1,7 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-
+    var that = this;
     this.setUserInfo();
     this.getChoiceList();
     wx.getLocation({
@@ -13,6 +13,9 @@ App({
         var accuracy = res.accuracy
 
         console.log(latitude, longitude)
+        that.globalData.latitude = latitude;
+        that.globalData.longitude = longitude;
+        
         // wx.openLocation({
         //   latitude: latitude,
         //   longitude: longitude,
@@ -22,6 +25,7 @@ App({
     })
     var that = this
     var user = wx.getStorageSync('user') || {};
+    this.globalData.openid = wx.getStorageSync('openid') || "";
     var userInfo = wx.getStorageSync('userInfo') || {};
     if ((1 || !user.openid || (user.expires_in || Date.now()) < (Date.now() + 600)) && (!userInfo.nickName)) {
       wx.login({
@@ -32,6 +36,14 @@ App({
             console.log("start....")
             wx.getUserInfo({
               withCredentials: true,
+              fail: function (res) {
+                that.getOpenid(res.code)
+
+                console.log(res, "fail")
+              },
+              complete: function (res) {
+                console.log(res, "complete")
+              },
               success: function (res) {
                 var objz = {};
                 console.log("sssss....")
@@ -90,6 +102,29 @@ App({
         }
       });
     }
+  },
+  getOpenid: function(code) {
+    var that=this;
+    if (that.globalData.openid) {
+      return that.globalData.openid;
+    }
+    var params = {};
+    var l = that.config.host + '/jscode_to_openid'
+    params["code"] = code
+    wx.request({
+      url: l,
+      data: params,
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT    
+      // header: {}, // 设置请求的 header    
+      success: function (res) {
+        if (res.data.code==0) {
+          that.globalData.openid = res.data.data.openid;
+          wx.setStorageSync('openid', res.data.data.openid);//存储openid    
+
+        }
+      
+        }
+    });
   },
   globalData: {
     userInfo: null,

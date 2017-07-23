@@ -1,7 +1,7 @@
 .entry-header {
   height: 80rpx;
   width: 100%;
-  border-bottom: 1rpx solid #e6e6e6;
+  border-bottom: 0 solid #e6e6e6;
 }
 
 page {
@@ -11,9 +11,9 @@ page {
 
 .entry {
   background: white;
-  border-top: 1rpx solid #e6e6e6;
+  border-top: 0 solid #e6e6e6;
   border-bottom: 1rpx solid #e6e6e6;
-  margin-top: 50rpx;
+  margin-top: 30rpx;
 }
 
 .entry-header view {
@@ -170,13 +170,14 @@ page {
   position: relative;
   padding: 10rpx 0rpx 10rpx 50rpx;
   background: white;
-  border-top: 1rpx solid #f3f2f5;
   font-size: 32rpx;
+  color: gray;
+  font-size: 30rpx;
 }
 
 .form-label {
   display: inline-block;
-  width: 200rpx;
+  width: 190rpx;
   height: 60rpx;
   float: left;
   line-height: 60rpx;
@@ -184,7 +185,7 @@ page {
 
 .form-input {
   display: inline-block;
-  width: 500rpx;
+  width: 470rpx;
   height: 60rpx;
 }
 
@@ -193,6 +194,7 @@ page {
   height: 60rpx;
   line-height: 60rpx;
   color: gray;
+  font-size: 30rpx;
 }
 
 .input-radio {
@@ -238,7 +240,7 @@ page {
   bottom: 0;
   background: white;
   width: 100%;
-  height: 80rpx;
+  height: 100rpx;
   line-height: 80rpx;
   border-top: 1rpx solid #e6e6e6;
 }
@@ -292,17 +294,107 @@ page {
   float: left;
 }
 
-
 .input-addr {
   height: 60rpx;
 }
 
-
-
 .arrow-icon {
-width:50rpx;
-height:76rpx;
-position:absolute;
-right:30rpx;
-top: 0rpx;
+  width: 50rpx;
+  height: 76rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 0rpx;
+}
+
+.entry-label {
+  float: left;
+  font-size: 28rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 150rpx;
+  color: #333;
+  padding: 5rpx 15rpx 5rpx 50rpx;
+}
+
+.entry-trade-label{
+  float: left;
+  font-size: 28rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 500rpx;
+  color: #333;
+  padding: 5rpx 15rpx 5rpx 50rpx;
+}
+
+.bot-entry {
+  width: 100%;
+  height: 60rpx;
+}
+
+.entry-value {
+  font-size: 30rpx;
+  width: 450rpx;
+  float: left;
+  height: 50rpx;
+  padding: 5rpx 15rpx 5rpx 20rpx;
+  line-height: 50rpx;
+}
+
+.bot-wrap {
+  background: white;
+  border-top: 10rpx solid #f3f2f5;
+}
+
+.address-wrap {
+  background: white;
+  border-bottom: 10rpx solid #f3f2f5;
+}
+
+
+.entry-foonter-btn {
+display:inline-block;
+float:right;
+box-sizing:border-box;
+height:70rpx;
+line-height:70rpx;
+margin-top:25rpx;
+margin:15rpx;
+border:1rpx solid gray;
+border-radius:5rpx;
+font-size:30rpx;
+margin-right:117rpx;
+width:200rpx;
+text-align:center;
+
+
+}
+
+
+.order-status-icon {
+  height:80rpx;
+width:80rpx;
+margin:0 auto;
+display:block;
+
+}
+
+.status-label-text {
+  display:block;
+width:100%;
+text-align:center;
+color: #333;
+}
+
+.status-wrap{
+background:white;
+font-size: 30rpx;
+padding: 10rpx;
+}
+
+
+.input-element {
+  display:inline-block;
+height:60rpx;
+line-height:60rpx;
+
 }

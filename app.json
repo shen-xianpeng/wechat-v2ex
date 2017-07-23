@@ -1,7 +1,10 @@
 {
   "pages":[
     "pages/bookList/bookList",
+    "pages/addSuccess/addSuccess",
+    "pages/orderDetail/orderDetail",
     "pages/amap/amap",
+    "pages/withdraw/withdraw",
     "pages/myAddr/myAddr",
     "pages/inputtips/input",    
     "pages/myPublish/myPublish",

@@ -262,6 +262,7 @@ Page({
     var that = this;
     var data = {};
     var id = e.currentTarget.dataset.key;
+  that.data.selectAddr = id;
     if (id == 0) {
       wx.showToast({
         title: "请选择地址",
@@ -310,6 +311,16 @@ Page({
             "addrList": that.data.addrList
           }
         )
+        var pages = getCurrentPages();
+        that.setSelected();
+        setTimeout(function(){
+          var prevPage = pages[pages.length - 2];  //上一个页面
+          prevPage.setData({
+            chooseAddr: that.data.chooseAddr
+          })
+          console.log(that.data.chooseAddr);
+        wx.navigateBack();
+        }, 500)
         return
 
 

@@ -17,6 +17,7 @@
 }
 
 .form-entry {
+  position: relative;
   padding: 10rpx;
   overflow: hidden;
   border-bottom: 1px solid #f3f2f5;
@@ -32,6 +33,7 @@
   height: 66rpx;
   line-height: 66rpx;
   overflow: hidden;
+  font-size: 36rpx;
 }
 
 .form-entry input {
@@ -159,4 +161,20 @@
   width: 500rpx;
   font-size: 30rpx;
   float: left;
+}
+
+.scan-tip {
+  font-size: 30rpx;
+  text-align: center;
+  color: gray;
+}
+
+
+
+.arrow-icon {
+width:50rpx;
+height:90rpx;
+position:absolute;
+right:30rpx;
+top:0;
 }

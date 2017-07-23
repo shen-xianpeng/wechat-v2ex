@@ -1,0 +1,21 @@
+<view class="page">
+ 
+ <view class="balance-label">
+  可提现金额：{{balance}}元
+ 
+ </view>
+
+
+
+
+    <view class="section section_gap form-entry">
+      <label class="form-label">提现金额</label>
+      <input type="digit" bindinput="setAmount" value="{{amount}}" placeholder="请输入想要提现的金额" />
+
+    </view>
+
+
+      <button catchtap="withdraw" class="confirm-btn" formType="submit">确定</button>
+
+
+</view>
