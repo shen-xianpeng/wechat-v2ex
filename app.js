@@ -1,5 +1,11 @@
 //app.js
+var util = require('/utils/md5.js')    
+
+
 App({
+  MD5: function (password) {
+    return util.hexMD5(password); 
+  },
   onLaunch: function () {
     var that = this;
     this.setUserInfo();
@@ -132,8 +138,8 @@ App({
   },
   config: {
     amapKey: "cbd35e0e051954c68624956df462aceb",
-    host: "https://www.xianpeng.org/api",
-   //host: "http://127.0.0.1:10001/api",
+    //host: "https://www.xianpeng.org/api",
+   host: "http://127.0.0.1:10001/api",
   },
   setUserInfo: function () {
     var user = wx.getStorageSync('user');

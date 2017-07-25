@@ -33,7 +33,7 @@
   height: 66rpx;
   line-height: 66rpx;
   overflow: hidden;
-  font-size: 36rpx;
+  font-size: 32rpx;
 }
 
 .form-entry input {

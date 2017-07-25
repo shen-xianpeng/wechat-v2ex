@@ -1,0 +1,37 @@
+<view class="page">
+ 
+
+
+
+  <view class="section section_gap form-entry">
+      <label class="form-label">手机</label>
+      <input type="number" bindinput="setAmount" value="{{cellphone}}" placeholder="请输入手机号码" />
+
+    </view>
+
+
+  <view class="section section_gap form-entry">
+      <label class="form-label">验证码</label>
+      <input class="vcode-input" type="number" bindinput="setAmount" value="{{vcode}}" placeholder="请输入验证码" />
+
+      <label class="send-btn">发送验证码</label>
+
+
+    </view>
+
+    <view class="section section_gap form-entry">
+      <label class="form-label">密码</label>
+      <input type="password" bindinput="setAmount" value="{{password}}" placeholder="请输入密码" />
+
+    </view>
+
+
+    <view class="tip">
+      <view catchtap="goLogin" class="left-tip">已有账号，直接登录吧>></view>
+
+    </view>
+
+      <button catchtap="withdraw" class="confirm-btn" formType="submit">确定</button>
+
+
+</view>

@@ -50,6 +50,14 @@ Page({
       url: url
     })
   },
+  goLogin: function (e) {
+ 
+    var url = '../login/login'  ;
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   goMyAddr: function (e) {
     var id = e.currentTarget.id;
     console.log(id);

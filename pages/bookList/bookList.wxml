@@ -14,7 +14,7 @@
     <image src="../../images/alarm.png">
 
     </image>
-    <swiper catchtap="goMyAddr" class="swiper_msg" circular="true" indicator-dots="{{indicatorDots}}" vertical="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+    <swiper catchtap="goLogin" class="swiper_msg" circular="true" indicator-dots="{{indicatorDots}}" vertical="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
       <block wx:for="{{[1,2,3]}}">
         <swiper-item bindtap="itemclick" data-id="{{item.id}}" data-name="{{item.name}}">
           <label>xianpeng上传了新书“一点巴黎”</label>

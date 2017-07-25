@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/bookList/bookList",
+    "pages/register/register",
+    "pages/login/login",
     "pages/addSuccess/addSuccess",
     "pages/orderDetail/orderDetail",
     "pages/amap/amap",

@@ -1,7 +1,7 @@
 
 Page({
     data: {
-      amount:0
+      amount:""
     },
     onLoad: function () {
         var that = this;

@@ -64,7 +64,7 @@ page, .page, .page__bd {
 
 .coin-num-amount {
   line-height: 180rpx;
-  font-size: 66rpx;
+  font-size: 60rpx;
   height: 130rpx;
 }
 
@@ -76,7 +76,7 @@ page, .page, .page__bd {
 
 .money-num-amount {
   line-height: 180rpx;
-  font-size: 66rpx;
+  font-size: 60rpx;
   height: 130rpx;
 }
 

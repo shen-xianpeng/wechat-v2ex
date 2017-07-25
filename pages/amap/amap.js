@@ -187,11 +187,17 @@ Page({
   onChoose: function (e) {
     console.log("tap", e)
     var name = e.currentTarget.dataset.name;
+    var lnglat = e.currentTarget.dataset.lnglat;
+    var adcode = e.currentTarget.dataset.adcode;
+    var address = e.currentTarget.dataset.address;
     var pages = getCurrentPages();
     var prevPage = pages[pages.length - 2];  //上一个页面
     prevPage.setData({
       addressInfo: { 
-        name:name
+        name:name,
+        adcode: adcode,
+        address: address,
+        lnglat: lnglat,
        }
     })
     wx.navigateBack();

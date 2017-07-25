@@ -1,0 +1,86 @@
+page {
+}
+
+.section {
+  position: relative;
+  background: white;
+  height: 60rpx;
+  line-height: 80rpx;
+  margin-bottom: 0;
+  border: 1rpx solid gray;
+  margin: 60rpx;
+  border-radius: 10rpx;
+  padding: 5rpx;
+}
+
+.form-label {
+  height: 60rpx;
+  line-height: 60rpx;
+  float: left;
+  width: 160rpx;
+  padding-left: 30rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.section input {
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 380rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.confirm-btn {
+  margin: -10rpx auto 0 auto;
+  width: 630rpx;
+  background: #1aad19;
+  color: white;
+  font-size: 40rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.balance-label {
+  color: #333;
+  padding: 30rpx 0 30rpx 50rpx;
+  font-size: 36rpx;
+}
+
+.tip {
+  margin: -30rpx 60rpx 10rpx 60rpx;
+  height: 100rpx;
+}
+
+.tip view {
+  font-size: 30rpx;
+}
+
+.left-tip {
+  width: 380rpx;
+  float: left;
+}
+
+.right-tip {
+  width: 250rpx;
+  float: right;
+  text-align: right;
+}
+
+.send-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 50rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  padding: 10rpx;
+  background: gray;
+  color: white;
+  border-radius: 0 5rpx 5rpx 0;
+}
+
+
+.vcode-input {
+  width: 250rpx !important;
+}

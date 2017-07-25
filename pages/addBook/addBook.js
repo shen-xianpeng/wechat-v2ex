@@ -6,6 +6,7 @@ Page({
     title: '添加图书',
     book: {},
     degreeList: [],
+    addressInfo: {},
     categoryList: [],
     newOldIndex: 0,
     categoryIndex: 0,
@@ -103,6 +104,10 @@ Page({
     data["category_id"] = that.data.categoryIdList[e.detail.value.category || 0];
     data["description"] = e.detail.value.bookDescription || "";
     data["location"] = e.detail.value.bookLocation || "";
+    data["address"] = that.data.addressInfo.address || "";
+    data["lnglat"] = that.data.addressInfo.lnglat || "";
+    data["adcode"] = that.data.addressInfo.adcode || "";
+    data["address_name"] = that.data.addressInfo.name || "";
 
     console.log(e.detail.value.oldDegree);
     console.log(that.data.categoryList[e.detail.value.category])
