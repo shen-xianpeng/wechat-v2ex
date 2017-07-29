@@ -1,28 +1,28 @@
-<view class="page">
+<form class="page" bindsubmit="onLogin">
  
 
 
 
   <view class="section section_gap form-entry">
       <label class="form-label">手机</label>
-      <input type="number" bindinput="setAmount" value="{{cellphone}}" placeholder="请输入手机号码" />
+      <input name="cellphone" type="number" bindinput="setAmount" value="{{cellphone}}" placeholder="请输入手机号码" />
 
     </view>
 
     <view class="section section_gap form-entry">
       <label class="form-label">密码</label>
-      <input type="password" bindinput="setAmount" value="{{password}}" placeholder="请输入密码" />
+      <input name="password" type="password" bindinput="setAmount" value="{{password}}" placeholder="请输入密码" />
 
     </view>
 
 
     <view class="tip">
       <view catchtap="goRegister" class="left-tip">还没有账号，注册一个>></view>
-      <view class="right-tip">忘记密码>></view>
+      <view catchtap="goReset" class="right-tip">忘记密码>></view>
 
     </view>
 
-      <button catchtap="withdraw" class="confirm-btn" formType="submit">确定</button>
+      <button  class="confirm-btn" formType="submit">确定</button>
 
 
-</view>
+</form>

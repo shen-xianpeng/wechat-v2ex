@@ -72,7 +72,7 @@ Page({
     var that= this;
     var params = {};
     params["cellphone"] = this.data.cellphone;
-    params["code_type"] = "register";
+    params["code_type"] = "reset";
 
     wx.request({
       url: getApp().config.host + "/send_sms_code",
@@ -116,7 +116,7 @@ Page({
     params["vcode"] = e.detail.value.vcode;
 
     wx.request({
-      url: getApp().config.host + "/register",
+      url: getApp().config.host + "/reset_password",
       data: params,
       method: "POST",
       header: {

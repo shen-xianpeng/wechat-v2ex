@@ -10,7 +10,7 @@ Page({
       this.data.book_id = options.book_id
   },
   goIndex: function () {
-    wx.reLaunch({
+    wx.switchTab({
       url: '/pages/bookList/bookList'
     })
   },

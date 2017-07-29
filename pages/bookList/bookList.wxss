@@ -10,7 +10,7 @@
   max-width: 200rpx;
   width: auto;
   margin: 0 auto;
-  margin-top: 10rpx;
+  margin-top: 50rpx;
   display: block;
 }
 
@@ -44,6 +44,7 @@
 }
 
 .item {
+  position: relative;
   display: inline-block;
   width: 350rpx;
   overflow: hidden;
@@ -221,7 +222,7 @@ swiper {
 
 /* 0rpx有高度 bug*/
 
-///
+
 .ad-swiper image {
   width: 100%;
 }
@@ -232,4 +233,21 @@ swiper {
 
 .item {
   background: white;
+}
+
+.dis-label-wrap {
+  position: absolute;
+  float: left;
+  background: #f9b73b;
+  color: white;
+  border-radius: 10rpx;
+  padding: 5rpx;
+  float: left;
+  margin: 5rpx;
+}
+
+.dis-label-wrap  view {
+  font-size: 26rpx;
+  text-align: left;
+  padding-left: 10rpx;
 }

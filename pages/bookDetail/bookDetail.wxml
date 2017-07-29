@@ -44,9 +44,9 @@
       </view>
       <view class="book-distance ">
 
-        <image mode="aspectFit" class=" hidden book-location-icon" src="../../images/location.png"></image>
-        <view class="hidden distance-text">
-          12km
+        <image  catchtap="goBookLocation" mode="aspectFit" class="  book-location-icon" src="../../images/location.png"></image>
+        <view class=" distance-text">
+         11 {{book.distance}}
 
         </view>
 

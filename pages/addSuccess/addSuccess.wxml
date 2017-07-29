@@ -15,7 +15,7 @@
 
 
 
-<view class="paySuccess-btn-order" catchtap="goBookDetail">查看订单</view>
+<view class="paySuccess-btn-order" catchtap="goBookDetail">查看图书</view>
 
 
 

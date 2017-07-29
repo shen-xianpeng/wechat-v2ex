@@ -1,3 +1,4 @@
+var Util = require('../../utils/md5.js');
 
 Page({
   data: {
@@ -14,27 +15,33 @@ Page({
       balance: getApp().globalData.balance
     })
   },
+  goReset: function(e) {
+    var url = '../reset/reset';
+
+    wx.redirectTo({
+      url: url
+    })
+  },
   goRegister: function (e) {
 
     var url = '../register/register';
 
-    wx.navigateTo({
+    wx.redirectTo({
       url: url
     })
   },
-  login: function () {
+  onLogin: function (e) {
     var that = this;
     var params = {};
-    params["amount"] = that.data.amount;
-    params["openid"] = getApp().globalData.openid;
+    params["cellphone"] = e.detail.value.cellphone;
+    params["password"] = Util.hexMD5( e.detail.value.password) ;
 
     wx.request({
-      url: getApp().config.host + "/withdraw_money",
+      url: getApp().config.host + "/login",
       data: params,
       method: "POST",
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
-        "token": getApp().globalData.userInfo.token
       },
       success: function (res) {
         if (res.data.code != 0) {
@@ -50,6 +57,9 @@ Page({
           icon: 'error',
           duration: 1000
         })
+    
+        wx.setStorageSync('user', res.data.data);//存储openid    
+        getApp().globalData.userInfo = res.data.data
         wx.navigateBack({
 
         })

@@ -15,9 +15,13 @@ page {
 }
 
 .owner-avatar {
-  width: 200rpx;
-  height: 200rpx;
+  width: 80rpx !important;
+  height: 80rpx  !important;
   border-radius: 100%;
+  position:absolute;
+right:100rpx;
+top: 4rpx;
+
 }
 
 .topic-created {
@@ -39,6 +43,10 @@ page {
   color: #777;
 }
 
+.topic-detail {
+  margin-top:40rpx;
+
+}
 .topic-desc {
   margin-bottom: 20rpx;
   line-height: 1.4;
@@ -91,11 +99,11 @@ page {
 }
 
 #mine .quote .prompt {
-  color: #909090;
+  color: gray;
   transform: translate(0, -50%);
   position: absolute;
   top: 50%;
-  right: 58rpx;
+  right: 110rpx;
 }
 
 #mine .quote .dot {
@@ -106,9 +114,8 @@ page {
 }
 
 .login-button {
-  width: 200rpx;
+  width: 160rpx;
   height: 60rpx;
-  font-size: 30rpx;
   line-height: 60rpx;
 }
 
@@ -119,10 +126,30 @@ page {
 
 
 
-.editUser {
-  position: absolute;
-  font-size: 32rpx;
-  color: #333;
-  top: 20rpx;
-  right: 50rpx;
+.modal-form {
+  position:fixed;
+background:white;
+top: 0;
+width:100%;
+height:100%;
+
+}
+
+.input-nickname {
+  margin:50rpx 30rpx 50rpx 30rpx;
+
+}
+
+.confirm-edit-btn {
+  width: 690rpx;
+  margin: 0 auto;
+}
+
+.pick-gender {
+  width:530rpx;
+  height:60rpx;
+  line-height:60rpx;
+  text-align:right;
+  color: gray;
+
 }

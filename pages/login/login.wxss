@@ -48,7 +48,7 @@ page {
 
 
 .tip {
-  margin:  -30rpx 60rpx 10rpx 60rpx;
+  margin:  30rpx 60rpx 10rpx 60rpx;
   height: 100rpx;
 }
 

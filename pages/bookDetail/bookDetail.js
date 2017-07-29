@@ -10,10 +10,25 @@ Page({
     scroll: 'auto',
     book: {},
   },
+  goBookLocation: function() {
+     wx.openLocation({
+          latitude: this.data.book.lat,
+          longitude: this.data.book.lng,
+          scale: 28
+        })
+  },
   fetchDetail: function (id) {
+    var params = {};
+    var longitude = getApp().globalData.longitude;
+    var latitude = getApp().globalData.latitude;
+    if (longitude && latitude) {
+      params["lnglat"] = longitude + "," + latitude
+    }
     var that = this;
     wx.request({
       url: getApp().config.host +"/book_detail?book_id=" + id,
+      method: "GET",
+      data: params,
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         "token": getApp().globalData.userInfo.token

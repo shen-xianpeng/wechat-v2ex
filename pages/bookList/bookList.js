@@ -18,6 +18,8 @@ var initSubMenuHighLight = [
 Page({
   data: {
     lastScrollTop:0,
+    currentCatNmae: "全部分类",
+    currentSortName: "推荐排序",
     sortList: ["离我最近", "最新发布", "人气最高"],
     mainMenuList: ["全部分类","推荐排序"],
     toView: "scrollmenu",
@@ -96,10 +98,32 @@ Page({
     var indexArray = e.currentTarget.dataset.index.split('-');
     if (indexArray[0]==0) {
       this.data.activeCat = indexArray[1];
+      if (this.data.activeCat==0) {
+        this.data.mainMenuList[0] = "全部分类"
 
+      } else {
+        this.data.mainMenuList[0] = this.data.categoryList[this.data.activeCat-1]
+
+      }
+      this.setData(
+        {
+          mainMenuList: this.data.mainMenuList
+        }
+      )
     } else {
       this.data.activeSort = indexArray[1];
+      if (this.data.activeSort == 0) {
+        this.data.mainMenuList[1] = "推荐排序"
 
+      } else {
+        this.data.mainMenuList[1] = this.data.sortList[this.data.activeSort - 1]
+
+      }
+      this.setData(
+        {
+          mainMenuList: this.data.mainMenuList
+        }
+      )
     }
     this.onPullDownRefresh();
     // 隐藏所有一级菜单
@@ -155,6 +179,12 @@ Page({
 
       }
     });
+    getApp().getLocation(
+      function() {
+        that.data.offset="";
+        that.fetchData()
+      }
+    )
   },  
   bindDownLoad: function () {
   },
@@ -191,12 +221,10 @@ Page({
     }
     var longitude = getApp().globalData.longitude;
     var latitude = getApp().globalData.latitude;
-    if (longitude) {
-      params["longitude"] = longitude
+    if (longitude && latitude) {
+      params["lnglat"] = longitude + "," + latitude
     }
-    if (latitude) {
-      params["latitude"] = latitude
-    }
+
     wx.request({
       url: "https://www.xianpeng.org/book_list",
       url: getApp().config.host + "/book_list",      data: params,
@@ -218,10 +246,16 @@ Page({
     })
   },
   onShow: function () {
-    this.setData({
-      categoryList: getApp().getNameList(getApp().globalData.choices.category_list),
-      categoryIdList: getApp().getIdList(getApp().globalData.choices.category_list),
+    var that = this;
+
+
+    getApp().getChoiceList(function () {
+      that.setData({
+        categoryList: getApp().getNameList(getApp().globalData.choices.category_list),
+        categoryIdList: getApp().getIdList(getApp().globalData.choices.category_list),
+      })
     })
+
     if (getApp().globalData.needFresh) {
       getApp().globalData.needFresh=false;
       this.onPullDownRefresh();

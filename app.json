@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/bookList/bookList",
+    "pages/editUser/editUser",
     "pages/register/register",
+    "pages/reset/reset",
     "pages/login/login",
     "pages/addSuccess/addSuccess",
     "pages/orderDetail/orderDetail",

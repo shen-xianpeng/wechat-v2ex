@@ -12,10 +12,10 @@ Page({
     selected: 'wechat',
     address: "",
     tradeMethodIndex: 0,
-    tradeMethod: ["邮寄", "上门取货"],
+    tradeMethod: ["邮寄", "上门自取"],
     expressFeeMethodList: [
-      { "id": "wechat", "name": "使用微信支付" },
-      { "id": "balance", "name": "使用余额支付" }
+      { "id": "wechat", "name": "微信支付" },
+      { "id": "balance", "name": "余额支付" }
       ]
   },
   goMyAddr: function (e) {
@@ -63,6 +63,12 @@ Page({
         "token": getApp().globalData.userInfo.token
       },
       success: function (res) {
+        if (res.data.data.addr_info) {
+          that.setData({
+
+          chooseAddr: res.data.data.addr_info
+          })
+        }
         that.setData({
           data: res.data.data
         })

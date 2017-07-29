@@ -6,10 +6,8 @@ App({
   MD5: function (password) {
     return util.hexMD5(password); 
   },
-  onLaunch: function () {
+  getLocation: function(callback) {
     var that = this;
-    this.setUserInfo();
-    this.getChoiceList();
     wx.getLocation({
       type: 'wgs84',
       success: function (res) {
@@ -21,14 +19,23 @@ App({
         console.log(latitude, longitude)
         that.globalData.latitude = latitude;
         that.globalData.longitude = longitude;
-        
+
         // wx.openLocation({
         //   latitude: latitude,
         //   longitude: longitude,
         //   scale: 28
         // })
+        if (callback) {
+          callback();
+        }
       }
     })
+  },
+  onLaunch: function () {
+    var that = this;
+    this.setUserInfo();
+    this.getChoiceList();
+
     var that = this
     var user = wx.getStorageSync('user') || {};
     this.globalData.openid = wx.getStorageSync('openid') || "";
@@ -43,7 +50,7 @@ App({
             wx.getUserInfo({
               withCredentials: true,
               fail: function (res) {
-                that.getOpenid(res.code)
+                that.getOpenid(jscode)
 
                 console.log(res, "fail")
               },
@@ -138,8 +145,8 @@ App({
   },
   config: {
     amapKey: "cbd35e0e051954c68624956df462aceb",
-    //host: "https://www.xianpeng.org/api",
-   host: "http://127.0.0.1:10001/api",
+    host: "https://www.xianpeng.org/api",
+     //host: "http://127.0.0.1:10001/api",
   },
   setUserInfo: function () {
     var user = wx.getStorageSync('user');
@@ -163,8 +170,15 @@ App({
     return res;
   },
   getChoiceList: function (callback) {
-    console.log("getChoiceList")
     var that = this;
+
+    if (that.globalData.choices.length>0) {
+      if (callback) {
+        callback();
+      }
+      return
+    }
+    console.log("getChoiceList")
     wx.request({
       url: that.config.host + '/get_choice_list',
       method: 'GET',

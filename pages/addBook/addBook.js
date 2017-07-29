@@ -150,11 +150,17 @@ Page({
         }
         that.book_id = res.data.data.id;
         getApp().globalData.needFresh = true;
-
         that.resetForm();
-        that.setData({
-          showSuccessModal: true
+
+
+        wx.navigateTo({
+          url: '/pages/addSuccess/addSuccess?book_id=' + that.book_id
         })
+
+        
+        // that.setData({
+        //   showSuccessModal: true
+        // })
 
       },
       fail: function (res) {
@@ -273,6 +279,7 @@ Page({
               formData: {
               },
               success: function (res) {
+                console.log(res)
                 var data = res.data
                 var tmpData = that.data.book_photos;
                 console.log("set", e.currentTarget.dataset.id + tmpI - 1, tmpData.length, tmpI)

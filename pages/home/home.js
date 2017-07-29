@@ -8,6 +8,14 @@ Page({
     user: {},
     logged: false
   },
+  goLogin: function (e) {
+
+    var url = '../login/login';
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   onMySold: function () {
     var url = '../mySold/mySold';
 
@@ -115,16 +123,51 @@ Page({
       }    });
   },
   onLoad: function (options) {
-    var gUser = getApp().globalData.userInfo
-    if (gUser.id>0) {
-      this.setData({
-        user: gUser
-      })
+    this.fetchUserInfo();
+    // if (gUser.id>0) {
+    //   this.setData({
+    //     user: gUser
+    //   })
 
-    } else {
-      this.popLogin()
-    }
+    // } else {
+    //   this.popLogin()
+    // }
   
+  },
+  fetchUserInfo: function () {
+    var that = this;
+    wx.request({
+      url: getApp().config.host + "/get_user_info",
+      method: "GET",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": getApp().globalData.userInfo.token
+      },
+      success: function (res) {
+        that.setData({
+          user: res.data.data.user
+        })
+
+      }
+    })
+  },
+  onShow: function() {
+    if (getApp().globalData.needRefreshHome) {
+      getApp().globalData.needRefreshHome = false;
+      this.fetchUserInfo();
+    } else if  (getApp().globalData.userInfo.id>0 &&this.data.user.id>0==false) {
+      this.fetchUserInfo();
+    } else {
+     
+    }
+ 
+  },
+  goEditUser: function () {
+    var url = '../editUser/editUser';
+
+    wx.navigateTo({
+      url: url
+    })
   },
   onMyAccount: function () {
     var url = '../myAccount/myAccount';

@@ -1,0 +1,77 @@
+<!--detail.wxml-->
+<view id="mine" class="container">
+
+
+  <view class="topic-detail {{logged?'hidden':''}}">
+
+
+
+
+    <view class="quote">
+      <view id="publish" class="publish {{ activeHoverIndex=='publish'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="uploadAvatar">
+        <view>头像</view>
+
+        <view class="prompt">{{ userInfo.my_quote_num }}</view>
+        <image class="owner-avatar" src="{{user.avatar}}" id="{{detail.member.id}}" bindtap="showUserInfo"></image>
+
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+      <view id="sold" class="sold {{ activeHoverIndex=='sold'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="onTabNickname">
+        <view>昵称</view>
+        <view class="prompt">{{ user.name }}</view>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+      
+      <view id="bought" class="bought {{ activeHoverIndex=='bought'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="">
+        <view>性别</view>
+         <picker class="pick-gender" name="category" bindchange="bindGenderChange" value="{{user.gender}}" range="{{['保密', '男','女']}}">
+        <view class="picker">
+            {{ ['保密', '男','女'][user.gender] || '' }}
+
+        </view>
+      </picker>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+
+      <view id="myLocation" class="news {{ activeHoverIndex=='myLocation'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="">
+        <view>我的位置</view>
+        <image mode="widthFix" widthFix src="../../images/dot.png" class="hidden prompt dot"></image>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+
+      <view class="set "  id="myAddr" class="news {{ activeHoverIndex=='myAddr'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goMyAddr">
+        <view>收货地址</view>
+        <view class="prompt">
+
+          <span wx:if="{{addrInfo}}">
+            {{addrInfo.province.name+addrInfo.city.name+addrInfo.detail}}
+          </span>
+        </view>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+    </view>
+
+  </view>
+
+
+  <view wx:if="{{showEdit}}" class="modal-form">
+
+    <form bindsubmit="confirmEdit" bindreset="reset">
+      <view class="section">
+        <view class="hidden label section__title">昵称:</view>
+        <view class='form-group'>
+          <input type="text" class="input-text input-nickname" value="{{user.name}}" name="nickname" placeholder="请输入昵称" />
+        </view>
+      </view>
+
+
+
+  <view class=" btn-area">
+    <button class="confirm-edit-btn" formType="submit">确定</button>
+   </view>
+  </form>
+
+  </view>
+
+  
+</view>
