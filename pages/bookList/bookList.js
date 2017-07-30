@@ -31,11 +31,8 @@ Page({
     hidden: false,
     scrollTop: 0,
     scrollHeight: 0,
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
+    banners: [],
+    alarms: [],
     indicatorDots: false,
     autoplay: false,
     activeCat: 0,
@@ -170,7 +167,7 @@ Page({
       success: function (res) {
         console.info(res.windowHeight);
         that.setData({
-          scrollHeight: res.windowHeight*2-115
+          scrollHeight: res.windowHeight*2
         });
         that.setData({
           toView: "scrollmenu",
@@ -229,14 +226,16 @@ Page({
       url: "https://www.xianpeng.org/book_list",
       url: getApp().config.host + "/book_list",      data: params,
       success: function(res) {
-     
-          var datas = data.concat(res.data.infos);
+          console.log(res);
+          var datas = data.concat(res.data.data.infos);
           that.setData({
             hidden: true,
             datalist: datas,
             loadingBottom: false,
-            hasMore: res.data.has_more,
-            offset: res.data.offset,
+            banners: res.data.data.banners,
+            alarms: res.data.data.alarms,
+            hasMore: res.data.data.has_more,
+            offset: res.data.data.offset,
           })
           if (callback) {
             callback();

@@ -10,6 +10,7 @@
         <text class="book-author ">
           {{item.author}}</text>
       </view>
+      <image wx:if="{{edit==1}}"  data-book="{{item.id}}" class="remove-btn"  catchtap="removeBook"   mode="aspectFit" src="../../images/remove.png"></image>
     </view>
 
 

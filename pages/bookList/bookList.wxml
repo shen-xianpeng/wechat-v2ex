@@ -3,7 +3,7 @@
 <scroll-view bindtouchmove="handletouchmove" enable-back-to-top="true" scroll-y scroll-into-view="{{toView}}" upper-threshold="187" bindscrolltoupper="bindUpper" style="height:{{scrollHeight}}rpx" bindscroll="scroll" class="container">
 
   <swiper class="ad-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
+    <block wx:for="{{banners}}">
       <swiper-item catchtap="goMap">
         <image src="{{item}}" class="slide-image" width="100%" height="150" />
       </swiper-item>
@@ -15,9 +15,9 @@
 
     </image>
     <swiper catchtap="goLogin" class="swiper_msg" circular="true" indicator-dots="{{indicatorDots}}" vertical="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
-      <block wx:for="{{[1,2,3]}}">
-        <swiper-item bindtap="itemclick" data-id="{{item.id}}" data-name="{{item.name}}">
-          <label>xianpeng上传了新书“一点巴黎”</label>
+      <block wx:for="{{alarms}}">
+        <swiper-item bindtap="itemclick" >
+          <label>{{item}}</label>
         </swiper-item>
       </block>
 
@@ -32,7 +32,11 @@
   </view>
   <dl class="menu  {{menuClass}}">
 
-    <dt  wx:for="{{mainMenuList}}" wx:for-index="j" data-index="{{j}}" catchtouchstart="tapMainMenu">{{item}}</dt>
+    <dt  wx:for="{{mainMenuList}}" wx:for-index="j" data-index="{{j}}" catchtouchstart="tapMainMenu">
+    {{item}}
+        <image class="arrow-menu-down"  mode="aspectFit" src="../../images/arrow-down.png" />
+
+    </dt>
     <dd class="{{subMenuDisplay[0]}}">
       <ul>
         <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" catchtouchstart="tapSubMenu">全部分类</li>

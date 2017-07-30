@@ -4,7 +4,7 @@
 
 
 <view class="position-list">
-  <view catchtap="onChoose" data-adcode="{{i.adcode}}" data-name="{{i.name}}" data-lnglat="{{i.location}}" data-address="{{i.address}}" class="text_box" wx:for="{{tips}}" wx:for-item="i">
+  <view wx:if="{{i.adcode.length>0}}" catchtap="onChoose" data-adcode="{{i.adcode}}" data-name="{{i.name}}" data-lnglat="{{i.location}}" data-address="{{i.address}}" class="text_box" wx:for="{{tips}}" wx:for-item="i">
     <p class="pos-name" >{{i.name}}</p>
     <p class="pos-addr" wx:if="{{1 || i.address.length==0}}" >{{i.address}}</p>
   </view>

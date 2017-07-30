@@ -98,7 +98,7 @@ Page({
   goCartBookList: function (e) {
 
     var bookIds = e.currentTarget.dataset.books;
-    var url = '../chooseBookList/chooseBookList?user_book_ids=' + bookIds;
+    var url = '../chooseBookList/chooseBookList?edit=1&user_book_ids=' + bookIds;
     console.log(e, "goCartBookList", url)
 
     wx.redirectTo({

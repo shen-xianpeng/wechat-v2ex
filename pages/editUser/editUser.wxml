@@ -32,8 +32,16 @@
       </picker>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
+      
+      <view id="cellphone" class="cellphone bought {{ activeHoverIndex=='cellphone'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="goBindPhone">
+        <view>手机</view>
+        <view class="prompt">{{ user.cellphone||"未绑定" }}</view>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
 
-      <view id="myLocation" class="news {{ activeHoverIndex=='myLocation'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="">
+    
+
+      <view id="myLocation" class="hidden news {{ activeHoverIndex=='myLocation'?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" bindtap="">
         <view>我的位置</view>
         <image mode="widthFix" widthFix src="../../images/dot.png" class="hidden prompt dot"></image>
         <image src="../../images/arrow.png" mode="widthFix"></image>

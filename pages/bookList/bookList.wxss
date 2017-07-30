@@ -222,7 +222,6 @@ swiper {
 
 /* 0rpx有高度 bug*/
 
-
 .ad-swiper image {
   width: 100%;
 }
@@ -250,4 +249,13 @@ swiper {
   font-size: 26rpx;
   text-align: left;
   padding-left: 10rpx;
+}
+
+.arrow-menu-down {
+  width: 50rpx;
+  height: 60rpx;
+  line-height: 40rpx;
+  vertical-align: middle;
+  position: relative;
+  top: -5rpx;
 }

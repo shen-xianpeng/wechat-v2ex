@@ -1,0 +1,48 @@
+<form class="page" bindsubmit="onBind">
+ 
+
+
+
+  <view class="section section_gap form-entry">
+      <label class="form-label">手机</label>
+      <input bindinput="onInputCellphone" name="cellphone" type="number" value="{{cellphone}}" placeholder="请输入手机号码" />
+
+    </view>
+
+
+  <view class="section section_gap form-entry">
+      <label class="form-label">验证码</label>
+      <input name="vcode" class="vcode-input" type="number"  placeholder="请输入验证码" />
+
+
+      <label catchtap="clickSend" wx:if="{{countdown==0 && sending==false}}" class="send-btn">
+      
+        发送验证码
+        
+      </label>
+
+      <label   wx:if="{{countdown==0  && sending==true}}" class="send-btn">
+      
+        发送验证码
+        
+      </label>
+
+      <label  wx:if="{{countdown>0}}"  class="send-btn">
+      
+        {{countdown}}
+        
+      </label>
+
+
+    </view>
+
+
+
+    <view class="tip">
+
+    </view>
+
+      <button class="confirm-btn" formType="submit">确定</button>
+
+
+</form>

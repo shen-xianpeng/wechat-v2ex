@@ -42,11 +42,11 @@
         </view>
 
       </view>
-      <view class="book-distance ">
+      <view catchtap="goBookLocation" class="book-distance ">
 
-        <image  catchtap="goBookLocation" mode="aspectFit" class="  book-location-icon" src="../../images/location.png"></image>
+        <image wx:if="{{book.distance.length>0}}" mode="aspectFit" class="  book-location-icon" src="../../images/location.png"></image>
         <view class=" distance-text">
-         11 {{book.distance}}
+          {{book.distance}}
 
         </view>
 
@@ -114,7 +114,7 @@
     <view wx:if="{{book.in_cart==false}}" catchtap="addToCart" class="menu-item add-cart">
       加入购物车
     </view>
-    <view  wx:if="{{book.in_cart}}" catchtap="addToCart" class="menu-item remove-cart">
+    <view wx:if="{{book.in_cart}}" catchtap="addToCart" class="menu-item remove-cart">
       移出购物车
     </view>
 
@@ -123,9 +123,11 @@
       立即购买
     </view>
 
- <view   class=" go-cart">
-    <image catchtap="goCart" mode="aspectFit" class="cart-icon" src="../../images/cart.png"></image>
+    <view class=" go-cart">
+      <image catchtap="goCart" mode="aspectFit" class="cart-icon" src="../../images/cart.png"></image>
+      <label wx:if="{{cartCount>0}}" class="cart-count-label">{{cartCount}}</label>
     </view>
+
 
   </view>
 

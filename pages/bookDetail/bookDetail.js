@@ -5,6 +5,7 @@ var Api = require('../../utils/api.js');
 Page({
   data: {
     title: '书本详情',
+    cartCount: 0,
     currentTab: 0,
     toastShow: true,
     scroll: 'auto',
@@ -35,7 +36,8 @@ Page({
       },
       success: function (res) {
         that.setData({
-          book: res.data.data
+          book: res.data.data,
+          cartCount: res.data.data.cart_count
         })
         wx.setNavigationBarTitle({
           title: res.data.data.title || ""
@@ -73,6 +75,15 @@ Page({
     this.fetchDetail(options.id);
   },
   goCart: function (e) {
+
+    if (this.data.cartCount== 0) {
+      wx.showToast({
+        title: "购物车空的",
+        icon: 'error',
+        duration: 1000
+      })
+      return
+    }
     var id = e.currentTarget.id;
     console.log(id);
     var url = '../cart/cart';
@@ -114,6 +125,7 @@ Page({
 
           that.setData({
             "message": res.data.msg,
+            "cartCount": res.data.data.cart_count,
             "toastShow": false,
             "book.in_cart": (data["status"]==0)==false
 

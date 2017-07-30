@@ -153,6 +153,7 @@ Page({
         that.resetForm();
 
 
+        console.log(that.book_id , "add success")
         wx.navigateTo({
           url: '/pages/addSuccess/addSuccess?book_id=' + that.book_id
         })

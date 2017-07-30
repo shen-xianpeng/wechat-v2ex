@@ -17,6 +17,14 @@ Page({
       url: url
     })
   },
+  goBindPhone:  function(e) {
+
+    var url = '../bind/bind';
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   goLogin: function (e) {
 
     var url = '../login/login';

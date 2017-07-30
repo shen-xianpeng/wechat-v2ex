@@ -15,8 +15,9 @@ Page({
     })
   },
   goBookDetail: function () {
+    var that = this;
     wx.redirectTo({
-      url: '/pages/bookDetail/bookDetail?book_id='+this.data.book_id
+      url: '/pages/bookDetail/bookDetail?id='+that.data.book_id
     })
   }
 

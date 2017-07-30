@@ -53,8 +53,10 @@ page {
 }
 
 .user-name {
-  width: 100%;
+  max-width: 500rpx;
+  height: 50rpx;
   display: block;
+  margin: 0 auto;
 }
 
 #mine .quote {
@@ -80,7 +82,6 @@ page {
   border-bottom: 1rpx solid #e1e1e1;
 }
 
-
 #mine .quote .publish {
   border-top: 1rpx solid #e1e1e1;
   border-bottom: 1rpx solid #e1e1e1;
@@ -101,8 +102,7 @@ page {
 #mine .quote .dot {
   width: 15rpx;
   height: 15rpx;
-  margin-right:20rpx;
-
+  margin-right: 20rpx;
 }
 
 .login-button {
@@ -112,12 +112,9 @@ page {
   line-height: 60rpx;
 }
 
-
 .hover-element {
   background: #e6e6e6 !important;
 }
-
-
 
 .editUser {
   position: absolute;
@@ -125,4 +122,18 @@ page {
   color: #333;
   top: 20rpx;
   right: 50rpx;
+}
+
+.sex-icon {
+  width: 36rpx;
+  height: 50rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.user-name-val {
+  height:50rpx;
+line-height:50rpx;
+
+    display: inline-block;
+
 }

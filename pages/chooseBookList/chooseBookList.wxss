@@ -60,3 +60,16 @@
   text-align: center;
   color: gray;
 }
+
+.remove-btn {
+  position: absolute;
+  right: 10rpx;
+  width: 50rpx;
+  top: 10rpx;
+  height: 50rpx;
+}
+
+
+.item {
+  position: relative;
+}

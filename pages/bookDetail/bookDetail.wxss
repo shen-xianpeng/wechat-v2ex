@@ -39,9 +39,8 @@ image {
 
 .sub-info {
   padding-bottom: 5rpx;
-  font-size:32rpx;
-padding:0 !important;
-
+  font-size: 32rpx;
+  padding: 0 !important;
 }
 
 .container {
@@ -144,7 +143,7 @@ scroll-view {
   width: 100%;
   height: 80rpx;
   padding-bottom: 0px;
-  border-top:1px solid #f3f2f5;
+  border-top: 1px solid #f3f2f5;
 }
 
 .bottom-menu .menu-item {
@@ -162,9 +161,9 @@ scroll-view {
 .add-cart {
   background: lightseagreen;
 }
+
 .remove-cart {
   background: gray;
-
 }
 
 .buy-now {
@@ -196,7 +195,7 @@ scroll-view {
 }
 
 .book-info .book-ship {
-  width: 200rpx;
+  width: 190rpx;
   display: inline-block;
   height: 60rpx;
   font-size: 32rpx;
@@ -211,7 +210,7 @@ scroll-view {
 }
 
 .book-info .book-distance {
-  width: 150rpx;
+  width: 160rpx;
   display: inline-block;
   height: 60rpx;
   font-size: 30rpx;
@@ -220,11 +219,11 @@ scroll-view {
 }
 
 .book-location-icon {
-  height: 36rpx;
+  height: 60rpx;
   width: 40rpx;
   padding: 0;
   position: relative;
-  top: 6rpx;
+  float: left;
 }
 
 .book-info-sub {
@@ -259,6 +258,9 @@ scroll-view {
 
 .distance-text {
   display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: left;
 }
 
 .book-extra-infos {
@@ -293,18 +295,29 @@ scroll-view {
 }
 
 .cart-icon {
-width:80rpx;
-height:80rpx;
-padding:0;
-padding-left:10rpx;
-background:white;
-padding-right:10rpx;
-
+  width: 80rpx;
+  height: 80rpx;
+  padding: 0;
+  padding-left: 10rpx;
+  background: white;
+  padding-right: 10rpx;
 }
 
-
 .sub-info label {
-  width:120rpx;
-display:inline-block;
+  width: 120rpx;
+  display: inline-block;
+}
 
+.cart-count-label {
+  position: absolute;
+  top: 5rpx;
+  right: 10rpx;
+  font-size: 16rpx;
+  color: white;
+  background: red;
+  border-radius: 12rpx;
+  width: 24rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
 }
