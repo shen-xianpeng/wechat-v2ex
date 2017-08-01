@@ -3,6 +3,8 @@ Page({
     data: {
       tabs: ["书币", "余额"],
       tabCat: ["coin", "balance"],
+      activeMoney: "",
+      activeBalance: "",
         activeIndex: 0,
         sliderWidth: 0,
         sliderOffset: 0,
@@ -11,6 +13,20 @@ Page({
           0: { offset: "", infos: [] },
           1: { offset: "", infos: [] },
         }
+    },
+    touchBalanceFilter: function(e) {
+        var i = e.currentTarget.dataset.i;
+        this.setData({
+          activeBalance: i
+        });
+        this.refresh()
+    },
+    touchMoneyFilter: function (e) {
+      var i = e.currentTarget.dataset.i;
+      this.setData({
+        activeMoney: i
+      });
+      this.refresh()
     },
     onLoad: function () {
         var that = this;
@@ -52,6 +68,11 @@ Page({
         url: url
       })
     },
+  refresh: function() {
+    this.data.dataSet[this.data.activeIndex].offset="";
+    this.fetchData(this.data.activeIndex)
+
+  },
   fetchData: function (tab, callback) {
       var that = this;
       var params = {};
@@ -63,6 +84,12 @@ Page({
       }
       var account_type = this.data.tabCat[tab||0];
       params["account_type"] = account_type;
+      if (account_type=="balance") {
+        params["in_out"] = this.data.activeBalance
+      } else {
+
+        params["in_out"] = this.data.activeMoney
+      }
       wx.request({
         url: getApp().config.host + "/account_log_list",
         data: params,

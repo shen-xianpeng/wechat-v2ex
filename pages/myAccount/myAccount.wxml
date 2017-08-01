@@ -32,9 +32,9 @@
               <view class="money-tab-label">书币明细</view>
               <view class="money-tab">
 
-                <view class="money-tab-all active">全部</view>
-                <view class="money-tab-in">收入</view>
-                <view class="money-tab-out">支出</view>
+                <view data-i=""  ontouchstart="touchMoneyFilter" class="money-tab-all {{activeMoney == '' ? 'active' : ''}}">全部</view>
+                <view data-i="1"  ontouchstart="touchMoneyFilter" class="money-tab-in  {{activeMoney == '1' ? 'active' : ''}}">收入</view>
+                <view data-i="2"  ontouchstart="touchMoneyFilter" class="money-tab-out  {{activeMoney == '2' ? 'active' : ''}}">支出</view>
 
               </view>
 
@@ -92,9 +92,10 @@
               <view class="money-tab-label">余额明细</view>
               <view class="money-tab">
 
-                <view class="money-tab-all active">全部</view>
-                <view class="money-tab-in">收入</view>
-                <view class="money-tab-out">支出</view>
+
+                <view data-i=""  ontouchstart="touchBalanceFilter" class="money-tab-all {{activeBalance == '' ? 'active' : ''}}">全部</view>
+                <view data-i="1"  ontouchstart="touchBalanceFilter" class="money-tab-in  {{activeBalance == '1' ? 'active' : ''}}">收入</view>
+                <view data-i="2"  ontouchstart="touchBalanceFilter" class="money-tab-out  {{activeBalance == '2' ? 'active' : ''}}">支出</view>
 
               </view>
 
