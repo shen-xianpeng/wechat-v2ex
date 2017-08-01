@@ -44,7 +44,12 @@ Page({
       tradeMethodIndex: e.detail.value
     })
   },
-  getOrderInfo: function (book_user_id, user_book_id, callback) {
+  getOrderInfo: function ( callback) {
+
+  var book_user_id = this.data.book_user_id
+  var user_book_id =  this.data.user_book_id;
+
+
     var callback = callback;
     var that = this;
     var params = {}
@@ -80,12 +85,21 @@ Page({
       }
     });
   },
+  refresh: function() {
+    this.getOrderInfo();
+  },
   onLoad: function (options) {
     console.log(options);
     wx.showNavigationBarLoading();
     var book_user_id = options.book_user_id
     var user_book_id = options.user_book_id
-    this.getOrderInfo(book_user_id, user_book_id, function () {
+    this.setData({
+      book_user_id: book_user_id,
+      user_book_id: user_book_id
+    })
+
+
+    this.getOrderInfo( function () {
       wx.hideNavigationBarLoading();
 
     });
@@ -204,7 +218,14 @@ Page({
   },
   goChooseBookList: function (e) {
     var bookIds = e.currentTarget.dataset.books;
-    var url = '../chooseBookList/chooseBookList?edit=1&user_book_ids=' + bookIds;
+    var url ="";
+
+    if (this.data.book_user_id > 0) {
+      url = '../chooseBookList/chooseBookList?edit=1&user_book_ids=' + bookIds;
+
+    } else {
+      url = '../chooseBookList/chooseBookList?user_book_ids=' + bookIds;
+    }
 
     wx.navigateTo({
       url: url

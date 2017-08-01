@@ -29,6 +29,9 @@ Page({
       }
     });
   },
+  refresh: function() {
+    this.getCartInfo();
+  },
   onLoad: function (options) {
     console.log(options);
     wx.showNavigationBarLoading();   

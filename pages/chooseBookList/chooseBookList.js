@@ -69,6 +69,13 @@ Page({
           duration: 1000
         })
    
+        var pages = getCurrentPages();
+
+        setTimeout(function () {
+          var prevPage = pages[pages.length - 2];  //上一个页面
+          prevPage.refresh();
+  
+        }, 1000)
         that.fetchData();
       }
     })
