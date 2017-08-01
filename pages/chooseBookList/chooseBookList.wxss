@@ -32,11 +32,31 @@
 }
 
 .book-info text {
-  padding: 10rpx;
+  font-size: 32rpx;
 }
+.book-coin {
+text-overflow:ellipsis;
+white-space:nowrap;
+width:400rpx;
+height:50rpx;
+line-height:50rpx;
+font-size:32rpx;
+vertical-align:middle;
+color: #f9b73b;
 
+
+}
 .book-author {
-  color: gray;
+text-overflow:ellipsis;
+white-space:nowrap;
+width:400rpx;
+height:50rpx;
+line-height:50rpx;
+font-size:32rpx;
+vertical-align:middle;
+
+
+
 }
 
 .text {
@@ -49,7 +69,13 @@
 }
 
 .title {
-  padding: 10rpx;
+  text-overflow:ellipsis;
+white-space:nowrap;
+width:400rpx;
+height:50rpx;
+line-height:50rpx;
+font-size:36rpx;
+vertical-align:middle;
 }
 
 .description {

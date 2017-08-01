@@ -33,6 +33,8 @@
                   <text class="title">{{item.title}}</text>
                   <text class="book-author ">
                     {{item.author}}</text>
+                  <text class="book-coin ">
+                    {{item.price}}书币</text>
                 </view>
               </view>
 
@@ -76,7 +78,7 @@
                 </view>
                 <view class="entry-nav-icon">
                   <label class="nav-btn-buy"></label>
- 
+
 
                 </view>
               </view>
@@ -87,6 +89,8 @@
                   <text class="title">{{item.title}}</text>
                   <text class="book-author ">
                     {{item.author}}</text>
+                  <text class="book-coin ">
+                    {{item.price}}书币</text>
                 </view>
               </view>
 
@@ -131,7 +135,7 @@
                 </view>
                 <view class="entry-nav-icon">
                   <label class="nav-btn-buy"></label>
- 
+
 
                 </view>
               </view>
@@ -142,6 +146,8 @@
                   <text class="title">{{item.title}}</text>
                   <text class="book-author ">
                     {{item.author}}</text>
+                  <text class="book-coin ">
+                    {{item.price}}书币</text>
                 </view>
               </view>
 
@@ -160,7 +166,7 @@
             </view>
 
 
-           <view wx:if="{{dataSet[2].infos.length>0}}" class="bottom-loader">
+            <view wx:if="{{dataSet[2].infos.length>0}}" class="bottom-loader">
               <text wx:if="{{dataSet[2].hasMore==false}}">没有了</text>
               <text wx:if="{{dataSet[2].hasMore==true && loadingBottom==false}}">加载更多</text>
               <text wx:if="{{dataSet[2].hasMore==true &&loadingBottom==true}}">加载中...</text>
@@ -183,7 +189,7 @@
                 </view>
                 <view class="entry-nav-icon">
                   <label class="nav-btn-buy"></label>
- 
+
 
                 </view>
               </view>
@@ -194,6 +200,8 @@
                   <text class="title">{{item.title}}</text>
                   <text class="book-author ">
                     {{item.author}}</text>
+                  <text class="book-coin ">
+                    {{item.price}}书币</text>
                 </view>
               </view>
 

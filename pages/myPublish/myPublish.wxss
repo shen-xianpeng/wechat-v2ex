@@ -87,11 +87,31 @@ font-size:36rpx;
 text-overflow:ellipsis;
 white-space:nowrap;
 width:400rpx;
-overflow:hidden;
-height:100rpx;
-line-height:100rpx;
-font-size:36rpx;
+height:50rpx;
+line-height:50rpx;
+font-size:32rpx;
+vertical-align:middle;
 
+
+
+}
+.book-coin {
+text-overflow:ellipsis;
+white-space:nowrap;
+width:400rpx;
+height:50rpx;
+line-height:50rpx;
+font-size:32rpx;
+vertical-align:middle;
+color: #f9b73b;
+
+
+}
+
+.entry-book-info .title {
+  display:inline-block;
+width:400rpx;
+height:59rpx;
 
 }
 

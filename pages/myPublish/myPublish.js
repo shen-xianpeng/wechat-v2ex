@@ -1,7 +1,7 @@
 
 Page({
   data: {
-    tabs: ["全部", "在售的", "已下架", "已卖出的"],
+    tabs: ["全部", "在售的", "已下架", "已卖出"],
     activeIndex: 0,
     sliderWidth: 0,
     sliderOffset: 0,

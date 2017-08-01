@@ -9,6 +9,8 @@
         <text class="title">{{item.title}}</text>
         <text class="book-author ">
           {{item.author}}</text>
+         <text class="book-coin ">
+          {{item.price}}书币</text>
       </view>
       <image wx:if="{{edit==1}}"  data-book="{{item.id}}" class="remove-btn"  catchtap="removeBook"   mode="aspectFit" src="../../images/remove.png"></image>
     </view>
