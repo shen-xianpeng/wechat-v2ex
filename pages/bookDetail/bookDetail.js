@@ -13,8 +13,8 @@ Page({
   },
   goBookLocation: function() {
      wx.openLocation({
-          latitude: this.data.book.lat,
-          longitude: this.data.book.lng,
+       latitude: Number(this.data.book.lat),
+       longitude: Number(this.data.book.lng),
           scale: 28
         })
   },

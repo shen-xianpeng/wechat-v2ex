@@ -4,7 +4,7 @@
 
   <swiper class="ad-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="true" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{banners}}">
-      <swiper-item catchtap="goMap">
+      <swiper-item catchtap="">
         <image src="{{item}}" class="slide-image" width="100%" height="150" />
       </swiper-item>
     </block>
@@ -14,9 +14,9 @@
     <image src="../../images/alarm.png">
 
     </image>
-    <swiper catchtap="goLogin" class="swiper_msg" circular="true" indicator-dots="{{indicatorDots}}" vertical="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+    <swiper catchtap="" class="swiper_msg" circular="true" indicator-dots="{{indicatorDots}}" vertical="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
       <block wx:for="{{alarms}}">
-        <swiper-item bindtap="itemclick" >
+        <swiper-item bindtap="" >
           <label>{{item}}</label>
         </swiper-item>
       </block>
