@@ -36,7 +36,7 @@
 
     <view class="section section_gap form-entry">
       <label class="form-label">简介</label>
-      <input name="bookSummary" bindinput="" value="{{book.summary>0?book.summary:form.summary}}" placeholder="请输入简介，非必须" />
+      <input name="bookSummary" bindinput="" value="{{book.summary.length>0?book.summary:form.summary}}" placeholder="请输入简介，非必须" />
 
     </view>
 
