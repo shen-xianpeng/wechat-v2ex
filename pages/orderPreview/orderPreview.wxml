@@ -89,11 +89,9 @@
 <view class="section section_gap form-entry">
 
   <label class="form-label">图书费用</label>
-  <picker class="form-input" bindchange="" value="{{newOldIndex}}" range="{{tradeMethod}}">
     <view class="input-element">
       {{data.book_fee}}书币
     </view>
-  </picker>
 </view>
 
 <view class="section section_gap form-entry-bot my-book-coin">

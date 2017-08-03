@@ -178,20 +178,20 @@ page {
   display: inline-block;
   width: 200rpx;
   height: 60rpx;
-  float: left;
   line-height: 60rpx;
 }
 
 .form-input {
   display: inline-block;
-  width: 500rpx;
+  width: 400rpx;
   height: 60rpx;
 }
 
-.form-input .input-element {
-  width: 500rpx;
+ .input-element {
+  width: 400rpx;
   height: 60rpx;
   line-height: 60rpx;
+  display: inline-block;
   color: gray;
 }
 
@@ -286,10 +286,9 @@ page {
 
 .addressBtn {
   width: 450rpx;
-  display: block;
+  display: inline-block;
   height: 60rpx;
   line-height: 60rpx;
-  float: left;
 }
 
 

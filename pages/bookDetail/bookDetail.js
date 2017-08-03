@@ -15,6 +15,8 @@ Page({
      wx.openLocation({
        latitude: Number(this.data.book.lat),
        longitude: Number(this.data.book.lng),
+       address: this.data.book.address,
+       name: this.data.book.address_name,
           scale: 28
         })
   },
