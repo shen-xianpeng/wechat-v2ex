@@ -9,9 +9,9 @@
         </block>
         <view class="weui-navbar__slider" style="width: {{sliderWidth}}px; left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
-      <view class="weui-tab__panel" style="height:{{scrollHeight}}rpx !important;">
+      <view class="weui-tab__panel" style="height:{{scrollHeight}}px !important;">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}px" class="container">
 
 
             <view  class="item" wx:for="{{dataSet[0].infos}}" wx:for-index="j" wx:key="id" >
@@ -79,7 +79,7 @@
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
 
-          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}px" class="container">
 
 
             <view class="item" wx:for="{{dataSet[1].infos}}" wx:for-index="j" wx:key="id">
@@ -145,7 +145,7 @@
 
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}px" class="container">
 
 
             <view class="item" wx:for="{{dataSet[2].infos}}" wx:for-index="j" wx:key="id">
@@ -211,7 +211,7 @@
 
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
-          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}px" class="container">
 
             <view class="item" wx:for="{{dataSet[3].infos}}" wx:for-index="j" wx:key="id">
               <view  id="order-detail-{{item.id}}" class=" entry-header {{ activeHoverIndex=='order-detail-'+item.id?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-order="{{item.order_no}}" catchtap="goOrderDetail">
@@ -278,7 +278,7 @@
         </view>
 
         <view class="weui-tab__content" hidden="{{activeIndex != 4}}">
-          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}rpx" class="container">
+          <scroll-view scroll-y bindscroll="scroll" style="height:{{scrollHeight}}px" class="container">
 
             <view class="item" wx:for="{{dataSet[4].infos}}" wx:for-index="j" wx:key="id">
               <view  id="order-detail-{{item.id}}" class=" entry-header {{ activeHoverIndex=='order-detail-'+item.id?'hover-element': '' }}" bindtouchstart="touchStartElement" bindtouchmove="touchMoveElement" bindtouchend="touchEndElement" data-order="{{item.order_no}}" catchtap="goOrderDetail">

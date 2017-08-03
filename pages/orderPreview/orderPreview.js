@@ -14,8 +14,8 @@ Page({
     tradeMethodIndex: 0,
     tradeMethod: ["邮寄", "上门自取"],
     expressFeeMethodList: [
-      { "id": "wechat", "name": "微信支付" },
-      { "id": "balance", "name": "余额支付" }
+      { "id": "balance", "name": "余额支付" },
+      { "id": "wechat", "name": "微信支付" }
       ]
   },
   goMyAddr: function (e) {

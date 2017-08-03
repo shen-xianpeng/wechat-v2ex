@@ -167,7 +167,7 @@ Page({
       success: function (res) {
         console.info(res.windowHeight);
         that.setData({
-          scrollHeight: res.windowHeight*2
+          scrollHeight: res.windowHeight
         });
         that.setData({
           toView: "scrollmenu",
