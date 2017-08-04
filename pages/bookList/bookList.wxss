@@ -35,7 +35,7 @@
 
 .book-user-info .recommend {
   color: gray;
-  font-size: 30rpx;
+  font-size: 25rpx;
   text-align: left;
   width: 280rpx;
   padding: 0 5rpx 0 5rpx;
@@ -69,6 +69,7 @@ image {
 
 .title {
   padding: 10rpx;
+  font-size: 32rpx;
 }
 
 .description {
