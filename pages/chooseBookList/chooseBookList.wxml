@@ -6,11 +6,11 @@
     <view class="item" wx:for="{{datalist}}"  wx:for-index="j" wx:key="id">
       <image class="book-image"  catchtap="goBookDetail"  id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
       <view class="book-info">
-        <text class="title">{{item.title}}</text>
-        <text class="book-author ">
-          {{item.author}}</text>
-         <text class="book-coin ">
-          {{item.price}}书币</text>
+        <view class="title entry-ellipsis">{{item.title}}</view>
+        <view class="book-author entry-ellipsis">
+          {{item.author}}</view>
+         <view class="book-coin ">
+          {{item.price}}书币</view>
       </view>
       <image wx:if="{{edit==1}}"  data-book="{{item.id}}" class="remove-btn"  catchtap="removeBook"   mode="aspectFit" src="../../images/remove.png"></image>
     </view>

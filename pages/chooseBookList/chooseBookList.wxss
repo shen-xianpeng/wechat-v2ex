@@ -71,7 +71,7 @@ vertical-align:middle;
 .title {
   text-overflow:ellipsis;
 white-space:nowrap;
-width:400rpx;
+width:450rpx;
 height:50rpx;
 line-height:50rpx;
 font-size:36rpx;
