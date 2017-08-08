@@ -46,7 +46,7 @@
 .form-label {
   /* Other styling.. */
   text-align: right;
-  font-size: 32rpx;
+  font-size: 28rpx;
   clear: both;
   float: left;
   margin-right: 15px;

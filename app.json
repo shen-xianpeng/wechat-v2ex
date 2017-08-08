@@ -41,7 +41,7 @@
     "borderStyle":"black",
     "list": [{
         "pagePath": "pages/bookList/bookList",
-        "text": "书籍",
+        "text": "书换换",
         "iconPath": "images/book.png",
         "selectedIconPath": "images/book_on.png"
       },{
