@@ -55,7 +55,8 @@ page, .page, .page__bd {
 
 .book-cover {
   height: 200rpx;
-  width: 200rpx;
+  width: 150rpx;
+  margin:0 20rpx;
   display: inline-block;
   float: left;
 }
@@ -84,6 +85,7 @@ font-size:36rpx;
 }
 
 .book-author {
+  display: block;
 text-overflow:ellipsis;
 white-space:nowrap;
 width:400rpx;

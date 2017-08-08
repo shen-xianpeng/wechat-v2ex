@@ -30,11 +30,11 @@
               <view class="entry-body">
                 <image class="book-cover" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
                 <view class="entry-book-info">
-                  <text class="title">{{item.title}}</text>
-                  <text class="book-author ">
-                    {{item.author}}</text>
-                  <text class="book-coin ">
-                    {{item.price}}书币</text>
+                  <view class="title entry-ellipsis">{{item.title}}</view>
+                  <view class="book-author entry-ellipsis ">
+                    {{item.author}}</view>
+                  <view class="book-coin ">
+                    {{item.price}}书币</view>
                 </view>
               </view>
 
@@ -86,11 +86,11 @@
               <view class="entry-body">
                 <image class="book-cover" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
                 <view class="entry-book-info">
-                  <text class="title">{{item.title}}</text>
-                  <text class="book-author ">
-                    {{item.author}}</text>
-                  <text class="book-coin ">
-                    {{item.price}}书币</text>
+                  <view class="title entry-ellipsis">{{item.title}}</view>
+                  <view class="book-author entry-ellipsis ">
+                    {{item.author}}</view>
+                  <view class="book-coin ">
+                    {{item.price}}书币</view>
                 </view>
               </view>
 
@@ -143,11 +143,11 @@
               <view class="entry-body">
                 <image class="book-cover" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
                 <view class="entry-book-info">
-                  <text class="title">{{item.title}}</text>
-                  <text class="book-author ">
-                    {{item.author}}</text>
-                  <text class="book-coin ">
-                    {{item.price}}书币</text>
+                  <view class="title entry-ellipsis">{{item.title}}</view>
+                  <view class="book-author entry-ellipsis ">
+                    {{item.author}}</view>
+                  <view class="book-coin ">
+                    {{item.price}}书币</view>
                 </view>
               </view>
 
@@ -197,11 +197,11 @@
               <view class="entry-body">
                 <image class="book-cover" catchtap="goBookDetail" id="{{item.id}}" mode="aspectFit" src="{{item.image_list[0] || item.image}}"></image>
                 <view class="entry-book-info">
-                  <text class="title">{{item.title}}</text>
-                  <text class="book-author ">
-                    {{item.author}}</text>
-                  <text class="book-coin ">
-                    {{item.price}}书币</text>
+                  <view class="title entry-ellipsis">{{item.title}}</view>
+                  <view class="book-author entry-ellipsis ">
+                    {{item.author}}</view>
+                  <view class="book-coin ">
+                    {{item.price}}书币</view>
                 </view>
               </view>
 
