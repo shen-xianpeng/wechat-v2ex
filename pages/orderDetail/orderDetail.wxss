@@ -21,7 +21,7 @@ page {
 }
 
 .user-info {
-  width: 360rpx;
+  width: 600rpx;
   padding-left: 40rpx;
 }
 

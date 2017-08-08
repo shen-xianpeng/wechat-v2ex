@@ -52,7 +52,7 @@
               </view>
 
               <view class="entry-footer">
-                <view class="entry-footer-buyer">卖家:{{item.seller.name}}</view>
+                <view class="entry-footer-buyer entry-ellipsis">卖家:{{item.seller.name}}</view>
                 <view wx:if="{{ item.status==5 && (item.confirm_delivery==0 || item.confirm_receive==0)}}" class="entry-footer-btns">
                   <view wx:if="{{item.status==5 || item.status==0}}" data-order="{{item.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
                   <view wx:if="{{item.status==5}}" data-order="{{item.order_no}}" catchtap="onConfirmReceive" class="entry-foonter-btn entry-btn-ok">已收货</view>
@@ -120,7 +120,7 @@
 
 
               <view class="entry-footer">
-                <view class="entry-footer-buyer">卖家:{{item.seller.name}}</view>
+                <view class="entry-footer-buyer entry-ellipsis">卖家:{{item.seller.name}}</view>
                 <view wx:if="{{ item.status==5 && (item.confirm_delivery==0 || item.confirm_receive==0)}}" class="entry-footer-btns">
                   <view wx:if="{{item.status==5 || item.status==0}}" data-order="{{item.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
                   <view wx:if="{{item.status==5}}" data-order="{{item.order_no}}" catchtap="onConfirmReceive" class="entry-foonter-btn entry-btn-ok">已收货</view>
@@ -185,7 +185,7 @@
               </view>
 
               <view class="entry-footer">
-                <view class="entry-footer-buyer">卖家:{{item.seller.name}}</view>
+                <view class="entry-footer-buyer entry-ellipsis">卖家:{{item.seller.name}}</view>
                 <view wx:if="{{ item.status==5 && (item.confirm_delivery==0 || item.confirm_receive==0)}}" class="entry-footer-btns">
                   <view wx:if="{{item.status==5 || item.status==0}}" data-order="{{item.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
                   <view wx:if="{{item.status==5}}" data-order="{{item.order_no}}" catchtap="onConfirmReceive" class="entry-foonter-btn entry-btn-ok">已收货</view>
@@ -249,7 +249,7 @@
 
               </view>
               <view class="entry-footer">
-                <view class="entry-footer-buyer">卖家:{{item.seller.name}}</view>
+                <view class="entry-footer-buyer entry-ellipsis">卖家:{{item.seller.name}}</view>
                 <view wx:if="{{ item.status==5 && (item.confirm_delivery==0 || item.confirm_receive==0)}}" class="entry-footer-btns">
                   <view wx:if="{{item.status==5 || item.status==0}}" data-order="{{item.order_no}}" catchtap="onCancel" class="entry-foonter-btn entry-btn-red">取消订单</view>
                   <view wx:if="{{item.status==5}}" data-order="{{item.order_no}}" catchtap="onConfirmReceive" class="entry-foonter-btn entry-btn-ok">已收货</view>

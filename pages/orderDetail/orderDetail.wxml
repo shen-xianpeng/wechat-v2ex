@@ -14,10 +14,7 @@
       <image class="user-avatar" src="{{data.seller.avatar}}"></image>
       <label class="user-name">{{data.seller.name}}</label>
     </view>
-    <view class="nav-icon">
 
-
-    </view>
 
   </view>
 

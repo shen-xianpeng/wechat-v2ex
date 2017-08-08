@@ -102,3 +102,7 @@
   border: 1rpx solid red !important;
   color:  red !important;
 }
+
+
+.entry-ellipsis { overflow: hidden; text-overflow:ellipsis; white-space: nowrap;}
+
