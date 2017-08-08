@@ -90,7 +90,7 @@ Page({
 
         params["in_out"] = this.data.activeMoney
       }
-      wx.request({
+      getApp().doRequest({
         url: getApp().config.host + "/account_log_list",
         data: params,
         method: "GET",

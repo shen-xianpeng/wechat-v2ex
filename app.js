@@ -196,5 +196,27 @@ App({
         }
       }
     });
+  },
+  doRequest: function(object) {
+    var success = object.success;
+
+    var interceptAuth = function ( res) {
+      if(res.data.code==401) {
+        wx.showToast({
+          title: "请登录",
+          icon: 'error',
+          duration: 1000
+        })
+        wx.removeStorageSync('user');
+        wx.navigateTo({
+          url: '/pages/login/login',
+        })
+        return
+      }
+      success(res);
+    }
+    object.success = interceptAuth;
+    wx.request(object)
+    
   }
 })
