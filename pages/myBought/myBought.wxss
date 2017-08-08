@@ -9,6 +9,7 @@ page, .page, .page__bd {
 }
 
 .nav-menu {
+  z-index: 20000 !important;
   background: white;
   box-sizing: border-box;
   height: 100rpx;
