@@ -126,7 +126,7 @@ Page({
       return
     }
     data["images"] = that.getImages();
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + '/add_book',
       data: data,
       method: 'POST',
@@ -190,7 +190,7 @@ Page({
         params["barcode"] = bookIsbn;
         params["code_type"] = res.scanType;
         console.log("start")
-        wx.request({
+        getApp().doRequest({
           url: getApp().config.host + '/add_book_by_barcode',
           data: params,
           method: 'GET',

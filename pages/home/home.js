@@ -97,7 +97,7 @@ Page({
               params["encrypt"] = res.encryptedData
               params["iv"] = res.iv
               var l = getApp().config.host +'/jscode_to_secrets';
-              wx.request({
+              getApp().doRequest({
                 url: l,
                 data: params,
                 method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT    
@@ -136,7 +136,7 @@ Page({
   },
   fetchUserInfo: function () {
     var that = this;
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + "/get_user_info",
       method: "GET",
       header: {

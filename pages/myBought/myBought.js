@@ -91,7 +91,7 @@ Page({
 
     var params = {}
     params["order_no"] = order_no
-    wx.request({
+    getApp().doRequest({
       method: 'POST',
       url: getApp().config.host + "/cancel_order_after_pay",
       header: {
@@ -126,7 +126,7 @@ Page({
 
     var params = {}
     params["order_no"] = order_no
-    wx.request({
+    getApp().doRequest({
       method: 'POST',
       url: getApp().config.host + "/confirm_receive",
       header: {
@@ -164,7 +164,7 @@ Page({
       params["offset"] = current_data.offset
     }
     params["cat"] = that.data.activeIndex
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + "/my_bought_list",
       header: {
         "Content-Type": "application/x-www-form-urlencoded",

@@ -9,7 +9,7 @@ Page({
   getCartInfo: function (callback) {
     var callback = callback;
     var that = this;
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + '/cart_item_list',
 
       method: 'GET',

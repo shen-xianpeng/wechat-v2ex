@@ -72,7 +72,7 @@ Page({
     var params = {}
     params["status"] = status
     params["user_book_id"] = user_book_id
-    wx.request({
+    getApp().doRequest({
       method: 'POST',
       url: getApp().config.host + "/set_book_status",
       header: {
@@ -114,7 +114,7 @@ Page({
 
     }
 
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + "/my_book_list",
       header: {
         "Content-Type": "application/x-www-form-urlencoded",

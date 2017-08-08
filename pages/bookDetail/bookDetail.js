@@ -28,7 +28,7 @@ Page({
       params["lnglat"] = longitude + "," + latitude
     }
     var that = this;
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host +"/book_detail?book_id=" + id,
       method: "GET",
       data: params,
@@ -115,7 +115,7 @@ Page({
     if (this.data.book.in_cart) {
       data["status"] = 0
     }
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + '/add_to_cart',
       data: data,
       method: 'POST',

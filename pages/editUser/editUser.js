@@ -35,7 +35,7 @@ Page({
   },
   fetchUserInfo: function () {
     var that = this;
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + "/get_user_info",
       method: "GET",
       header: {
@@ -126,7 +126,7 @@ Page({
     var that=this;
     var data = {};
     data["gender"] = gender
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + '/edit_user_info',
       data: data,
       method: 'POST',
@@ -162,7 +162,7 @@ Page({
 
     var data = {};
     data["nickname"] = nickname
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + '/edit_user_info',
       data: data,
       method: 'POST',
