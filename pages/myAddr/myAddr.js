@@ -99,7 +99,7 @@ Page({
   fetchData: function (callback) {
     var that = this;
     console.log("get_addr_list")
-    getApp().doRequestest({
+    getApp().doRequest({
       // url:  + "/book_list", data: params,
       url: getApp().config.host + "/get_addr_list",
       header: {
@@ -158,7 +158,7 @@ Page({
       url = getApp().config.host + "/edit_addr";
     }
 
-    getApp().doRequestest({
+    getApp().doRequest({
       // url:  + "/book_list", data: params,
       url: url,
       method: "POST",
@@ -225,7 +225,7 @@ Page({
       return
     }
     data["id"] = that.data.selectAddr
-    getApp().doRequestest({
+    getApp().doRequest({
       // url:  + "/book_list", data: params,
       url: getApp().config.host + "/delete_addr",
       method: "POST",
@@ -272,7 +272,7 @@ Page({
       return
     }
     data["id"] = id
-    getApp().doRequestest({
+    getApp().doRequest({
       // url:  + "/book_list", data: params,
       url: getApp().config.host + "/set_default_addr",
       method: "POST",
@@ -353,7 +353,7 @@ Page({
   getChoiceList: function () {
     console.log("getChoiceList")
     var that = this;
-    getApp().doRequestest({
+    getApp().doRequest({
       url: getApp().config.host + '/get_area_list',
       method: 'GET',
       header: {

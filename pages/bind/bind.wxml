@@ -15,17 +15,17 @@
       <input name="vcode" class="vcode-input" type="number"  placeholder="请输入验证码" />
 
 
-      <label catchtap="clickSend" wx:if="{{countdown==0 && sending==false}}" class="send-btn">
+      <view catchtap="clickSend" wx:if="{{countdown==0 && sending==false}}" class="send-btn">
       
         发送验证码
         
-      </label>
+      </view>
 
-      <label   wx:if="{{countdown==0  && sending==true}}" class="send-btn">
+      <view   wx:if="{{countdown==0  && sending==true}}" class="send-btn">
       
         发送验证码
         
-      </label>
+      </view>
 
       <label  wx:if="{{countdown>0}}"  class="send-btn">
       

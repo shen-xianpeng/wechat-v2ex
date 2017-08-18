@@ -4,13 +4,15 @@ page {
 .section {
   position: relative;
   background: white;
-  height: 60rpx;
+  height: 90rpx;
   line-height: 80rpx;
   margin-bottom: 0;
   border: 1rpx solid gray;
   margin: 60rpx;
   border-radius: 10rpx;
-  padding: 5rpx;
+  padding: 15rpx;
+    box-sizing:border-box;
+
 }
 
 .form-label {
@@ -71,9 +73,9 @@ page {
   position: absolute;
   right: 0;
   top: 0;
-  height: 50rpx;
+  height: 70rpx;
   font-size: 30rpx;
-  line-height: 50rpx;
+  line-height: 70rpx;
   padding: 10rpx;
   background: gray;
   color: white;

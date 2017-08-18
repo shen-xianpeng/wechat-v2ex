@@ -140,7 +140,7 @@ App({
     });
   },
   globalData: {
-    userInfo: null,
+    userInfo: {},
     choices: {},
   },
   config: {
