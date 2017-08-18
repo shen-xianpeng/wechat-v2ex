@@ -59,7 +59,7 @@ Page({
     if (user_book_id > 0) {
       params["user_book_id"] = user_book_id
     }
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + '/preview_order',
       data: params,
       method: 'GET',
@@ -132,7 +132,7 @@ Page({
 
     }
     data["openid"] = getApp().globalData.openid;
-    wx.request({
+    getApp().doRequest({
       url: getApp().config.host + '/start_pay',
       method: 'POST',
       data: data,
@@ -176,7 +176,7 @@ Page({
             },
             'fail': function (res) {
               console.log(res, "fail")
-              wx.request({
+              getApp().doRequest({
                 url: getApp().config.host + '/cancel_order_before_pay',
                 method: 'POST',
                 data: { order_no: that.order_no },

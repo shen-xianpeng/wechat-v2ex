@@ -218,5 +218,13 @@ App({
     object.success = interceptAuth;
     wx.request(object)
     
+  },
+  goLogin: function (e) {
+
+    var url = '../login/login';
+
+    wx.navigateTo({
+      url: url
+    })
   }
 })
